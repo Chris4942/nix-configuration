@@ -90,6 +90,7 @@
       brave
       neofetch
       steam
+      discord
     ];
   };
 
