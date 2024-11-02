@@ -86,6 +86,7 @@
       neovim
       brave
       neofetch
+      steam
     ];
   };
 
