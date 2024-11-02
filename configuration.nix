@@ -107,7 +107,7 @@
       git
       openssh
       xsel
-  #  wget
+      pavucontrol
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
