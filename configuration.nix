@@ -87,7 +87,9 @@
       neovim
       brave
       git
-    #  thunderbird
+      neofetch
+      openssh
+      xsel
     ];
   };
 
