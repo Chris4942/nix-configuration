@@ -76,6 +76,7 @@
 
   # make steam work
   hardware.opengl.driSupport32Bit = true;
+  programs.steam.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
