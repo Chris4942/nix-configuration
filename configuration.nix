@@ -115,6 +115,7 @@
       openssh
       xsel
       pavucontrol
+      python313
   ];
 
   programs.nix-ld.enable = true;
