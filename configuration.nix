@@ -97,6 +97,7 @@
       neofetch
       steam
       discord
+      spotify
     ];
   };
 
@@ -121,6 +122,21 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
+
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "FiraCode" ];
+      };
+    };
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
