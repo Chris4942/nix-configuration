@@ -140,6 +140,14 @@
     };
   };
 
+  programs.bash = {
+	  shellAliases = {
+      g = "git";
+      n = "nvim .";
+      ns = "nix-shell";
+    };
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
