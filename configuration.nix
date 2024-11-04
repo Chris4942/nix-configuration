@@ -99,6 +99,7 @@
       steam
       discord
       spotify
+      alacritty
     ];
   };
 
