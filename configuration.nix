@@ -118,6 +118,7 @@
       xsel
       pavucontrol
       python313
+      jq
   ];
 
   programs.nix-ld.enable = true;
