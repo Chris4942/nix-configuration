@@ -119,6 +119,7 @@
       pavucontrol
       python313
       jq
+      ripgrep
   ];
 
   programs.nix-ld.enable = true;
