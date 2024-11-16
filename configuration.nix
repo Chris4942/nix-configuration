@@ -100,6 +100,7 @@
       discord
       spotify
       alacritty
+      wmctrl
     ];
   };
 
@@ -120,6 +121,8 @@
       python313
       jq
       ripgrep
+      inxi
+      pciutils
   ];
 
   programs.nix-ld.enable = true;
