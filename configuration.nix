@@ -123,6 +123,8 @@
       ripgrep
       inxi
       pciutils
+      tmux
+      htop
   ];
 
   programs.nix-ld.enable = true;
