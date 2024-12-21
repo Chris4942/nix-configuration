@@ -125,6 +125,9 @@
       pciutils
       tmux
       htop
+      unzip
+      nodejs_22
+      libgcc
   ];
 
   programs.nix-ld.enable = true;
