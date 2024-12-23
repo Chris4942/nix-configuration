@@ -10,6 +10,8 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -135,6 +137,7 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    libusb1
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
