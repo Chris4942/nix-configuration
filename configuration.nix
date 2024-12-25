@@ -77,8 +77,6 @@
   };
   hardware.bluetooth.enable = true;
 
-  # enable android
-  programs.adb.enable = true;
 
   # make steam work
   hardware.opengl.driSupport32Bit = true;
@@ -96,7 +94,7 @@
   users.users.cwest = {
     isNormalUser = true;
     description = "Chris West";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       neovim
       brave
@@ -133,7 +131,6 @@
       unzip
       nodejs_22
       libgcc
-      android-tools
   ];
 
   programs.nix-ld.enable = true;
