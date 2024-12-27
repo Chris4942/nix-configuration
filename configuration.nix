@@ -60,6 +60,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable drivers for xbox controllers
+  hardware.xone.enable = true;
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -77,6 +80,14 @@
   };
   hardware.bluetooth.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    user = "cwest";
+    dataDir = "/home/cwest/west-sync/";
+    configDir = "/home/cwest/.config/syncthing";
+  };
+
+  hardware.steam-hardware.enable = true;
 
   # make steam work
   hardware.opengl.driSupport32Bit = true;
@@ -104,8 +115,10 @@
       spotify
       alacritty
       wmctrl
+      syncthing
     ];
   };
+
 
   # Install firefox.
   programs.firefox.enable = true;
