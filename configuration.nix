@@ -116,6 +116,7 @@
       alacritty
       wmctrl
       syncthing
+      gimp
     ];
   };
 
@@ -146,6 +147,7 @@
       libgcc
       xboxdrv
       linuxKernel.packages.linux_zen.xone
+      tree
   ];
 
   programs.nix-ld.enable = true;
