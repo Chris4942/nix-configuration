@@ -1,5 +1,6 @@
-To create symbolic links to these files from `/etc/nixos/` use:
+
+To build make sure that flakes are enabled and run
 ```sh
-sudo ln -s ~/path/to/repo/configuration.nix /etc/nixos/configuration.nix
-sudo ln -s ~/path/to/repo/hardware/whichever-applies /etc/nixos/hardware-configuration.nix
+sudo nixos-rebuild switch --flake .#default
 ```
+
