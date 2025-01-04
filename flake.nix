@@ -16,6 +16,7 @@
       modules = [
         ./configuration.nix
         ./modules/fonts.nix
+        ./modules/localization.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
