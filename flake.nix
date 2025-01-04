@@ -18,6 +18,7 @@
         ./modules/fonts.nix
         ./modules/localization.nix
         ./modules/monitor-configuration.nix
+        ./modules/bash.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
