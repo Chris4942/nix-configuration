@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware/amd-gpu.nix
-    ];
+  imports =[ # Include the results of the hardware scan.
+    ./hardware/amd-gpu.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command"  "flakes" ];
 
@@ -156,20 +155,6 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-
-
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    ];
-
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "FiraCode" ];
-      };
-    };
-  };
 
   programs.bash = {
 	  shellAliases = {
