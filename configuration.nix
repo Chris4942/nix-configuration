@@ -5,11 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =[
-    ./hardware/amd-gpu.nix
-  ];
+  imports = [ ./hardware/amd-gpu.nix ];
 
-  nix.settings.experimental-features = [ "nix-command"  "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -19,7 +20,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -39,7 +39,6 @@
 
   hardware.bluetooth.enable = true;
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -47,7 +46,10 @@
   users.users.cwest = {
     isNormalUser = true;
     description = "Chris West";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       neovim
       brave
@@ -61,7 +63,6 @@
     ];
   };
 
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -71,23 +72,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      vim
-      git
-      openssh
-      xsel
-      python313
-      jq
-      ripgrep
-      inxi
-      pciutils
-      tmux
-      htop
-      unzip
-      nodejs_22
-      libgcc
-      tree
+    vim
+    git
+    openssh
+    xsel
+    python313
+    jq
+    ripgrep
+    inxi
+    pciutils
+    tmux
+    htop
+    unzip
+    nodejs_22
+    libgcc
+    tree
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -10,22 +10,27 @@
     # };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        ./modules/fonts.nix
-        ./modules/localization.nix
-        ./modules/monitor-configuration.nix
-        ./modules/bash.nix
-        ./modules/syncthing.nix
-        ./modules/nix-ld.nix
-        ./modules/xinput.nix
-        ./modules/steam.nix
-        ./modules/audio.nix
-        # inputs.home-manager.nixosModules.default
-      ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./configuration.nix
+          ./modules/fonts.nix
+          ./modules/localization.nix
+          ./modules/monitor-configuration.nix
+          ./modules/bash.nix
+          ./modules/syncthing.nix
+          ./modules/nix-ld.nix
+          ./modules/xinput.nix
+          ./modules/steam.nix
+          ./modules/audio.nix
+          # inputs.home-manager.nixosModules.default
+        ];
+      };
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
-  };
 }
