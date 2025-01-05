@@ -4,18 +4,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, home-manager, ... }:
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
+          inherit home-manager;
         };
         modules = [
           ./configuration.nix
@@ -28,7 +28,7 @@
           ./modules/xinput.nix
           ./modules/steam.nix
           ./modules/audio.nix
-          # inputs.home-manager.nixosModules.default
+          home-manager.nixosModules.default
         ];
       };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
