@@ -15,6 +15,15 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        ./modules/fonts.nix
+        ./modules/localization.nix
+        ./modules/monitor-configuration.nix
+        ./modules/bash.nix
+        ./modules/syncthing.nix
+        ./modules/nix-ld.nix
+        ./modules/xinput.nix
+        ./modules/steam.nix
+        ./modules/audio.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
