@@ -75,7 +75,6 @@
       git
       openssh
       xsel
-      pavucontrol
       python313
       jq
       ripgrep
