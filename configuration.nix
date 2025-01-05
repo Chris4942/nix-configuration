@@ -2,10 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
-  imports = [ ./hardware/amd-gpu.nix ];
+  imports = [
+    ./hardware/amd-gpu.nix
+    home-manager.nixosModules.default
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -39,8 +47,14 @@
 
   hardware.bluetooth.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  home-manager = {
+    extraSpecialArgs = {
+      inherit home-manager;
+    };
+    users = {
+      "cwest" = import ./users/cwest.nix;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cwest = {
