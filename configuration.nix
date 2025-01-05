@@ -37,9 +37,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable drivers for xbox controllers
-  hardware.xone.enable = true;
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -114,8 +111,6 @@
       unzip
       nodejs_22
       libgcc
-      xboxdrv
-      linuxKernel.packages.linux_zen.xone
       tree
   ];
 
