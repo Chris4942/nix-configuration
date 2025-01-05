@@ -39,9 +39,11 @@
     # '')
   ];
 
-  programs.zoxide.enable = true;
   programs.bash.enable = true;
-  programs.zoxide.options = [ "--cmd cd" ];
+  programs.zoxide = {
+    options = [ "--cmd cd" ];
+    enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
