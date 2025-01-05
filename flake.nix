@@ -22,6 +22,7 @@
         ./modules/syncthing.nix
         ./modules/nix-ld.nix
         ./modules/xinput.nix
+        ./modules/steam.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
