@@ -19,6 +19,7 @@
         ./modules/localization.nix
         ./modules/monitor-configuration.nix
         ./modules/bash.nix
+        ./modules/syncthing.nix
         # inputs.home-manager.nixosModules.default
       ];
     };
