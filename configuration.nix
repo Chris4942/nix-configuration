@@ -2,10 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, home-manager, ... }:
+{
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
-  imports = [ ./hardware/amd-gpu.nix home-manager.nixosModules.default ];
+  imports = [
+    ./hardware/amd-gpu.nix
+    home-manager.nixosModules.default
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -40,7 +48,9 @@
   hardware.bluetooth.enable = true;
 
   home-manager = {
-    extraSpecialArgs = { inherit home-manager; };
+    extraSpecialArgs = {
+      inherit home-manager;
+    };
     users = {
       "cwest" = import ./users/cwest.nix;
     };

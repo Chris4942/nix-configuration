@@ -11,7 +11,12 @@
   };
 
   outputs =
-    { self, nixpkgs, home-manager, ... }:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
