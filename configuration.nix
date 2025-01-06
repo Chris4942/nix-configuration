@@ -53,6 +53,7 @@
     };
     users = {
       "cwest" = import ./users/cwest.nix;
+      "steamuser" = import ./users/steamuser.nix;
     };
   };
 
@@ -75,6 +76,12 @@
       wmctrl
       gimp
     ];
+  };
+
+  users.users.steamuser = {
+    isNormalUser = true;
+    description = "User that launches in gamescope instead of gnome";
+    packages = with pkgs; [ steam ];
   };
 
   # Install firefox.
