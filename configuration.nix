@@ -57,6 +57,10 @@
     };
   };
 
+  environment.loginShellInit = ''
+    [[ "$(tty)" = "/dev/tty1" ]] && ./gs.sh
+  '';
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cwest = {
     isNormalUser = true;
@@ -87,7 +91,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
@@ -108,6 +111,7 @@
     nodejs_22
     libgcc
     tree
+    mangohud
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
