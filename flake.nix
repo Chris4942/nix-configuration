@@ -2,12 +2,13 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs =
@@ -15,12 +16,17 @@
       self,
       nixpkgs,
       home-manager,
+      nvf,
       ...
     }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit home-manager;
+          inherit home-manager nvf;
         };
         modules = [
           ./configuration.nix
@@ -33,9 +39,11 @@
           ./modules/xinput.nix
           ./modules/steam.nix
           ./modules/audio.nix
+          ./modules/nvf.nix
+          nvf.nixosModules.default
           home-manager.nixosModules.default
         ];
       };
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+      formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
     };
 }
