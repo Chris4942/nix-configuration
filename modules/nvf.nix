@@ -15,7 +15,15 @@
         viAlias = false;
         vimAlias = true;
         binds.whichKey.enable = true;
-        lsp.enable = true;
+        lsp = {
+          enable = true;
+          mappings = {
+            goToDefinition  = "gd";
+            goToDeclaration = "gD";
+            hover = "<leader>ch";
+            renameSymbol = "<leader>cr";
+          };
+        };
         comments.comment-nvim.enable = true;
         filetree.neo-tree.enable = true;
         languages = {
@@ -24,10 +32,13 @@
           nix.enable = true;
           rust = {
             enable = true;
-            lsp.enable = true;
             crates.enable = true;
           };
-          python.enable = true;
+          python = {
+            enable = true;
+            lsp.server = "pyright";
+          };
+          lua.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
