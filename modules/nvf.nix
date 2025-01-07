@@ -1,14 +1,10 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-
     neovim-node-client
-
   ];
   programs.nvf = {
     enable = true;
-    # your settings need to go into the settings attribute set
-    # most settings are documented in the appendix
     settings = {
       vim = {
         theme = {
@@ -18,15 +14,20 @@
         };
         viAlias = false;
         vimAlias = true;
-        lsp = {
-          enable = true;
-        };
+        binds.whichKey.enable = true;
+        lsp.enable = true;
+        comments.comment-nvim.enable = true;
+        filetree.neo-tree.enable = true;
         languages = {
-          nix = {
+          enableLSP = true;
+          enableTreesitter = true;
+          nix.enable = true;
+          rust = {
             enable = true;
+            lsp.enable = true;
+            crates.enable = true;
           };
-        };
-        lazy.plugins = {
+          python.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
