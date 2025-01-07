@@ -14,6 +14,7 @@
         };
         viAlias = false;
         vimAlias = true;
+        lineNumberMode = "number";
         binds.whichKey.enable = true;
         lsp = {
           enable = true;
@@ -26,6 +27,9 @@
         };
         comments.comment-nvim.enable = true;
         filetree.neo-tree.enable = true;
+        git = {
+          gitsigns.enable = true;
+        };
         languages = {
           enableLSP = true;
           enableTreesitter = true;
@@ -49,6 +53,15 @@
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
+        keymaps = [
+          {
+            key = "<leader>r";
+            mode = "n";
+            silent = true;
+            action = ":term<CR>";
+            desc = "open terminal";
+          }
+        ];
       };
     };
   };
