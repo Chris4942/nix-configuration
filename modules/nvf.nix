@@ -69,6 +69,34 @@
             action = ":b#<CR>";
             desc = "open previous buffer";
           }
+          {
+            key = "<C-h>";
+            mode = "n";
+            silent = true;
+            action = "<C-w>h";
+            desc = "move to left window";
+          }
+          {
+            key = "<C-j>";
+            mode = "n";
+            silent = true;
+            action = "<C-w>j";
+            desc = "move to left window";
+          }
+          {
+            key = "<C-k>";
+            mode = "n";
+            silent = true;
+            action = "<C-w>k";
+            desc = "move to left window";
+          }
+          {
+            key = "<C-l>";
+            mode = "n";
+            silent = true;
+            action = "<C-w>l";
+            desc = "move to left window";
+          }
         ];
       };
     };
