@@ -3,7 +3,7 @@
   programs.bash = {
     shellAliases = {
       g = "git";
-      n = "nvim .";
+      n = "vim .";
       ns = "nix-shell";
     };
   };
