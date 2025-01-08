@@ -16,6 +16,7 @@
         vimAlias = true;
         lineNumberMode = "number";
         binds.whichKey.enable = true;
+        useSystemClipboard = true;
         lsp = {
           enable = true;
           mappings = {
@@ -60,6 +61,13 @@
             silent = true;
             action = ":term<CR>";
             desc = "open terminal";
+          }
+          {
+            key = "<leader>bb";
+            mode = "n";
+            silent = true;
+            action = ":b#<CR>";
+            desc = "open previous buffer";
           }
         ];
       };
