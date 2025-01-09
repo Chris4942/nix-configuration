@@ -98,6 +98,20 @@
             action = "<C-w>l";
             desc = "move to left window";
           }
+          {
+            key = "<leader>fy";
+            mode = "n";
+            silent = true;
+            action = ":let @+ = expand('%:.')<cr>";
+            desc = "copy relative path to clipboard";
+          }
+          {
+            key = "<leader>fY";
+            mode = "n";
+            silent = true;
+            action = ":let @+ = expand('%:p')<cr>";
+            desc = "copy absolute path to clipboard";
+          }
         ];
       };
     };
