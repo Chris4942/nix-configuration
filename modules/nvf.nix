@@ -20,7 +20,7 @@
         lsp = {
           enable = true;
           mappings = {
-            goToDefinition  = "gd";
+            goToDefinition = "gd";
             goToDeclaration = "gD";
             hover = "<leader>ch";
             renameSymbol = "<leader>cr";
