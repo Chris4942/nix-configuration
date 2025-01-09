@@ -49,13 +49,12 @@
     enable = true;
   };
 
-  xsession.windowManager.i3 =
+  wayland.windowManager.sway =
     let
       mod = "Mod4";
     in
     {
       enable = true;
-      package = pkgs.i3-gaps;
       config = {
         modifier = mod;
         gaps = {
@@ -97,7 +96,7 @@
         startup = [
           {
             always = true;
-            command = "feh --bg-scale /home/cwest/Pictures/background.jpg";
+            command = "swaymsg output \"*\" bg /home/cwest/Pictures/background.jpg fill";
           }
         ];
       };

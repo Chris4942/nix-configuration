@@ -37,6 +37,11 @@
   services.displayManager = {
     defaultSession = "none+i3";
   };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  security.polkit.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -107,6 +112,10 @@
     nodejs_22
     libgcc
     tree
+    grim # screenshot functionality
+    slurp # screenshot functionality
+    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    mako # notification system developed by swaywm maintainer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
