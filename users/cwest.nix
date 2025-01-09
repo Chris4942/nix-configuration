@@ -2,6 +2,7 @@
   config,
   pkgs,
   home-manager,
+  lib,
   ...
 }:
 
@@ -24,6 +25,10 @@
   # environment.
   home.packages = with pkgs; [
     zoxide
+    pulseaudio
+    brave
+    arandr
+    feh
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -44,39 +49,68 @@
     enable = true;
   };
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+  xsession.windowManager.i3 =
+    let
+      mod = "Mod4";
+    in
+    {
+      enable = true;
+      package = pkgs.i3-gaps;
+      config = {
+        modifier = mod;
+        gaps = {
+          inner = 10;
+          outer = 5;
+        };
+        keybindings = lib.mkOptionDefault {
+          # requires pulseaudio packages
+          # TODO: figure out how to get add that in here so that if it's not provided elsewhere this will pull it in as a dependency
+          "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +7%";
+          "shift+XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%";
+          "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -7%";
+          "shift+XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%";
+          "XF86AudioPlay" =
+            "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause";
+          "XF86AudioNext" =
+            "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next";
+          "XF86AudioPrev" =
+            "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous";
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
+          "${mod}+l" = "mode launcher";
+        };
+        modes =
+          let
+            withEscape = {
+              Escape = "mode \"default\"";
+            };
+            toDefault = ", mode \"default\"";
+          in
+          lib.mkOptionDefault {
+            launcher = {
+              b = "exec $BROWSER" + toDefault;
+              s = "exec $MUSIC_PLAYER" + toDefault;
+              a = "exec $DISPLAY_MANAGER" + toDefault;
+              p = "exec $AUDIO_CONTROLLER" + toDefault;
+            } // withEscape;
+            resize = lib.mkOptionDefault withEscape;
+          };
+        startup = [
+          {
+            always = true;
+            command = "feh --bg-scale /home/cwest/Pictures/background.jpg";
+          }
+        ];
+      };
+    };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/cwest/etc/profile.d/hm-session-vars.sh
-  #
+  home.file = { };
+
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    TERMINAL = "alacritty";
+    BROWSER = "brave";
+    MUSIC_PLAYER = "spotify";
+    DISPLAY_MANAGER = "arandr";
+    AUDIO_CONTROLLER = "pavucontrol";
   };
 
   # Let Home Manager install and manage itself.
