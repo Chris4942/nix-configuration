@@ -131,7 +131,6 @@
   home.file = { };
 
   home.sessionVariables = {
-    # TODO: Figure out how to get these working with sway
     TERMINAL = "alacritty";
     BROWSER = "brave";
     MUSIC_PLAYER = "spotify";
