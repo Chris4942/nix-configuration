@@ -136,6 +136,7 @@
     MUSIC_PLAYER = "spotify";
     DISPLAY_MANAGER = "arandr";
     AUDIO_CONTROLLER = "pavucontrol";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
