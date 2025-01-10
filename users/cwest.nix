@@ -111,6 +111,13 @@
     defaultTimeout = 10 * 1000;
   };
 
+  programs.swaylock = {
+    enable = true;
+    settings = lib.mkOptionDefault {
+      image = "/home/cwest/Pictures/background.jpg";
+    };
+  };
+
   home.file = { };
 
   home.sessionVariables = {
