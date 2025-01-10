@@ -115,6 +115,11 @@
     enable = true;
     settings = lib.mkOptionDefault {
       image = "/home/cwest/Pictures/background.jpg";
+      ring-color = "96d17e";
+      ring-ver-color = "7ea6d1";
+      ring-wrong-color = "f35636";
+      line-color = "1a191a";
+      font = "GoMono";
     };
   };
 
