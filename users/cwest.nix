@@ -49,13 +49,12 @@
     enable = true;
   };
 
-  xsession.windowManager.i3 =
+  wayland.windowManager.sway =
     let
       mod = "Mod4";
     in
     {
       enable = true;
-      package = pkgs.i3-gaps;
       config = {
         modifier = mod;
         gaps = {
@@ -77,6 +76,7 @@
             "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous";
 
           "${mod}+l" = "mode launcher";
+          "${mod}+x" = "mode lock";
         };
         modes =
           let
@@ -87,21 +87,46 @@
           in
           lib.mkOptionDefault {
             launcher = {
-              b = "exec $BROWSER" + toDefault;
-              s = "exec $MUSIC_PLAYER" + toDefault;
-              a = "exec $DISPLAY_MANAGER" + toDefault;
-              p = "exec $AUDIO_CONTROLLER" + toDefault;
+              # b = "exec $BROWSER" + toDefault;
+              b = "exec brave" + toDefault;
+              # s = "exec $MUSIC_PLAYER" + toDefault;
+              s = "exec spotify" + toDefault;
+              # a = "exec $DISPLAY_MANAGER" + toDefault;
+              a = "exec arandr" + toDefault;
+              # p = "exec $AUDIO_CONTROLLER" + toDefault;
+              p = "exec pavucontrol" + toDefault;
             } // withEscape;
             resize = lib.mkOptionDefault withEscape;
+            lock = {
+              l = "exec swaylock" + toDefault;
+              x = "exec swaylock & systemctl suspend" + toDefault;
+            } // withEscape;
           };
         startup = [
           {
             always = true;
-            command = "feh --bg-scale /home/cwest/Pictures/background.jpg";
+            command = "swaymsg output \"*\" bg /home/cwest/Pictures/background.jpg fill";
           }
         ];
       };
     };
+
+  services.mako = {
+    enable = true;
+    defaultTimeout = 10 * 1000;
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = lib.mkOptionDefault {
+      image = "/home/cwest/Pictures/background.jpg";
+      ring-color = "96d17e";
+      ring-ver-color = "7ea6d1";
+      ring-wrong-color = "f35636";
+      line-color = "1a191a";
+      font = "GoMono";
+    };
+  };
 
   home.file = { };
 
@@ -111,6 +136,7 @@
     MUSIC_PLAYER = "spotify";
     DISPLAY_MANAGER = "arandr";
     AUDIO_CONTROLLER = "pavucontrol";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
