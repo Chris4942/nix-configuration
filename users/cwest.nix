@@ -86,10 +86,14 @@
           in
           lib.mkOptionDefault {
             launcher = {
-              b = "exec $BROWSER" + toDefault;
-              s = "exec $MUSIC_PLAYER" + toDefault;
-              a = "exec $DISPLAY_MANAGER" + toDefault;
-              p = "exec $AUDIO_CONTROLLER" + toDefault;
+              # b = "exec $BROWSER" + toDefault;
+              b = "exec brave" + toDefault;
+              # s = "exec $MUSIC_PLAYER" + toDefault;
+              s = "exec spotify" + toDefault;
+              # a = "exec $DISPLAY_MANAGER" + toDefault;
+              a = "exec arandr" + toDefault;
+              # p = "exec $AUDIO_CONTROLLER" + toDefault;
+              p = "exec pavucontrol" + toDefault;
             } // withEscape;
             resize = lib.mkOptionDefault withEscape;
           };
@@ -102,9 +106,15 @@
       };
     };
 
+  services.mako = {
+    enable = true;
+    defaultTimeout = 10 * 1000;
+  };
+
   home.file = { };
 
   home.sessionVariables = {
+    # TODO: Figure out how to get these working with sway
     TERMINAL = "alacritty";
     BROWSER = "brave";
     MUSIC_PLAYER = "spotify";
