@@ -76,6 +76,7 @@
             "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous";
 
           "${mod}+l" = "mode launcher";
+          "${mod}+x" = "mode lock";
         };
         modes =
           let
@@ -96,6 +97,10 @@
               p = "exec pavucontrol" + toDefault;
             } // withEscape;
             resize = lib.mkOptionDefault withEscape;
+            lock = {
+              l = "exec swaylock" + toDefault;
+              x = "exec swaylock & systemctl suspend" + toDefault;
+            } // withEscape;
           };
         startup = [
           {
