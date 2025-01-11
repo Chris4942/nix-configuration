@@ -5,9 +5,10 @@
   lib,
   ...
 }:
-let random-image = "find /home/cwest/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
-set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
-  in
+let
+  random-image = "find /home/cwest/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
+  set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
+in
 
 rec {
   # Home Manager needs a bit of information about you and the paths it should

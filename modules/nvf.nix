@@ -112,6 +112,43 @@
             action = ":let @+ = expand('%:p')<cr>";
             desc = "copy absolute path to clipboard";
           }
+          {
+            key = "<leader>fj";
+            mode = "n";
+            silent = true;
+            action = ":let @+ = expand('%:t')<cr>";
+            desc = "Copy short file name to clipboard";
+          }
+          {
+            key = "<leader>fe";
+            mode = "n";
+            silent = true;
+            action = "<cmd>Neotree reveal<cr>";
+            desc = "Reveal current file in file tree";
+          }
+          {
+            key = "<leader>nh";
+            mode = "n";
+            silent = true;
+            action = "<cmd>noh<cr";
+            desc = "Turn off search highlights (until next search)";
+          }
+          {
+            key = "<leader>bd";
+            mode = "n";
+            silent = true;
+            action = "<cmd>bp<cr>";
+            desc = "Close current buffer (TODO this macro is kind of broken)";
+          }
+          {
+            key = "<C-s>";
+            mode = [
+              "i"
+              "n"
+            ];
+            action = "<cmd>w<cr>";
+            desc = "save current buffer ( same as `:w`)";
+          }
         ];
       };
     };
