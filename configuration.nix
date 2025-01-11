@@ -82,9 +82,9 @@
       steam
       discord
       spotify
-      alacritty
       wmctrl
       gimp
+      foot
     ];
   };
 

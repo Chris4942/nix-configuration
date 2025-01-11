@@ -3,7 +3,7 @@
   hardware.steam-hardware.enable = true;
 
   # make steam work
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
