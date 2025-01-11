@@ -9,7 +9,7 @@ let random-image = "find /home/cwest/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
 set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
   in
 
-{
+rec {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "cwest";
@@ -32,6 +32,7 @@ set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
     brave
     arandr
     feh
+    foot
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -78,7 +79,7 @@ set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
           "XF86AudioPrev" =
             "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous";
 
-          "${mod}+l" = "mode launcher";
+          "${mod}+n" = "mode launcher";
           "${mod}+x" = "mode lock";
         };
         modes =
@@ -112,6 +113,7 @@ set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
             command = set-random-image;
           }
         ];
+        terminal = "${pkgs.foot}/bin/foot";
       };
     };
 
@@ -132,14 +134,34 @@ set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
     };
   };
 
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font.size = 16.0;
+    };
+  };
+
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "monospace:size=15";
+      };
+      colors = {
+        regular1 = "bb6565"; # red
+        regular2 = "7ac854"; # green
+      };
+    };
+  };
+
   home.file = { };
 
-  home.sessionVariables = {
-    TERMINAL = "alacritty";
-    BROWSER = "brave";
+  home.sessionVariables = with pkgs; {
+    TERMINAL = "${foot}/bin/foot";
+    BROWSER = "${brave}/bin/brave";
     MUSIC_PLAYER = "spotify";
-    DISPLAY_MANAGER = "arandr";
-    AUDIO_CONTROLLER = "pavucontrol";
+    DISPLAY_MANAGER = "${arandr}/bin/arandr";
+    AUDIO_CONTROLLER = "${pavucontrol}/bin/pavucontrol";
     EDITOR = "vim";
   };
 
