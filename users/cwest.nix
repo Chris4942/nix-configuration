@@ -5,6 +5,9 @@
   lib,
   ...
 }:
+let random-image = "find /home/cwest/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
+set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
+  in
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -95,6 +98,7 @@
               a = "exec arandr" + toDefault;
               # p = "exec $AUDIO_CONTROLLER" + toDefault;
               p = "exec pavucontrol" + toDefault;
+              q = "exec ${set-random-image}" + toDefault;
             } // withEscape;
             resize = lib.mkOptionDefault withEscape;
             lock = {
@@ -105,7 +109,7 @@
         startup = [
           {
             always = true;
-            command = "swaymsg output \"*\" bg /home/cwest/Pictures/background.jpg fill";
+            command = set-random-image;
           }
         ];
       };
@@ -119,7 +123,7 @@
   programs.swaylock = {
     enable = true;
     settings = lib.mkOptionDefault {
-      image = "/home/cwest/Pictures/background.jpg";
+      image = "`${random-image}`";
       ring-color = "96d17e";
       ring-ver-color = "7ea6d1";
       ring-wrong-color = "f35636";
