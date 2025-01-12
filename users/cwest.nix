@@ -115,6 +115,7 @@ rec {
           }
         ];
         terminal = "${pkgs.foot}/bin/foot";
+        defaultWorkspace = "workspace number 1";
       };
     };
 
