@@ -29,13 +29,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # i3 configuration
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-  };
+  services.xserver.enable = true;
+
   services.displayManager = {
-    defaultSession = "none+i3";
+    defaultSession = "sway";
   };
   programs.sway = {
     enable = true;
