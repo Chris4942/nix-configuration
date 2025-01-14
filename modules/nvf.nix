@@ -130,7 +130,7 @@
             key = "<leader>nh";
             mode = "n";
             silent = true;
-            action = "<cmd>noh<cr";
+            action = "<cmd>noh<cr>";
             desc = "Turn off search highlights (until next search)";
           }
           {
