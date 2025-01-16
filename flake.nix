@@ -39,7 +39,7 @@
           ./modules/xinput.nix
           ./modules/steam.nix
           ./modules/audio.nix
-          ./modules/nvf.nix
+          ./modules/nvf/module.nix
           nvf.nixosModules.default
           home-manager.nixosModules.default
         ];

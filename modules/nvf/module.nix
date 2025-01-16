@@ -53,8 +53,23 @@
         };
         statusline.lualine.enable = true;
         tabline.nvimBufferline.enable = true;
-        telescope.enable = true;
+        telescope = {
+          enable = true;
+          setupOpts.default.vimgrep_arguments = [
+            "${pkgs.ripgrep}/bin/rg"
+            "--color=never"
+            "--no-heading"
+            "--with-filename"
+            "--line-number"
+            "--column"
+            "--smart-case"
+            "--hidden"
+          ];
+        };
         autocomplete.nvim-cmp.enable = true;
+        autopairs.nvim-autopairs.enable = true;
+        notes.todo-comments.enable = true;
+        visuals.indent-blankline.enable = true;
         keymaps = [
           {
             key = "<leader>r";
@@ -137,8 +152,15 @@
             key = "<leader>bd";
             mode = "n";
             silent = true;
-            action = "<cmd>bp<cr>";
+            action = "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>";
             desc = "Close current buffer (TODO this macro is kind of broken)";
+          }
+          {
+            key = "<leader>bo";
+            mode = "n";
+            silent = true;
+            action = "<cmd>%bd<bar>e#<cr>";
+            desc = "Close all other bothers";
           }
           {
             key = "<C-s>";
@@ -149,7 +171,7 @@
             action = "<cmd>w<cr>";
             desc = "save current buffer ( same as `:w`)";
           }
-        ];
+        ] ++ import ./nvf-extension-keymaps.nix { inherit pkgs; };
       };
     };
   };

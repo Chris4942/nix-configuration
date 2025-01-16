@@ -63,7 +63,7 @@ rec {
       config = {
         modifier = mod;
         gaps = {
-          inner = 10;
+          inner = 30;
           outer = 5;
         };
         keybindings = lib.mkOptionDefault {
