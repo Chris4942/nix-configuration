@@ -105,6 +105,7 @@
     pciutils
     tmux
     htop
+    zip
     unzip
     nodejs_22
     libgcc
