@@ -19,11 +19,15 @@
         useSystemClipboard = true;
         lsp = {
           enable = true;
+          formatOnSave = true;
+          lightbulb.enable = true;
+          lspSignature.enable = true;
           mappings = {
             goToDefinition = "gd";
             goToDeclaration = "gD";
             hover = "<leader>ch";
             renameSymbol = "<leader>cr";
+            codeAction = "<leader>ca";
           };
         };
         comments.comment-nvim.enable = true;
