@@ -59,7 +59,7 @@
         tabline.nvimBufferline.enable = true;
         telescope = {
           enable = true;
-          setupOpts.default.vimgrep_arguments = [
+          setupOpts.defaults.vimgrep_arguments = [
             "${pkgs.ripgrep}/bin/rg"
             "--color=never"
             "--no-heading"
