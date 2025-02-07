@@ -40,6 +40,7 @@
           ./modules/steam.nix
           ./modules/audio.nix
           ./modules/nvf/module.nix
+          ./hardware/amd-gpu.nix
           nvf.nixosModules.default
           home-manager.nixosModules.default
         ];

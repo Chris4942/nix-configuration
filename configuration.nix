@@ -11,7 +11,6 @@
 
 {
   imports = [
-    ./hardware/amd-gpu.nix
     home-manager.nixosModules.default
   ];
 
