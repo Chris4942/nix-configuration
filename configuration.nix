@@ -6,6 +6,7 @@
   config,
   pkgs,
   home-manager,
+rootUser,
   ...
 }:
 
@@ -58,14 +59,15 @@
   home-manager = {
     extraSpecialArgs = {
       inherit home-manager;
+      inherit rootUser;
     };
     users = {
-      "cwest" = import ./users/cwest.nix;
+      "${rootUser.name}" = import ./users/root-user.nix;
     };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cwest = {
+  users.users.${rootUser.name} = {
     isNormalUser = true;
     description = "Chris West";
     extraGroups = [

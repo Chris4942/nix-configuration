@@ -3,18 +3,18 @@
   pkgs,
   home-manager,
   lib,
+  rootUser,
   ...
 }:
 let
-  random-image = "find /home/cwest/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
+  random-image = "find /${rootUser.homeDirectory}/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
   set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
 in
 
 rec {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "cwest";
-  home.homeDirectory = "/home/cwest";
+  # Home Manager needs a bit of information about you and the paths it should manage.
+  home.username = rootUser.name;
+  home.homeDirectory = rootUser.homeDirectory;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
