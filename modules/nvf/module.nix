@@ -74,6 +74,13 @@
         autopairs.nvim-autopairs.enable = true;
         notes.todo-comments.enable = true;
         visuals.indent-blankline.enable = true;
+        spellcheck = {
+          enable = true;
+          programmingWordlist.enable = true;
+          extraSpellWords = {
+            "en.utf-8" = builtins.filter (s: builtins.isString s) (builtins.split "\n" (builtins.readFile ./dictionary.txt + "\n" + builtins.readFile ./extra-words.txt));
+          };
+        };
         keymaps = [
           {
             key = "<leader>r";
