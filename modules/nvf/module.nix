@@ -78,7 +78,11 @@
           enable = true;
           programmingWordlist.enable = true;
           extraSpellWords = {
-            "en.utf-8" = builtins.filter (s: builtins.isString s) (builtins.split "\n" (builtins.readFile ./dictionary.txt + "\n" + builtins.readFile ./extra-words.txt));
+            "en.utf-8" = builtins.filter (s: builtins.isString s) (
+              builtins.split "\n" (
+                builtins.readFile ./dictionary.txt + "\n" + builtins.readFile ./extra-words.txt
+              )
+            );
           };
         };
         keymaps = [
@@ -181,6 +185,18 @@
             ];
             action = "<cmd>w<cr>";
             desc = "save current buffer ( same as `:w`)";
+          }
+          {
+            key = "<leader>fi";
+            mode = "n";
+            action = ":let @+ = expand('%:.') . ':' . line('.')<cr>";
+            desc = "copy relative file path with line number";
+          }
+          {
+            key = "<leader>fI";
+            mode = "n";
+            action = ":let @+ = expand('%:p') . ':' . line('.')<cr>";
+            desc = "copy absolute file path with line number";
           }
         ] ++ import ./nvf-extension-keymaps.nix { inherit pkgs; };
       };
