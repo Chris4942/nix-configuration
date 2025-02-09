@@ -1,3 +1,4 @@
+# https://nixos.wiki/wiki/KDE
 { ... }:
 {
   services.xserver.enable = true;

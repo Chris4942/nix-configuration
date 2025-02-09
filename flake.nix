@@ -35,7 +35,7 @@
             };
           };
           modules = [
-            ./configuration.nix
+            ./hardware/machines/cwest-nixos-1/configuration.nix
             ./modules/fonts.nix
             ./modules/localization.nix
             ./modules/monitor-configuration.nix
@@ -46,7 +46,8 @@
             ./modules/steam.nix
             ./modules/audio.nix
             ./modules/nvf/module.nix
-            ./hardware/machines/amd-gpu.nix
+            ./hardware/machines/cwest-nixos-1/hardware.nix
+            ./hardware/drivers/amdgpu.nix
             ./modules/desktop-environment/gnome.nix
             ./modules/desktop-environment/sway.nix
             nvf.nixosModules.default

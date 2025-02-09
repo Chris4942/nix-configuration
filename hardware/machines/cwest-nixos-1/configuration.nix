@@ -49,7 +49,7 @@
       inherit rootUser;
     };
     users = {
-      "${rootUser.name}" = import ./users/root-user.nix;
+      "${rootUser.name}" = import ../../../users/root-user.nix;
     };
   };
 

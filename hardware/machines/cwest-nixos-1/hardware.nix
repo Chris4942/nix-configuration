@@ -20,13 +20,8 @@
     "usbhid"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
-  # Use amdgpu driver
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Can still access files that are not set up properly
   systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
@@ -56,5 +51,4 @@
   # networking.interfaces.wlp12s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
