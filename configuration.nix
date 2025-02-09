@@ -6,7 +6,7 @@
   config,
   pkgs,
   home-manager,
-rootUser,
+  rootUser,
   ...
 }:
 

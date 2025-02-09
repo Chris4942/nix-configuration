@@ -27,11 +27,11 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit home-manager nvf;
-                                        rootUser = rec {
-                                                name = "cwest";
-                                                description = "Chris West";
-                                                homeDirectory = "/home/${name}";
-                                        };
+          rootUser = rec {
+            name = "cwest";
+            description = "Chris West";
+            homeDirectory = "/home/${name}";
+          };
         };
         modules = [
           ./configuration.nix
