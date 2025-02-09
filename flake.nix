@@ -24,31 +24,35 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit home-manager nvf;
-          rootUser = rec {
-            name = "cwest";
-            description = "Chris West";
-            homeDirectory = "/home/${name}";
+      nixosConfigurations = {
+        cwest-nixos-1 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit home-manager nvf;
+            rootUser = rec {
+              name = "cwest";
+              description = "Chris West";
+              homeDirectory = "/home/${name}";
+            };
           };
+          modules = [
+            ./configuration.nix
+            ./modules/fonts.nix
+            ./modules/localization.nix
+            ./modules/monitor-configuration.nix
+            ./modules/bash.nix
+            ./modules/syncthing.nix
+            ./modules/nix-ld.nix
+            ./modules/xinput.nix
+            ./modules/steam.nix
+            ./modules/audio.nix
+            ./modules/nvf/module.nix
+            ./hardware/machines/amd-gpu.nix
+            ./modules/desktop-environment/gnome.nix
+            ./modules/desktop-environment/sway.nix
+            nvf.nixosModules.default
+            home-manager.nixosModules.default
+          ];
         };
-        modules = [
-          ./configuration.nix
-          ./modules/fonts.nix
-          ./modules/localization.nix
-          ./modules/monitor-configuration.nix
-          ./modules/bash.nix
-          ./modules/syncthing.nix
-          ./modules/nix-ld.nix
-          ./modules/xinput.nix
-          ./modules/steam.nix
-          ./modules/audio.nix
-          ./modules/nvf/module.nix
-          ./hardware/amd-gpu.nix
-          nvf.nixosModules.default
-          home-manager.nixosModules.default
-        ];
       };
       formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
     };
