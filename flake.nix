@@ -54,7 +54,16 @@
             home-manager.nixosModules.default
           ];
         };
+
+        # NOTE: this is just a template. Make sure to change the rootUser to your own before building it
         guest-nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            rootUser = rec {
+              name = "guest";
+              description = "Guest User";
+              homeDirectory = "/home/${name}";
+            };
+          };
           modules = [
             ./hardware/machines/guest/configuration.nix
             ./modules/fonts.nix
@@ -64,9 +73,9 @@
             ./modules/xinput.nix
             ./modules/steam.nix
             ./modules/audio.nix
-            # ./hardware/machines/cwest-nixos-1/hardware.nix # replace this with your own hardware configuration file and uncomment
+            ./hardware/machines/cwest-nixos-1/hardware.nix # replace this with your own hardware configuration file and uncomment
             ./hardware/drivers/amdgpu.nix
-            ./modules/desktop-environment/gnome.nix # replace this with kde.nix if you prefer
+            ./modules/desktop-environment/kde.nix # replace this with kde.nix if you prefer
           ];
         };
       };
