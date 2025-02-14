@@ -14,6 +14,8 @@
         };
         options = {
           wrap = false;
+          cursorline = true;
+          cursorcolumn = true;
         };
         viAlias = false;
         vimAlias = true;
