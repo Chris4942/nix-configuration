@@ -85,7 +85,7 @@
           extraSpellWords = {
             "en.utf-8" = builtins.filter (s: builtins.isString s) (
               builtins.split "\n" (
-                builtins.readFile ./dictionary.txt + "\n" + builtins.readFile ./extra-words.txt
+                builtins.readFile ./dictionary/base.txt + "\n" + builtins.readFile ./dictionary/extra.txt
               )
             );
           };
