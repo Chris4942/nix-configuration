@@ -56,8 +56,8 @@
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
-            package = harpoon;
-            setup = "require('harpoon').setup {}";
+            package = harpoon2;
+            setup = builtins.readFile ./lua/harpoon.lua;
           };
         };
         statusline.lualine.enable = true;
