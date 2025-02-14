@@ -12,6 +12,9 @@
           name = "gruvbox";
           style = "dark";
         };
+        options = {
+          wrap = false;
+        };
         viAlias = false;
         vimAlias = true;
         lineNumberMode = "number";

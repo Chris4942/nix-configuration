@@ -71,7 +71,7 @@
           };
           modules = [
             # This is mostly just a duplicate of my configuration file with a few cwest speceific things removed
-            ./hardware/machines/nadaph-nixos-1/configuration.nix 
+            ./hardware/machines/nadaph-nixos-1/configuration.nix
             # This adds in some fonts. Feel free to add more if you want a particular system font
             ./modules/fonts.nix
             # I think this will give you the right time zone. I'm not using this file, so feel free to change it
