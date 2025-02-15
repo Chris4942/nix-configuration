@@ -96,7 +96,7 @@
       "i"
       "n"
     ];
-    action = "<cmd>w<cr>";
+    action = "<C-\\><C-n><cmd>w<cr>";
     desc = "save current buffer ( same as `:w`)";
   }
   {
