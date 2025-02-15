@@ -52,6 +52,7 @@
             ./modules/desktop-environment/sway.nix
             nvf.nixosModules.default
             home-manager.nixosModules.default
+                                                ./modules/libre-office.nix
           ];
         };
 

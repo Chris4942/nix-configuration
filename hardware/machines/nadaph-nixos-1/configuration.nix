@@ -41,7 +41,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${rootUser.name} = {
     isNormalUser = true;
-    description = "Chris West";
+    description = rootUser.description;
     extraGroups = [
       "networkmanager"
       "wheel"
