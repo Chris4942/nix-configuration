@@ -8,7 +8,7 @@
   rootUser,
   ...
 }:
-
+# Nathan, feel free to change this to whatever you need
 {
   nix.settings.experimental-features = [
     "nix-command"

@@ -27,7 +27,6 @@
       nixosConfigurations = {
         cwest-nixos-1 = import ./hardware/machines/cwest-nixos-1 inputs;
 
-        # Nathan, feel free to change this to whatever you need
         nadaph-nixos-1 = import ./hardware/machines/nadaph-nixos-1 inputs;
       };
       formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
