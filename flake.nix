@@ -27,6 +27,8 @@
       nixosConfigurations = {
         cwest-nixos-1 = import ./hardware/machines/cwest-nixos-1 inputs;
 
+        # This calls your `default.nix` file in the directory below.
+        # It defines a function that is called with the argument inputs which is the argument to the outputs function that we're in currently
         nadaph-nixos-1 = import ./hardware/machines/nadaph-nixos-1 inputs;
       };
       formatter.x86_64-linux = pkgs.nixfmt-rfc-style;
