@@ -61,17 +61,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      neovim
-      brave
-      neofetch
-      steam
-      discord
-      spotify
-      wmctrl
-      gimp
-      foot
-    ];
+    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
   };
 
   # Install firefox.
@@ -82,24 +72,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    openssh
-    xsel
-    python313
-    jq
-    ripgrep
-    inxi
-    pciutils
-    tmux
-    htop
-    zip
-    unzip
-    nodejs_22
-    libgcc
-    tree
-  ];
+  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
