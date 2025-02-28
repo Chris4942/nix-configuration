@@ -17,14 +17,24 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     (
-      { pkgs, modulesPath, ... }:
       {
-        imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
-        environment.systemPackages = [ pkgs.neovim ];
+        pkgs,
+        modulesPath,
+        lib,
+        ...
+      }:
+      {
+        imports = [ (modulesPath + "/installer/cd-dvd/iso-image.nix") ];
+        isoImage = {
+          makeEfiBootable = true;
+          makeUsbBootable = true;
+          edition = lib.mkOverride 500 "minimal";
+        };
+
       }
     )
-    ./hardware.nix
     ./configuration.nix
+    ./hardware.nix
     ../../../modules/fonts.nix
     # ../../../modules/localization/new-york.nix
     # ../../../modules/bash.nix
