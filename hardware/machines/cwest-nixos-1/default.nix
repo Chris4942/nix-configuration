@@ -30,6 +30,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/gnome.nix
     ../../../modules/desktop-environment/sway.nix
     ../../../modules/libre-office.nix
+    ../../../modules/automated-garbage-collection.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];
