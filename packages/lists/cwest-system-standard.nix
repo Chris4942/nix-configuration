@@ -15,4 +15,5 @@ pkgs: with pkgs; [
   nodejs_22
   libgcc
   tree
+  fd
 ]
