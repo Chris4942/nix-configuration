@@ -1,7 +1,5 @@
 { rootUser, ... }:
 {
-  imports = [ ./installation-cd-graphical-base.nix ];
-
   isoImage.edition = "gnome";
 
   services.xserver.desktopManager.gnome = {
