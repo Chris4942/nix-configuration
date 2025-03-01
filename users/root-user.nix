@@ -7,7 +7,7 @@
   ...
 }:
 let
-  random-image = "find /${rootUser.homeDirectory}/.backgrounds | rg \"\.jpg$\" | shuf -n 1";
+  random-image = "find /${rootUser.homeDirectory}/.backgrounds | rg \"\\.(jpg|png)$\" | shuf -n 1";
   set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
 in
 
