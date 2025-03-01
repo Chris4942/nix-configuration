@@ -14,18 +14,6 @@
     # Show the manual.
     documentation.nixos.enable = mkImageMediaOverride true;
 
-    # Use less privileged nixos user
-    users.users.nixos = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-        "video"
-      ];
-      # Allow the graphical user to login without password
-      initialHashedPassword = "";
-    };
-
     # Allow the user to log in as root without a password.
     users.users.root.initialHashedPassword = "";
 
@@ -39,7 +27,7 @@
     };
 
     # Automatically log in at the virtual consoles.
-    services.getty.autologinUser = "nixos";
+    services.getty.autologinUser = "cwest";
 
     # Some more help text.
     services.getty.helpLine =
@@ -116,8 +104,6 @@
       Unlink=no
     '';
 
-    # allow nix-copy to live system
-    nix.settings.trusted-users = [ "nixos" ];
 
     # Install less voices for speechd to save some space
     nixpkgs.overlays = [

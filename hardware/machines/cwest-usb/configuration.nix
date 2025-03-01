@@ -20,6 +20,9 @@
     "flakes"
   ];
 
+  # allow nix-copy to live system
+  nix.settings.trusted-users = [ rootUser.name ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -61,6 +64,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+                        "video"
     ];
     packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
   };
