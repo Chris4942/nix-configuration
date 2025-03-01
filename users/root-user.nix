@@ -149,7 +149,9 @@ rec {
     };
   };
 
-  home.file = { };
+  home.file = {
+    ".backgrounds/ink-splat.png".source = ../data/backgrounds/ink-splat.png;
+  };
 
   home.sessionVariables = with pkgs; {
     TERMINAL = "${foot}/bin/foot";
