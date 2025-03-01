@@ -17,7 +17,9 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     ./iso.nix
-    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-base.nix"
+    "${nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
+    "${nixpkgs}/nixos/modules/profiles/base.nix"
+    "${nixpkgs}/nixos/modules/profiles/installation-device.nix"
     "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
     ./configuration.nix
     ./hardware.nix
