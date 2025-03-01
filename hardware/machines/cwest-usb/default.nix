@@ -16,7 +16,8 @@ nixpkgs.lib.nixosSystem {
   };
 
   modules = [
-    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-base.nix"
+    ./iso.nix
+    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-base.nix"
     "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
     ./configuration.nix
     ./hardware.nix
