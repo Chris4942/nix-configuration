@@ -20,12 +20,6 @@
     "flakes"
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  # Configure bootloader device
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for EFI only
-
   networking.hostName = "nixos"; # Define your hostname.
   #
   # # Enable networking
