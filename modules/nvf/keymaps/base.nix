@@ -111,4 +111,17 @@
     action = ":let @+ = expand('%:p') . ':' . line('.')<cr>";
     desc = "copy absolute file path with line number";
   }
+  {
+    key = "<leader>fwv";
+    mode = "n";
+    action = "<C-w>o<C-w>v<cmd>execute \"edit \" . getreg(\"+\")<cr>";
+    desc = "split vertically between the current buffer and the clipboard buffer";
+  }
+  {
+    key = "<leader>fws";
+    mode = "n";
+    action = "<C-w>o<C-w>s<cmd>execute \"edit \" . getreg(\"+\")<cr>";
+    desc = "split horizontally between the current buffer and the clipboard buffer";
+  }
+
 ]
