@@ -16,6 +16,8 @@
           "$mod, L, movefocus, r"
           "$mod, K, movefocus, u"
           "$mod, J, movefocus, d"
+          "$mod, 0, workspace, ${toString 10}"
+          "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
         ]
         ++ (
           # workspaces
