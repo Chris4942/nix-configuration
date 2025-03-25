@@ -31,7 +31,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/sway.nix
     ../../../modules/libre-office.nix
     ../../../modules/automated-garbage-collection.nix
-    ../../../modules/desktop-environment/hyperland.nix
+    ../../../modules/desktop-environment/hyperland/config.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];

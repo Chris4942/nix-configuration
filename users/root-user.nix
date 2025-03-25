@@ -5,7 +5,7 @@
   lib,
   rootUser,
   ...
-}:
+}@inputs:
 let
   random-image = "find /${rootUser.homeDirectory}/.backgrounds | rg \"\\.(jpg|png)$\" | shuf -n 1";
   set-random-image = "swaymsg output \"*\" bg `${random-image}` fill";
@@ -48,10 +48,16 @@ rec {
     # '')
   ];
 
-  programs.bash.enable = true;
-  programs.zoxide = {
-    options = [ "--cmd cd" ];
-    enable = true;
+  programs = {
+    bash.enable = true;
+    zoxide = {
+      options = [ "--cmd cd" ];
+      enable = true;
+    };
+    kitty.enable = true;
+  };
+  wayland.windowManager.hyprland = {
+        enable = true; # enable Hyprland
   };
 
   wayland.windowManager.sway =
