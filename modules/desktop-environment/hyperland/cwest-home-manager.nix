@@ -9,6 +9,7 @@
         [
           ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
           "$mod, N, submap, launch"
+          "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
         ]
         ++ (
           # workspaces
@@ -40,6 +41,78 @@
                 bind = , S, exec, ${reset} ${pkgs.spotify}/bin/spotify
                 bind = , catchall, submap, reset
         submap = reset
+
+        # What follows was copied straight from the default config
+
+        # https://wiki.hyprland.org/Configuring/Variables/#general
+        general {
+            gaps_in = 5
+            gaps_out = 20
+
+            border_size = 2
+
+            # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+            col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+            col.inactive_border = rgba(595959aa)
+
+            # Set to true enable resizing windows by clicking and dragging on borders and gaps
+            resize_on_border = false
+
+            # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+            allow_tearing = false
+
+            layout = dwindle
+        }
+
+        # https://wiki.hyprland.org/Configuring/Variables/#decoration
+        decoration {
+            rounding = 10
+            rounding_power = 2
+
+            # Change transparency of focused and unfocused windows
+            active_opacity = 1.0
+            inactive_opacity = 1.0
+
+            shadow {
+                enabled = true
+                range = 4
+                render_power = 3
+                color = rgba(1a1a1aee)
+            }
+
+            # https://wiki.hyprland.org/Configuring/Variables/#blur
+            blur {
+                enabled = true
+                size = 3
+                passes = 1
+
+                vibrancy = 0.1696
+            }
+        }
+
+        # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+        dwindle {
+            pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+            preserve_split = true # You probably want this
+        }
+
+        # https://wiki.hyprland.org/Configuring/Variables/#input
+        input {
+            kb_layout = us
+            kb_variant =
+            kb_model =
+            kb_options =
+            kb_rules =
+
+            follow_mouse = 1
+
+            sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+
+            touchpad {
+                natural_scroll = false
+            }
+        }
+
       '';
   };
 }
