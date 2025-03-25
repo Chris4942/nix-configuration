@@ -26,6 +26,9 @@
         )
       );
   };
+  plugins = with pkgs.hyprlandPlugins; ([
+    hyprbars
+  ]);
   extraConfig =
     let
       reset = "hyprctl dispatch submap reset;";

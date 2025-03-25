@@ -52,6 +52,7 @@ rec {
 
   programs = {
     bash.enable = true;
+    waybar.enable = true;
     zoxide = {
       options = [ "--cmd cd" ];
       enable = true;
