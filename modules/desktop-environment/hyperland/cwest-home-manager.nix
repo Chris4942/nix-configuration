@@ -1,5 +1,9 @@
 { lib, pkgs, ... }:
 {
+  programs.waybar = {
+        enable = true;
+        };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -12,6 +16,7 @@
           "$mod, N, submap, launch"
           "$smod, Q, killactive,"
           "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
+          "$smod, E, exit,"
           "$mod, H, movefocus, l"
           "$mod, L, movefocus, r"
           "$mod, K, movefocus, u"
@@ -51,6 +56,7 @@
                 bind = , S, exec, ${reset} ${pkgs.spotify}/bin/spotify
                 bind = , catchall, submap, reset
         submap = reset
+
 
         # What follows was copied straight from the default config
 
@@ -140,6 +146,7 @@
         bindl = , XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause
         bindl = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
         bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
+        exec-once = ${pkgs.waybar}/bin/waybar
       '';
   };
 }

@@ -162,6 +162,7 @@ rec {
 
   home.file = {
     ".backgrounds/ink-splat.png".source = ../data/backgrounds/ink-splat.png;
+    ".config/waybar/config".source = ../cwest/.config/waybar/config;
   };
 
   home.sessionVariables = with pkgs; {
