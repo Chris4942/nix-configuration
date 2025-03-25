@@ -18,6 +18,8 @@
           "$mod, J, movefocus, d"
           "$mod, 0, workspace, ${toString 10}"
           "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
+          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e-1"
         ]
         ++ (
           # workspaces
@@ -121,6 +123,23 @@
             }
         }
 
+        bindm = $mod, mouse:272, movewindow
+        bindm = $mod, mouse:273, resizewindow
+
+        # Laptop multimedia keys for volume and LCD brightness
+        bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+        bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+        bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+
+        bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
+
+
+        # Requires playerctl
+        bindl = , XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next
+        bindl = , XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause
+        bindl = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
+        bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
       '';
   };
 }
