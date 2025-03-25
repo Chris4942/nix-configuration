@@ -25,11 +25,16 @@
         )
       );
   };
-  extraConfig = let escape = "bind = , escape, submap, reset "; in ''
-    submap = launch
-    bind = , B, exec, ${pkgs.brave}/bin/brave
-    bind = , Q, submap, reset
-    ${escape}
-    submap = reset
-  '';
+  extraConfig =
+    let
+      escape = "bind = , escape, submap, reset ";
+    in
+    ''
+      submap = launch
+      bind = , B, exec, ${pkgs.brave}/bin/brave
+      bind = , S, exec, ${pkgs.spotify}/bin/spotify
+      bind = , Q, submap, reset
+      ${escape}
+      submap = reset
+    '';
 }
