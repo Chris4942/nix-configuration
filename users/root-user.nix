@@ -99,6 +99,7 @@ rec {
               # a = "exec $DISPLAY_MANAGER" + toDefault;
               a = "exec arandr" + toDefault;
               # p = "exec $AUDIO_CONTROLLER" + toDefault;
+              d = "exec discord" + toDefault;
               p = "exec pavucontrol" + toDefault;
               q = "exec ${set-random-image}" + toDefault;
             } // withEscape;
