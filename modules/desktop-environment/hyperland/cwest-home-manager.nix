@@ -12,6 +12,10 @@
           "$mod, N, submap, launch"
           "$smod, Q, killactive,"
           "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
+          "$mod, H, movefocus, l"
+          "$mod, L, movefocus, r"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
         ]
         ++ (
           # workspaces
