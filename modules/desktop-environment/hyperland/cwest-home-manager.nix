@@ -6,6 +6,7 @@
     bind =
       [
         ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
+        "$mod, N, submap, launch"
       ]
       ++ (
         # workspaces
@@ -24,10 +25,11 @@
         )
       );
   };
-  # extraConfig = ''
-  #   $mod, N, submap, launch
-  #
-  #   submap = launch
-  #   bind = b, exec, ${pkgs.brave}/bin/brave
-  # '';
+  extraConfig = let escape = "bind = , escape, submap, reset "; in ''
+    submap = launch
+    bind = , B, exec, ${pkgs.brave}/bin/brave
+    bind = , Q, submap, reset
+    ${escape}
+    submap = reset
+  '';
 }
