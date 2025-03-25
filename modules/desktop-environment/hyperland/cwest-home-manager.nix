@@ -3,6 +3,7 @@
   enable = true;
   settings = {
     "$mod" = "SUPER";
+
     bind =
       [
         ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
@@ -27,14 +28,13 @@
   };
   extraConfig =
     let
-      escape = "bind = , escape, submap, reset ";
+      reset = "hyprctl dispatch submap reset;";
     in
     ''
       submap = launch
-      bind = , B, exec, ${pkgs.brave}/bin/brave
-      bind = , S, exec, ${pkgs.spotify}/bin/spotify
-      bind = , Q, submap, reset
-      ${escape}
+              bind = , B, exec, ${reset} ${pkgs.brave}/bin/brave
+              bind = , S, exec, ${reset} ${pkgs.spotify}/bin/spotify
+              bind = , catchall, submap, reset
       submap = reset
     '';
 }
