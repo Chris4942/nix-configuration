@@ -4,11 +4,13 @@
     enable = true;
     settings = {
       "$mod" = "SUPER";
+      "$smod" = "SUPER_SHIFT";
 
       bind =
         [
           ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
           "$mod, N, submap, launch"
+          "$smod, Q, killactive,"
           "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
         ]
         ++ (
