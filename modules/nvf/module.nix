@@ -92,6 +92,7 @@
           };
         };
         keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix { inherit pkgs; };
+        extraLuaFiles = [ ./lua/terminal.lua ];
       };
     };
   };

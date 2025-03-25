@@ -1,12 +1,5 @@
 [
   {
-    key = "<leader>r";
-    mode = "n";
-    silent = true;
-    action = ":term<CR>";
-    desc = "open terminal";
-  }
-  {
     key = "<leader>bb";
     mode = "n";
     silent = true;
