@@ -12,6 +12,9 @@ let
 in
 
 rec {
+  imports = [
+    ../modules/desktop-environment/hyperland/cwest-home-manager.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = rootUser.name;
   home.homeDirectory = rootUser.homeDirectory;
@@ -59,7 +62,7 @@ rec {
     };
     kitty.enable = true;
   };
-  wayland.windowManager.hyprland = import ../modules/desktop-environment/hyperland/cwest-home-manager.nix inputs;
+  # wayland.windowManager.hyprland = import ../modules/desktop-environment/hyperland/cwest-home-manager.nix inputs;
 
   wayland.windowManager.sway =
     let
