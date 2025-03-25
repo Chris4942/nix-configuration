@@ -56,9 +56,7 @@ rec {
     };
     kitty.enable = true;
   };
-  wayland.windowManager.hyprland = {
-        enable = true; # enable Hyprland
-  };
+  wayland.windowManager.hyprland = import ../modules/desktop-environment/hyperland/cwest-home-manager.nix inputs;
 
   wayland.windowManager.sway =
     let
