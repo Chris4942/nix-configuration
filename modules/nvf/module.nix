@@ -54,6 +54,7 @@
             lsp.server = "pyright";
           };
           lua.enable = true;
+          java.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
