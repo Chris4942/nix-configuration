@@ -33,7 +33,7 @@
             hover = "<leader>ch";
             renameSymbol = "<leader>cr";
             codeAction = "<leader>ca";
-            listReferences = "gr";
+            listReferences = "<leader>gr";
           };
         };
         comments.comment-nvim.enable = true;
