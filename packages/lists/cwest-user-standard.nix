@@ -8,4 +8,5 @@ pkgs: with pkgs; [
   wmctrl
   gimp
   foot
+  zulip-term
 ]

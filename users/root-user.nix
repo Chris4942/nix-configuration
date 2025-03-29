@@ -102,6 +102,7 @@ rec {
               d = "exec discord" + toDefault;
               p = "exec pavucontrol" + toDefault;
               q = "exec ${set-random-image}" + toDefault;
+              u = "exec ${pkgs.blueman}/bin/blueman-manager" + toDefault;
             } // withEscape;
             resize = lib.mkOptionDefault withEscape;
             lock = {
