@@ -61,6 +61,11 @@
             package = harpoon2;
             setup = builtins.readFile ./lua/harpoon.lua;
           };
+          # Highlight hex colors in that color
+          nvim-highlight-color = {
+            package = nvim-highlight-colors;
+            setup = builtins.readFile ./lua/highlight-color.lua;
+          };
         };
         statusline.lualine.enable = true;
         tabline.nvimBufferline.enable = true;
