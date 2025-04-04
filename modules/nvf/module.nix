@@ -55,6 +55,7 @@
           };
           lua.enable = true;
           java.enable = true;
+          markdown.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
