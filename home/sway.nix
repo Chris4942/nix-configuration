@@ -73,7 +73,7 @@ in
             command = set-random-image;
           }
         ];
-        terminal = "${pkgs.foot}/bin/foot";
+        terminal = "${pkgs.kitty}/bin/kitty";
         defaultWorkspace = "workspace number 1";
       };
     };
