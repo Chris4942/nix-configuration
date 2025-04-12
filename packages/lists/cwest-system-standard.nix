@@ -17,4 +17,5 @@ pkgs: with pkgs; [
   tree
   fd
   paprefs
+  kitty
 ]
