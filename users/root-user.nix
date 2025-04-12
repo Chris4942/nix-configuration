@@ -12,6 +12,9 @@ let
 in
 
 rec {
+  imports = [
+    ../modules/terminal/kitty/default.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = rootUser.name;
   home.homeDirectory = rootUser.homeDirectory;
