@@ -16,4 +16,5 @@ pkgs: with pkgs; [
   libgcc
   tree
   fd
+  paprefs
 ]
