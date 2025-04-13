@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     neovim-node-client
   ];
@@ -98,8 +97,8 @@
             );
           };
         };
-        keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix { inherit pkgs; };
-        extraLuaFiles = [ ./lua/terminal.lua ];
+        keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix {inherit pkgs;};
+        extraLuaFiles = [./lua/terminal.lua];
       };
     };
   };

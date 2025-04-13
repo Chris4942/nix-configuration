@@ -1,4 +1,4 @@
-{ nixpkgs, ... }:
+{nixpkgs, ...}:
 nixpkgs.lib.nixosSystem {
   specialArgs = {
     rootUser = rec {

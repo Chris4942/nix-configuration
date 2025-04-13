@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -11,7 +14,7 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "FiraCode" ];
+        monospace = ["FiraCode"];
       };
     };
   };

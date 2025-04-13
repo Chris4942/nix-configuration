@@ -5,8 +5,7 @@
   lib,
   rootUser,
   ...
-}:
-rec {
+}: rec {
   imports = [
     ../modules/desktop-environment/hyperland/cwest-home-manager.nix
     ../home/sway.nix
@@ -54,7 +53,7 @@ rec {
     bash.enable = true;
     waybar.enable = true;
     zoxide = {
-      options = [ "--cmd cd" ];
+      options = ["--cmd cd"];
       enable = true;
     };
     kitty.enable = true;
@@ -94,6 +93,6 @@ rec {
   services.blueman-applet.enable = true;
 
   dconf.settings."org/blueman/general" = {
-    plugin-list = [ "!ConnectionNotifier" ];
+    plugin-list = ["!ConnectionNotifier"];
   };
 }
