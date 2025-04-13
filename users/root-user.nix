@@ -80,4 +80,11 @@ rec {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # https://github.com/blueman-project/blueman/issues/1556#issuecomment-882857426
+  services.blueman-applet.enable = true;
+
+  dconf.settings."org/blueman/general" = {
+    plugin-list = [ "!ConnectionNotifier" ];
+  };
 }
