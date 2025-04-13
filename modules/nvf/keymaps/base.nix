@@ -116,5 +116,10 @@
     action = "<C-w>o<C-w>s<cmd>execute \"edit \" . getreg(\"+\")<cr>";
     desc = "split horizontally between the current buffer and the clipboard buffer";
   }
+  {
+    key = "<leader>lo";
+    mode = "n";
+    action = "<cmd>LspStop<cr>";
+  }
 
 ]

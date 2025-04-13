@@ -33,7 +33,7 @@
             hover = "<leader>ch";
             renameSymbol = "<leader>cr";
             codeAction = "<leader>ca";
-            listReferences = "gr";
+            listReferences = "<leader>gr";
           };
         };
         comments.comment-nvim.enable = true;
@@ -54,11 +54,18 @@
             lsp.server = "pyright";
           };
           lua.enable = true;
+          java.enable = true;
+          markdown.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
             package = harpoon2;
             setup = builtins.readFile ./lua/harpoon.lua;
+          };
+          # Highlight hex colors in that color
+          nvim-highlight-color = {
+            package = nvim-highlight-colors;
+            setup = builtins.readFile ./lua/highlight-color.lua;
           };
         };
         statusline.lualine.enable = true;

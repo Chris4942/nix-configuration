@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.bash = {
     shellAliases = {
@@ -6,5 +6,9 @@
       n = "vim .";
       ns = "nix-shell";
     };
+    interactiveShellInit = ''
+      . ${pkgs.git}/share/git/contrib/completion/git-completion.bash
+      __git_complete g __git_main
+    '';
   };
 }
