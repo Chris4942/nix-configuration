@@ -1,5 +1,8 @@
-{ pkgs, rootUser, ... }:
 {
+  pkgs,
+  rootUser,
+  ...
+}: {
   services.syncthing = {
     enable = true;
     user = rootUser.name;
@@ -7,5 +10,5 @@
     configDir = "${rootUser.homeDirectory}/.config/syncthing";
   };
 
-  environment.systemPackages = with pkgs; [ syncthing ];
+  environment.systemPackages = with pkgs; [syncthing];
 }

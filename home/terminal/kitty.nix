@@ -5,8 +5,7 @@
   lib,
   rootUser,
   ...
-}:
-{
+}: {
   programs.kitty = {
     enable = true;
     # kitty has catppuccin theme built-in,
@@ -16,7 +15,10 @@
     font = {
       name = "JetBrainsMono Nerd Font";
       # use different font size on macOS
-      size = if pkgs.stdenv.isDarwin then 14 else 13;
+      size =
+        if pkgs.stdenv.isDarwin
+        then 14
+        else 13;
     };
 
     # consistent with other terminal emulators
@@ -32,6 +34,6 @@
     };
 
     # macOS specific settings
-    darwinLaunchOptions = [ "--start-as=maximized" ];
+    darwinLaunchOptions = ["--start-as=maximized"];
   };
 }

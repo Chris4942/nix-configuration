@@ -7,9 +7,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-
-{
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -24,11 +22,11 @@
         "usbhid"
         "sd_mod"
       ];
-      kernelModules = [ ];
+      kernelModules = [];
       luks.devices.cryptroot.device = "/dev/disk/by-label/ENCRYPTED_NIXROOT";
     };
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
 
     loader = {
       # systemd-boot.enable = true;
@@ -57,7 +55,7 @@
   };
 
   swapDevices = [
-    { device = "/.swapfile"; }
+    {device = "/.swapfile";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

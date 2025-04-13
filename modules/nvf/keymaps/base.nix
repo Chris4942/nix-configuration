@@ -121,5 +121,4 @@
     mode = "n";
     action = "<cmd>LspStop<cr>";
   }
-
 ]
