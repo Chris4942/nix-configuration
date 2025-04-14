@@ -23,9 +23,9 @@
         # "margin-right" = 25;
         "margin-bottom" = -11;
         #"margin-top" = 5;
-        "modules-left" = ["wlr/workspaces"];
-        "modules-right" = ["temperature" "network" "battery" "custom/ss" "custom/cycle_wall" "custom/expand" "cpu" "clock"];
-        "modules-center" = ["custom/dynamic_pill"];
+        modules-left = ["wlr/workspaces"];
+        modules-right = ["temperature" "network" "battery" "custom/ss" "custom/cycle_wall" "custom/expand" "cpu" "clock"];
+        modules-center = ["custom/dynamic_pill"];
         # Modules configuration
 
         # custom modules ////////////////
