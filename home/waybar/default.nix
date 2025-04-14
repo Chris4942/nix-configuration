@@ -23,11 +23,11 @@
         # "margin-right" = 25;
         "margin-bottom" = -11;
         #"margin-top" = 5;
-        modules-left = ["workspaces"];
+        modules-left = ["hyprland/workspaces"];
         modules-right = ["pulseaudio/slider" "cpu" "clock"];
-        modules-center = ["workspaces"];
-        "workspaces" = {
-          format = "foo {icon}";
+        modules-center = [];
+        "hyprland/workspaces" = {
+          format = "{icon}";
           on-click = "hyprctl dispatch workspace {id}";
         };
         "pulseaudio/slider" = {
