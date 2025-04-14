@@ -25,7 +25,7 @@
         #"margin-top" = 5;
         modules-left = ["hyprland/workspaces"];
         modules-right = ["pulseaudio/slider" "cpu" "clock"];
-        modules-center = ["hyprland/window"];
+        modules-center = ["hyprland/window" "hyprland/submap"];
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "hyprctl dispatch workspace {id}";
@@ -38,6 +38,10 @@
         "hyprland/window" = {
           "format" = "{class}:{title}";
           "separate-outputs" = true;
+        };
+        "hyprland/submap" = {
+          format = "{}";
+          tooltip = false;
         };
       }
     ];

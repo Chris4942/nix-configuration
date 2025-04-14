@@ -21,6 +21,7 @@
 #custom-ss,
 #custom-dynamic_pill,
 #window,
+#submap,
 #mpd {
     padding: 0 10px;
     border-radius: 15px;
@@ -344,5 +345,10 @@ window#waybar {
 
 #window {
     background-color: #f9e2af;
+    color: #3F2F4F
+}
+
+#submap {
+    background-color: #ffa000;
     color: #3F2F4F
 }
