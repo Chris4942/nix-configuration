@@ -7,6 +7,8 @@
     enable = true;
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
