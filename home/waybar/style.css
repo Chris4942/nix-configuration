@@ -334,3 +334,9 @@ window#waybar {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
+
+#pulseaudio-slider {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+}

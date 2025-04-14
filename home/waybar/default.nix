@@ -24,11 +24,16 @@
         "margin-bottom" = -11;
         #"margin-top" = 5;
         modules-left = ["workspaces"];
-        modules-right = ["temperature" "network" "battery" "cpu" "clock"];
-        modules-center = [];
+        modules-right = ["pulseaudio/slider" "cpu" "clock"];
+        modules-center = ["workspaces"];
         "workspaces" = {
           format = "foo {icon}";
           on-click = "hyprctl dispatch workspace {id}";
+        };
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
         };
       }
     ];
