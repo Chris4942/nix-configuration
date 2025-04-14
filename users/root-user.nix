@@ -10,6 +10,7 @@
     ../home/sway.nix
     ../home/terminal/kitty.nix
     ../home/desktop-environments/hyperland.nix
+    ../home/waybar/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = rootUser.name;
