@@ -25,7 +25,7 @@
         #"margin-top" = 5;
         modules-left = ["hyprland/workspaces"];
         modules-right = ["pulseaudio/slider" "cpu" "clock"];
-        modules-center = [];
+        modules-center = ["hyprland/window"];
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "hyprctl dispatch workspace {id}";
@@ -34,6 +34,10 @@
           min = 0;
           max = 100;
           orientation = "horizontal";
+        };
+        "hyprland/window" = {
+          "format" = "{class}:{title}";
+          "separate-outputs" = true;
         };
       }
     ];

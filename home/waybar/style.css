@@ -20,6 +20,7 @@
 #custom-cycle_wall,
 #custom-ss,
 #custom-dynamic_pill,
+#window,
 #mpd {
     padding: 0 10px;
     border-radius: 15px;
@@ -339,4 +340,9 @@ window#waybar {
     min-height: 10px;
     min-width: 80px;
     border-radius: 5px;
+}
+
+#window {
+    background-color: #f9e2af;
+    color: #3F2F4F
 }
