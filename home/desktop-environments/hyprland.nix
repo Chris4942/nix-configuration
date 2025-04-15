@@ -97,6 +97,9 @@
       submap = launch
               bind = , B, exec, ${reset} ${pkgs.brave}/bin/brave
               bind = , S, exec, ${reset} ${pkgs.spotify}/bin/spotify
+              bind = , D, exec, ${reset} ${pkgs.discord}/bin/discord
+              bind = , U, exec, ${reset} ${pkgs.blueman}/bin/blueman-manager
+              bind = , P, exec, ${reset} ${pkgs.pavucontrol}/bin/pavucontrol
               bind = , catchall, submap, reset
       submap = reset
 
