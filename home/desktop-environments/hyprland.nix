@@ -30,6 +30,13 @@
       "$mod" = "SUPER";
       "$smod" = "SUPER_SHIFT";
 
+      animations = {
+        enabled = true;
+        animation = [
+          "workspaces, 1, 2, default"
+        ];
+      };
+
       bind =
         [
           ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
