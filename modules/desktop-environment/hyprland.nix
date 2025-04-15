@@ -4,6 +4,7 @@
   environment.systemPackages = [
     # ... other packages
     pkgs.kitty # required for the default Hyprland config
+    pkgs.rose-pine-hyprcursor
   ];
 
   # Optional, hint Electron apps to use Wayland:

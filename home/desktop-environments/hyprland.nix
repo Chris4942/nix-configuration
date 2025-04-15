@@ -165,6 +165,7 @@
       bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
       exec-once = ${pkgs.waybar}/bin/waybar
       exec-once = ${pkgs.hyprpaper}bin/hyprpaper
+      env = HYPRCURSOR_THEME,rose-pine-hyprcursor
     '';
   };
 }
