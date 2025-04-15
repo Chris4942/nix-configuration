@@ -52,6 +52,7 @@
           "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
+          "$mod, D, exec, ${pkgs.dmenu}/bin/dmenu_run"
         ]
         ++ (
           # workspaces
