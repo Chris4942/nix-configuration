@@ -9,6 +9,21 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
+
+      preload = ["/home/cwest/.backgrounds/wallhaven-852q62_3840x2160.png"];
+
+      wallpaper = [
+        ",/home/cwest/.backgrounds/wallhaven-852q62_3840x2160.png"
+      ];
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -149,6 +164,7 @@
       bindl = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
       bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
       exec-once = ${pkgs.waybar}/bin/waybar
+      exec-once = ${pkgs.hyprpaper}bin/hyprpaper
     '';
   };
 }
