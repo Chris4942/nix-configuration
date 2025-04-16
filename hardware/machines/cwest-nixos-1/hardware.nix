@@ -24,21 +24,22 @@
   # Can still access files that are not set up properly
   systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/2ea67b92-5e3d-48b7-ab73-23f53e862129";
-    fsType = "ext4";
-  };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6F07-ADDA";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/edc73ff8-81a5-4417-93d3-bd99b7a6bd1f";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/F54B-1902";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/c653a2bb-eb7b-4488-9553-846bbc22bdd1"; }
     ];
-  };
 
-  swapDevices = [{device = "/dev/disk/by-uuid/941d9a5d-645a-4a7d-8417-bce46a0686d0";}];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -49,4 +50,5 @@
   # networking.interfaces.wlp12s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
