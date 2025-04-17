@@ -5,6 +5,7 @@
     # ... other packages
     pkgs.kitty # required for the default Hyprland config
     pkgs.rose-pine-hyprcursor
+    pkgs.hyprlock
   ];
 
   # Optional, hint Electron apps to use Wayland:
