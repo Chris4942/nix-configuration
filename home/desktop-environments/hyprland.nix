@@ -11,15 +11,20 @@
 
   services.hyprpaper = {
     enable = true;
-    settings = {
+    settings = let
+      backgrounds = builtins.path {
+        path = ../../data/backgrounds;
+        name = "background-assets";
+      };
+    in {
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
 
-      preload = ["/home/cwest/.backgrounds/wallhaven-852q62_3840x2160.png"];
+      preload = ["${backgrounds}/wallhaven-852q62_3840x2160.png"];
 
       wallpaper = [
-        ",/home/cwest/.backgrounds/wallhaven-852q62_3840x2160.png"
+        ",${backgrounds}/wallhaven-852q62_3840x2160.png"
       ];
     };
   };
