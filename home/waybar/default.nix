@@ -24,7 +24,7 @@
         "margin-bottom" = -11;
         #"margin-top" = 5;
         modules-left = ["hyprland/workspaces"];
-        modules-right = ["pulseaudio/slider" "cpu" "clock"];
+        modules-right = ["bluetooth" "pulseaudio/slider" "cpu" "clock"];
         modules-center = ["hyprland/window" "hyprland/submap"];
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -42,6 +42,15 @@
         "hyprland/submap" = {
           format = "{}";
           tooltip = false;
+        };
+        "bluetooth" = {
+          # "controller"= "controller1", # specify the alias of the controller if there are more than 1 on the system
+          format = " {status}";
+          format-disabled = ""; # an empty format will hide the module
+          format-connected = " {num_connections} connected";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
         };
       }
     ];
