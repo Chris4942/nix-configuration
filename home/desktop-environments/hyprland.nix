@@ -95,7 +95,7 @@
       "$smod" = "SUPER_SHIFT";
 
       animations = {
-        enabled = true;
+        enabled = false;
         animation = [
           "workspaces, 1, 2, default"
         ];
