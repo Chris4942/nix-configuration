@@ -4,6 +4,8 @@
       g = "git";
       n = "vim .";
       ns = "nix-shell";
+      pbc = "wl-copy";
+      pbp = "wl-paste";
     };
     interactiveShellInit = ''
       . ${pkgs.git}/share/git/contrib/completion/git-completion.bash
