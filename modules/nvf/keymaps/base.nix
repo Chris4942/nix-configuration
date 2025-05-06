@@ -56,6 +56,13 @@
     desc = "Copy short file name to clipboard";
   }
   {
+    key = "<leader>fJ";
+    mode = "n";
+    silent = true;
+    action = ":let @+ = expand('%:t') . ':' . line('.')<cr>";
+    desc = "Copy short file name to clipboard with line number";
+  }
+  {
     key = "<leader>fe";
     mode = "n";
     silent = true;
