@@ -2,6 +2,7 @@
   nixpkgs,
   home-manager,
   nvf,
+  nixos-hardware,
   ...
 }:
 nixpkgs.lib.nixosSystem {
@@ -34,5 +35,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/hyprland.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
+    nixos-hardware.nixosModules.apple-t2
   ];
 }

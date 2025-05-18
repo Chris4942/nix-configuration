@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf.url = "github:notashelf/nvf";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -16,6 +17,7 @@
     nixpkgs,
     home-manager,
     nvf,
+    nixos-hardware,
     ...
   } @ inputs: let
     system = "x86_64-linux";

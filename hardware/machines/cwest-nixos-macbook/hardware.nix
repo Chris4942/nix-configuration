@@ -4,8 +4,8 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
+  nixos-hardware,
   ...
 }: {
   imports = [
@@ -13,9 +13,9 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-  boot.initrd.kernelModules = [ "wl" ];
+  boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  boot.extraModulePackages = [];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/062efb13-2bd9-4b71-8db9-b0592ba05e55";
