@@ -8,6 +8,5 @@ with pkgs; [
   spotify
   wmctrl
   gimp
-  foot
   zulip-term
 ]

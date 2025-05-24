@@ -61,6 +61,18 @@
     packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
   };
 
+  users.users.hwest = {
+    isNormalUser = true;
+    description = "Haley West";
+    packages = with pkgs; [
+      steam
+      brave
+      discord
+      spotify
+      gimp
+    ];
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
