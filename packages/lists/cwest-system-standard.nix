@@ -19,4 +19,5 @@ with pkgs; [
   fd
   paprefs
   kitty
+  acl
 ]

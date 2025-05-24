@@ -57,6 +57,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "gamers"
     ];
     packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
   };
@@ -71,17 +72,33 @@
       spotify
       gimp
     ];
+    extraGroups = ["gamers"];
   };
+
+  users.groups.gamers = {};
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
+
+  systemd.tmpfiles.rules = [
+    "d /steam-library 2775 root gamers -"
+  ];
+
+  system.activationScripts.steamLibraryACLs.text = ''
+    mkdir -p /steam-library
+    chown root:gamers /steam-library
+    chmod 2775 /steam-library
+    ${pkgs.acl}/bin/setfacl -d -m u::rwx /steam-library
+    ${pkgs.acl}/bin/setfacl -d -m g::rwx /steam-library
+    ${pkgs.acl}/bin/setfacl -d -m o::rx /steam-library
+  '';
 
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
