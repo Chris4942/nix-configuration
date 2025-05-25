@@ -3,9 +3,6 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
-  services.displayManager = {
-    defaultSession = "sway";
-  };
   security.polkit.enable = true;
   environment.systemPackages = with pkgs; [
     grim # screenshot functionality

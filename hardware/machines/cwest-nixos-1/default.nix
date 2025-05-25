@@ -28,7 +28,6 @@ nixpkgs.lib.nixosSystem {
     ../../../hardware/machines/cwest-nixos-1/hardware.nix
     ../../../hardware/drivers/amdgpu.nix
     ../../../modules/desktop-environment/gnome.nix
-    ../../../modules/desktop-environment/sway.nix
     ../../../modules/libre-office.nix
     ../../../modules/automated-garbage-collection.nix
     ../../../modules/desktop-environment/hyprland.nix
