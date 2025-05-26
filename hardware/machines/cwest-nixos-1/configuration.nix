@@ -59,7 +59,7 @@
       "wheel"
       "gamers"
     ];
-    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
+    packages = (import ../../../packages/lists/cwest-user-standard.nix pkgs) ++ (with pkgs; [runelite]);
   };
 
   users.users.hwest = {
