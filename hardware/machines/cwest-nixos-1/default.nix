@@ -31,6 +31,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/libre-office.nix
     ../../../modules/automated-garbage-collection.nix
     ../../../modules/desktop-environment/hyprland.nix
+    ../../../modules/jellyfin.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];
