@@ -5,7 +5,6 @@
   config,
   pkgs,
   home-manager,
-  rootUser,
   ...
 }: {
   imports = [
@@ -43,17 +42,16 @@
   home-manager = {
     extraSpecialArgs = {
       inherit home-manager;
-      inherit rootUser;
     };
     users = {
-      "${rootUser.name}" = import ../../../users/root-user.nix;
+      cwest = import ../../../users/cwest.nix;
     };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${rootUser.name} = {
+  users.users.cwest = {
     isNormalUser = true;
-    description = rootUser.description;
+    description = "Chris West";
     extraGroups = [
       "networkmanager"
       "wheel"

@@ -3,7 +3,6 @@
   pkgs,
   home-manager,
   lib,
-  rootUser,
   ...
 }: rec {
   imports = [
@@ -13,8 +12,8 @@
     ../home/waybar/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
-  home.username = rootUser.name;
-  home.homeDirectory = rootUser.homeDirectory;
+  home.username = "cwest";
+  home.homeDirectory = "/home/cwest";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

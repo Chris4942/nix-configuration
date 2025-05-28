@@ -3,7 +3,6 @@
   pkgs,
   home-manager,
   lib,
-  rootUser,
   ...
 }: {
   programs.kitty = {

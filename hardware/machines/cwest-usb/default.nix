@@ -8,11 +8,6 @@ nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   specialArgs = {
     inherit home-manager nvf;
-    rootUser = rec {
-      name = "cwest";
-      description = "Chris West";
-      homeDirectory = "/home/${name}";
-    };
   };
 
   modules = [

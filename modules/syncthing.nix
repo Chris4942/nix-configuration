@@ -1,13 +1,9 @@
-{
-  pkgs,
-  rootUser,
-  ...
-}: {
+{pkgs, ...}: {
   services.syncthing = {
     enable = true;
-    user = rootUser.name;
-    dataDir = "${rootUser.homeDirectory}/west-sync/";
-    configDir = "${rootUser.homeDirectory}/.config/syncthing";
+    user = "cwest";
+    dataDir = "/home/cwest/west-sync/";
+    configDir = "/home/cwest/.config/syncthing";
   };
 
   environment.systemPackages = with pkgs; [syncthing];
