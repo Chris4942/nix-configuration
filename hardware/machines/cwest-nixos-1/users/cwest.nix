@@ -4,6 +4,9 @@
   ];
 
   home.file = {
-    ".config/monitors.xml".source = ../default-monitors.xml;
+    ".config/monitors.xml" = {
+      source = ../default-monitors.xml;
+      force = true;
+    };
   };
 }

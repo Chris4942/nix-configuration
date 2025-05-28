@@ -9,4 +9,5 @@ with pkgs; [
   wmctrl
   gimp
   zulip-term
+  wdisplays
 ]
