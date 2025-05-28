@@ -44,7 +44,8 @@
       inherit home-manager;
     };
     users = {
-      "cwest" = import ../../../users/cwest.nix;
+      cwest = import ./users/cwest.nix;
+      hwest = import ./users/hwest.nix;
     };
   };
 
