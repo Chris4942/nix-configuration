@@ -20,7 +20,6 @@
         vimAlias = true;
         lineNumberMode = "number";
         binds.whichKey.enable = true;
-        useSystemClipboard = true;
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -98,7 +97,7 @@
           };
         };
         keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix {inherit pkgs;};
-        extraLuaFiles = [./lua/terminal.lua];
+        extraLuaFiles = [./lua/terminal.lua ./lua/clipboard.lua];
       };
     };
   };
