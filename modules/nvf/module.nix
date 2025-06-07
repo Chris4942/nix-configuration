@@ -15,6 +15,8 @@
           wrap = false;
           cursorline = true;
           cursorcolumn = true;
+          # Specify bash from pkgs.bash so that if I'm running neovim from inside a nix shell, it uses that version of bash instead.
+          shell = "${pkgs.bash}/bin/bash";
         };
         viAlias = false;
         vimAlias = true;
