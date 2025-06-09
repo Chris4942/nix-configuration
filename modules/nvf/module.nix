@@ -56,6 +56,12 @@
           lua.enable = true;
           java.enable = true;
           markdown.enable = true;
+          sql = {
+            enable = true;
+            extraDiagnostics.enable = true;
+            format.enable = true;
+            treesitter.enable = true;
+          };
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
