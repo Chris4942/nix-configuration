@@ -167,6 +167,7 @@
               bind = , D, exec, ${reset} ${pkgs.discord}/bin/discord
               bind = , U, exec, ${reset} ${pkgs.blueman}/bin/blueman-manager
               bind = , P, exec, ${reset} ${pkgs.pavucontrol}/bin/pavucontrol
+              bind = , W, exec, ${reset} ${pkgs.wdisplays}/bin/wdisplays
               bind = , catchall, submap, reset
       submap = reset
 
