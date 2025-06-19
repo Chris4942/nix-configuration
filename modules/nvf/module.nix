@@ -54,10 +54,10 @@
             lsp.server = "pyright";
           };
           lua.enable = true;
-          java.enable = true;
+          java.enable = false;
           markdown.enable = true;
           sql = {
-            enable = true;
+            enable = false;
             extraDiagnostics.enable = true;
             format.enable = true;
             treesitter.enable = true;
