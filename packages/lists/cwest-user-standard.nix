@@ -10,4 +10,5 @@ with pkgs; [
   gimp
   zulip-term
   wdisplays
+  bat
 ]
