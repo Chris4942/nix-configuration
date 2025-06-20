@@ -27,7 +27,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/automated-garbage-collection.nix
     ../../../modules/desktop-environment/hyprland.nix
     ../../../modules/jellyfin.nix
-                ../../../modules/enable-bluetooth-on-boot.nix
+    ../../../modules/enable-bluetooth-on-boot.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];

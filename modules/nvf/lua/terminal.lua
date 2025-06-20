@@ -21,3 +21,8 @@ end, { desc = "open terminal (insert mode)" })
 vim.keymap.set("n", "<leader>R", function()
         switch_to_terminal()
 end, { desc = "open terminal (normal mode)" })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+        pattern = "*",
+        command = "setlocal number",
+})
