@@ -83,10 +83,10 @@
         splash = false;
         splash_offset = 2.0;
 
-        preload = [ "${backgrounds}/wallhaven-852q62_3840x2160.png" ];
+        preload = [ "${backgrounds}/wallhaven-1p75xv_2560x1440.png" ];
 
         wallpaper = [
-          ",${backgrounds}/wallhaven-852q62_3840x2160.png"
+          ",${backgrounds}/wallhaven-1p75xv_2560x1440.png"
         ];
       };
   };
