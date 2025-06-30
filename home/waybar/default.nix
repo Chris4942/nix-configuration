@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -23,7 +22,7 @@
         # "margin-right" = 25;
         "margin-bottom" = -11;
         #"margin-top" = 5;
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = ["hyprland/workspaces"];
         modules-right = [
           "bluetooth"
           "pulseaudio/slider"
