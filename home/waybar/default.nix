@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.waybar = {
     enable = true;
     systemd = {
@@ -15,7 +16,6 @@
       {
         "layer" = "top"; # Waybar at top layer
         "position" = "top"; # Waybar position (top|bottom|left|right)
-        "height" = 50; # Waybar height (to be removed for auto height)
         # "width" =  1280, // Waybar width
         "spacing" = 5; # Gaps between modules (4px)
         # Choose the order of the modules
@@ -23,9 +23,19 @@
         # "margin-right" = 25;
         "margin-bottom" = -11;
         #"margin-top" = 5;
-        modules-left = ["hyprland/workspaces"];
-        modules-right = ["bluetooth" "pulseaudio/slider" "cpu" "clock"];
-        modules-center = ["hyprland/window" "hyprland/submap"];
+        modules-left = [ "hyprland/workspaces" ];
+        modules-right = [
+          "bluetooth"
+          "pulseaudio/slider"
+          "cpu"
+          "clock#day"
+          "clock#date"
+          "clock#time"
+        ];
+        modules-center = [
+          "hyprland/window"
+          "hyprland/submap"
+        ];
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "hyprctl dispatch workspace {id}";
@@ -51,6 +61,18 @@
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+        };
+        "clock#day" = {
+          format = "{:%A}";
+          tooltip-format = "Vecka: {:%V}";
+        };
+        "clock#time" = {
+          timezone = "America/New_York";
+          tooltip-format = "<big>{:%Z %z}</big>\n<small>Eastern Time</small>";
+        };
+        "clock#date" = {
+          format = "{:%d-%m-%Y}";
+          tooltip-format = "<big>{calendar}</big>";
         };
       }
     ];

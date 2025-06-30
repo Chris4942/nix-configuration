@@ -1,277 +1,314 @@
+/*    GRUVBOX DARK PALETTE
+      -------------------- */
+@define-color bg        #282828;
+@define-color gray1     #928374;
+@define-color red1      #cc241d;
+@define-color red2      #fb4934;
+@define-color green1    #98971a;
+@define-color green2    #b8bb26;
+@define-color yellow1   #d79921;
+@define-color yellow2   #fabd2f;
+@define-color blue1     #458588;
+@define-color blue2     #83a598;
+@define-color purple1   #b16286;
+@define-color purple2   #d3869b;
+@define-color aqua1     #689d6a;
+@define-color aqua2     #8ec07c;
+@define-color gray2     #a89984;
+@define-color fg        #ebdbb2;
+@define-color bg0_h     #1d2021;
+@define-color bg0       @bg;
+@define-color bg1       #3c3836;
+@define-color bg2       #504945;
+@define-color bg3       #665c54;
+@define-color bg4       #7c6f64;
+@define-color bg-gray   @gray1;
+@define-color bg0_s     #32302f;
+@define-color fg4       #a89984;
+@define-color fg3       #bdae93;
+@define-color fg2       #d5c4a1;
+@define-color fg1       @fg;
+@define-color fg0       #fbf1c7;
+@define-color orange1   #d65d0e;
+@define-color orange2   #af3a03;
+
+/*    GRUVBOX LIGHT PALETTE
+      ---------------------     
+@define-color bg        #fbf1c7;
+@define-color gray1     #928374;
+@define-color red1      #cc241d;
+@define-color red2      #9d0006;
+@define-color green1    #98971a;
+@define-color green2    #79740e;
+@define-color yellow1   #d79921;
+@define-color yellow2   #b57614;
+@define-color blue1     #458588;
+@define-color blue2     #076678;
+@define-color purple1   #b16286;
+@define-color purple2   #8f3f71;
+@define-color aqua1     #689d6a;
+@define-color aqua2     #427b58;
+@define-color gray2     #7c6f64;
+@define-color fg        #3c3836;
+@define-color bg0_h     #f9f5d7;
+@define-color bg0       @bg;
+@define-color bg1       #ebdbb2;
+@define-color bg2       #d5c4a1;
+@define-color bg3       #bdae93;
+@define-color bg4       #a89984;
+@define-color bg-gray   @gray1;
+@define-color bg0_s     #f2e5bc;
+@define-color fg4       #7c6f64;
+@define-color fg3       #665c54;
+@define-color fg2       #504945;
+@define-color fg1       @fg;
+@define-color fg0       #282828;
+@define-color orange1   #d65d0e;
+@define-color orange2   #af3a03;
+
+*/
+
+/*	COLOR BINDS
+	-----------			*/
+@define-color waybar            @bg;
+@define-color text-main         @fg;
+@define-color text-opposite     @bg;
+@define-color text-alert        @red2;
+@define-color alert             @red1;
+@define-color warning           @orange1;
+@define-color ok                @aqua2;
+@define-color workspaces        @yellow1;
+@define-color workspaces-hover  @yellow2;
+@define-color day               @orange1;
+@define-color time              @orange2;
+@define-color date              @orange1;
+@define-color backlight         @bg-gray;
+@define-color network           @bg4;
+@define-color audio             @bg3;
+@define-color audio-up          @fg2;
+@define-color battery           @bg2;
+
+
+/*      ELEMENT SETTINGS
+	----------------	*/
+.modules-left > widget:first-child > #workspaces {margin: 0}
+.modules-right > widget:last-child > #workspaces {margin: 0}
+
 * {
-    font-family: FiraCode , Noto Sans,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: Symbols Nerd Font Mono, VictorMono Nerd Font;
+    font-size: 12;
+    color: @text-main;
+    background-color: @waybar;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#custom-expand,
-#custom-cycle_wall,
-#custom-ss,
+workspaces button label,
 #window,
-#submap,
-#bluetooth,
-#mpd {
-    padding: 0 10px;
-    border-radius: 15px;
-    background: #11111b;
-    color: #b4befe;
-    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+widget label,
+#tray {
+    padding: 0 .5em;
 }
 
-window#waybar {
-    background-color: transparent;
-}
 
-#workspaces button label{
-    color: 	#f9be48 ;
-    font-weight: bolder;
-}
-
-#workspaces button.active label{
-    color: #11111b;
-    font-weight: bolder;
-}
-
-#workspaces{
-    background-color: transparent;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 25px;
-}
-#workspaces button{
-    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
-    background-color: #11111b ;
-    border-radius: 15px;
-    margin-right: 10px;
-    padding: 10px;
-    padding-top: 4px;
-    padding-bottom: 2px;
-    font-weight: bolder;
-    color: 	#f9be48 ;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
-}
-
-#workspaces button.active{
-    padding-right: 20px;
-    box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
-    padding-left: 20px;
-    padding-bottom: 3px;
-    background: rgba(223,120,60,1);
-    background: radial-gradient(circle, rgba(223,120,60,1) 0%, rgba(231,100,40,1) 12%, rgba(249,226,175,1) 19%, rgba(211,164,88,1) 20%, rgba(242,132,92,1) 24%, rgba(223,120,60,1) 36%, rgba(231,100,40,1) 37%,  rgba(255,255,255,1) 52%,  rgba(249,226,175,1) 68%, rgba(205,214,244,1) 77%, rgba(242,92,134,1) 100%); 
-    background-size: 400% 400%;
-    animation: gradient_f 20s ease-in-out infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 30%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-@keyframes gradient_f {
-	0% {
-		background-position: 0% 200%;
-	}
-    50% {
-        background-position: 200% 0%;
-    }
-	100% {
-		background-position: 400% 200%;
-	}
-}
-
-@keyframes gradient_f_nh {
-	0% {
-		background-position: 0% 200%;
-	}
-	100% {
-		background-position: 200% 200%;
-	}
-}
-
-#clock label{
-    color: #11111b;
-    font-weight:  bolder;
-}
-
-#clock {
-    background: rgb(200,081,084);
-
-    background-size: 200% 300%;
-
-    animation: gradient_f_nh 4s linear infinite;
-    margin-right: 25px;
-    color: #fff ;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-    
-    font-size: 15px;
-    padding-top: 5px;
-    padding-right: 21px;
-    font-weight: bolder;
-    padding-left: 20px;
-}
-
-#battery.charging, #battery.plugged {
-    background-color: #94e2d5 ;
-}
-
-#battery {
-    background-color: #11111b;
-    color:#a6e3a1;
-    font-weight: bolder;
-    font-size: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-@keyframes blink {
+/*	ANIMATION		
+	---------		*/
+@keyframes text-blink {
     to {
-        background-color: #f9e2af;
-        color:#96804e;
+        color: @text-alert;
     }
 }
 
+@keyframes gradient-blink {
+    from {
+        color: @text-alert;
+        background: linear-gradient(to right, @battery 100%, @alert);
+    }
+    to {
+        color: @text-opposite;
+        background: linear-gradient(to right, @battery 15%, @alert);
+    }
+}
 
-
-#battery.critical:not(.charging) {
-    background-color:  #f38ba8;
-    color:#bf5673;
-    animation-name: blink;
+/* Attention */
+#mode,
+#battery.below20.discharging {
+    animation-name: text-blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
-#cpu label{
-    color:#89dceb;
+#battery.below20.discharging {
+    color: transparent
 }
 
-#cpu {
-    background: rgb(30,30,46);
-    background: radial-gradient(circle, rgba(30,30,46,1) 30%, rgba(17,17,27,1) 100%); 
-    color: 	#f9be48;
+/* Warning */
+#pulseaudio.muted,
+#network.disconnected/*,
+#battery.below20.discharging*/ {
+    color: @text-alert;
 }
 
-#memory {
-    background-color: #cba6f7;
-    color: 	#9a75c7;
-    font-weight: bolder;
+/* Critical */
+#battery.below10.discharging {
+    animation-name: gradient-blink;
+    animation-duration: .75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#disk {
-    color: #964B00;
+
+/*	LEFT MODULES
+	------------		*/
+#workspaces button label {
+    background: @workspaces;
+}
+#workspaces button:hover label {
+    transition: background-color .5s;
+    background: radial-gradient( @workspaces-hover, @workspaces 60%);
+}
+#workspaces button.urgent {
+    transition: background-color .5s;
+    background: radial-gradient( @alert, @workspaces 80%);
+    transition: color .5s;
+    color: @text-alert;
 }
 
-#backlight {
-    color: #90b1b1;
+#mode {
+    font-style: italic;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 .5em;
+    color: transparent;
+    background-color: @waybar;
+    box-shadow:
+	0 .2em @alert inset,
+	0 -.2em @alert inset;
 }
 
-#network{
-    color:#000;
+
+/*	CENTER MODULES
+	--------------		*/
+#scratchpad.empty {
+    color: @waybar;
 }
 
-#network.disabled{
-    background-color: #45475a;
+#clock {
+    color: @text-opposite;
+}
+#clock.day {
+    background: @day;
+}
+#clock.time {
+    background: @day;
+}
+#clock.date {
+    background: @time;
 }
 
-#network.disconnected{
-    background: rgb(243,139,168);
-    background: linear-gradient(45deg, rgba(243,139,168,1) 0%, rgba(250,179,135,1) 100%); 
-    color: #fff;
-    font-weight: bolder;
-    padding-top: 3px;
-    padding-right: 11px;
+#scratchpad.invisible {
+    color: @waybar;
 }
 
-#network.linked, #network.wifi{
-    background-color: #a6e3a1 ;
-}
 
-#network.ethernet{
-    background-color:#f9e2af ;
-}
-
-#pulseaudio {
-    background-color:  	#fab387;
-    color: #bf7d54;
-    font-weight: bolder;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-}
-
-#custom-media {
-    color: #66cc99;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f9e2af;
-    color:#96804e;
-}
-
-#temperature.critical {
-    background-color: #f38ba8 ;
-    color:#bf5673;
-}
+/*	RIGHT MODULES
+	-------------		*/
 
 #tray {
-    background-color: #2980b9;
+    background-color: @bg;
 }
-
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
-
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+}
+
+#backlight {
+    background-color: @backlight;
+}
+
+#network {
+    background-color: @network;
 }
 
 #pulseaudio-slider {
-    min-height: 10px;
+    background-color: @audio;
+}
+
+#pulseaudio-slider trough {
+    background-color: @audio;
+    min-height: 7px;
     min-width: 80px;
-    border-radius: 5px;
 }
 
-#window {
-    background-color: #f9e2af;
-    color: #3F2F4F
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    background-color: @audio-up;
 }
 
-#submap {
-    background-color: #ffa000;
-    color: #3F2F4F
+#battery {
+    background-color: @battery;
+}
+#battery.charging {
+    background: linear-gradient(to right, @battery 30%, @ok);
+}
+#battery.discharging {
+    background: linear-gradient(to right, @battery 30%, @alert);
+}
+
+
+/*	ARROWS
+	------			*/
+#custom-arrow-right,
+#custom-arrow-left {
+    padding: 0;
+    font-family: Hack Nerd Font Mono;
+    font-size: 1.4em;
+}
+
+#custom-arrow-right.workspaces {
+    color: @workspaces;
+    background-color: transparent;
+}
+#custom-arrow-right.time {
+    color: @time;
+    background-color: @date;
+}
+#custom-arrow-right.date {
+    color: @date;
+    background-color: transparent;
+}
+
+#custom-arrow-left.battery {
+    color: @battery;
+    background-color: @audio;
+}
+#custom-arrow-left.audio {
+    color: @audio;
+    background-color: @network;
+}
+#custom-arrow-left.network {
+    color: @network;
+    background-color: @backlight;
+}
+#custom-arrow-left.backlight {
+    color: @backlight;
+    background-color: transparent;
+}
+#custom-arrow-left.time {
+    color: @time;
+    background-color: @day;
+}
+#custom-arrow-left.day {
+    color: @day;
+    background-color: transparent;
 }
