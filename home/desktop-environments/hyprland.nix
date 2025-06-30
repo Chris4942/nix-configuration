@@ -181,6 +181,7 @@
         submap = lock
                 bind = , L, exec, ${reset} ${pkgs.hyprlock}/bin/hyprlock
                 bind = , X, exec, ${reset} ${pkgs.hypridle}/bin/hypridle
+                bind = , catchall, submap, reset
         submap = reset
 
 
