@@ -66,7 +66,7 @@
         };
         "clock#day" = {
           format = "{:%A}";
-          tooltip-format = "Vecka: {:%V}";
+          tooltip-format = "Week {:%V}";
         };
         "clock#time" = {
           timezone = "America/New_York";
