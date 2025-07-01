@@ -16,13 +16,8 @@
       {
         "layer" = "top"; # Waybar at top layer
         "position" = "top"; # Waybar position (top|bottom|left|right)
-        # "width" =  1280, // Waybar width
-        "spacing" = 5; # Gaps between modules (4px)
-        # Choose the order of the modules
-        # "margin-left" = 25;
-        # "margin-right" = 25;
+        "spacing" = 5;
         "margin-bottom" = -11;
-        #"margin-top" = 5;
         modules-left = [ "hyprland/workspaces" ];
         modules-right = [
           "bluetooth"
