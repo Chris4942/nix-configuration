@@ -122,7 +122,7 @@
           "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
-          "$mod, D, exec, ${pkgs.dmenu}/bin/dmenu_run"
+          "$mod, D, exec, ${pkgs.rofi}/bin/rofi -show drun"
           "$mod, F, fullscreen"
         ]
         ++ (
@@ -255,10 +255,6 @@
         exec-once = ${pkgs.hyprpaper}bin/hyprpaper
         env = HYPRCURSOR_THEME,rose-pine-hyprcursor
         exec-once=fcitx5 -d # not ${pkgs.fcitx5}/bin/fcitx5 !
-
-        # Position dmenu 16 pixels below the top so that it is below the waybar, but still at the top
-        windowrule = float, class:^(dmenu)$
-        windowrule = move 0 16, class:^(dmenu)$
       '';
   };
 }
