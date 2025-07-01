@@ -180,6 +180,10 @@ widget label,
     color: @text-alert;
 }
 
+#workspaces button.active label {
+    background: @purple1;
+}
+
 #mode {
     font-style: italic;
     font-weight: bold;
