@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     neovim-node-client
   ];
@@ -37,7 +38,10 @@
           };
         };
         comments.comment-nvim.enable = true;
-        filetree.neo-tree.enable = true;
+        filetree.neo-tree = {
+          enable = true;
+          setupOpts.open_files_do_not_replace_types = [ ];
+        };
         git = {
           gitsigns.enable = true;
         };
@@ -104,8 +108,11 @@
             );
           };
         };
-        keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix {inherit pkgs;};
-        extraLuaFiles = [./lua/terminal.lua ./lua/clipboard.lua];
+        keymaps = import ./keymaps/base.nix ++ import ./keymaps/extra.nix { inherit pkgs; };
+        extraLuaFiles = [
+          ./lua/terminal.lua
+          ./lua/clipboard.lua
+        ];
       };
     };
   };
