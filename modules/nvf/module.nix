@@ -46,7 +46,6 @@
           gitsigns.enable = true;
         };
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
           nix.enable = true;
           rust = {
