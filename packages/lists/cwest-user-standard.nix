@@ -1,5 +1,4 @@
-pkgs:
-with pkgs; [
+pkgs: with pkgs; [
   neovim
   brave
   neofetch
@@ -8,7 +7,7 @@ with pkgs; [
   spotify
   wmctrl
   gimp
-  zulip-term
+  # zulip-term
   wdisplays
   bat
 ]
