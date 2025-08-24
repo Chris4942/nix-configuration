@@ -99,6 +99,7 @@
         spellcheck = {
           enable = true;
           programmingWordlist.enable = true;
+          # Run :DirtytalkUpdate on first use to fix download errors
           extraSpellWords = {
             "en.utf-8" = builtins.filter (s: builtins.isString s) (
               builtins.split "\n" (
