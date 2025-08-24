@@ -28,6 +28,7 @@ init
 keymap
 linux
 mypy
+narHash
 nixos
 nixpkgs
 nvf
