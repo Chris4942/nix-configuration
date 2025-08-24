@@ -4,6 +4,7 @@ aws
 cachix
 callPackage
 cargoToml
+Chris4942
 compat
 ccirunner
 ci
