@@ -37,6 +37,7 @@ nixos
 nixpkgs
 nvf
 OpenSS
+parallelizable
 passwd
 pipewire
 polyrepo
