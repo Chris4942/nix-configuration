@@ -10,4 +10,5 @@ pkgs: with pkgs; [
   # zulip-term
   wdisplays
   bat
+  audacity
 ]
