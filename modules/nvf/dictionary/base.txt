@@ -16,6 +16,7 @@ hercules
 Hyprland
 lastModified
 debuginfo
+despawn
 devEnv
 devShell
 DoubleValue
