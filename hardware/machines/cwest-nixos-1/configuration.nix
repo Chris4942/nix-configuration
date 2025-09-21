@@ -6,7 +6,8 @@
   pkgs,
   home-manager,
   ...
-}: {
+}:
+{
   imports = [
     home-manager.nixosModules.default
   ];
@@ -58,7 +59,12 @@
       "wheel"
       "gamers"
     ];
-    packages = (import ../../../packages/lists/cwest-user-standard.nix pkgs) ++ (with pkgs; [runelite]);
+    packages =
+      (import ../../../packages/lists/cwest-user-standard.nix pkgs)
+      ++ (with pkgs; [
+        runelite
+        blender
+      ]);
   };
 
   users.users.hwest = {
@@ -79,7 +85,7 @@
     ];
   };
 
-  users.groups.gamers = {};
+  users.groups.gamers = { };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
