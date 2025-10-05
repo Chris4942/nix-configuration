@@ -244,7 +244,6 @@ widget label,
 }
 
 #pulseaudio-slider highlight {
-    min-width: 10px;
     background-color: @audio-up;
 }
 
