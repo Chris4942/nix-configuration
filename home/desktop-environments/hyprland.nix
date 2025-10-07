@@ -26,11 +26,11 @@
 
       listener = [
         {
-          timeout = 300;
+          timeout = 900;
           on-timeout = "${pkgs.hyprlock}/bin/hyprlock";
         }
         {
-          timeout = 360;
+          timeout = 1000;
           on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
           on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
         }
@@ -43,7 +43,7 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 4;
+        grace = 60;
         hide_cursor = true;
         no_fade_in = false;
       };
