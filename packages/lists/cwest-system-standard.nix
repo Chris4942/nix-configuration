@@ -1,5 +1,4 @@
-pkgs:
-with pkgs; [
+pkgs: with pkgs; [
   vim
   git
   openssh
@@ -20,4 +19,5 @@ with pkgs; [
   paprefs
   kitty
   acl
+  gnumake42
 ]
