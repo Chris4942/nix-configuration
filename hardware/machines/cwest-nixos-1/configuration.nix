@@ -58,6 +58,7 @@
       "networkmanager"
       "wheel"
       "gamers"
+      "dialout"
     ];
     packages =
       (import ../../../packages/lists/cwest-user-standard.nix pkgs)
