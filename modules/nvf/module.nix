@@ -51,6 +51,13 @@
           rust = {
             enable = true;
             crates.enable = true;
+            lsp.opts = ''
+              ['rust-analyzer'] = {
+                check = {
+                  command = "clippy",
+                },
+              },
+            '';
           };
           python = {
             enable = true;
