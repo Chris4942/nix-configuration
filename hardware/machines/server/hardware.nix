@@ -28,17 +28,6 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-
-    loader = {
-      # systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      # Configure bootloader device
-      grub = {
-        enable = true;
-        device = "nodev"; # or "nodev" for EFI only
-        efiSupport = true;
-      };
-    };
   };
 
   fileSystems."/" = {
