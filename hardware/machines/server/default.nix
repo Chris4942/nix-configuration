@@ -1,13 +1,12 @@
 {
   nixpkgs,
-  home-manager,
   nvf,
   ...
 }:
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   specialArgs = {
-    inherit home-manager nvf;
+    inherit nvf;
   };
 
   modules = [
@@ -18,6 +17,5 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/nix-ld.nix
     ../../../modules/nvf/module.nix
     nvf.nixosModules.default
-    home-manager.nixosModules.default
   ];
 }

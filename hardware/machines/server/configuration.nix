@@ -4,14 +4,9 @@
 {
   config,
   pkgs,
-  home-manager,
   ...
 }:
 {
-  imports = [
-    home-manager.nixosModules.default
-  ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -35,15 +30,6 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  home-manager = {
-    extraSpecialArgs = {
-      inherit home-manager;
-    };
-    users = {
-      cwest = import ../../../users/cwest.nix;
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cwest = {
