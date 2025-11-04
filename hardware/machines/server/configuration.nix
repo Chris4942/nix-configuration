@@ -12,7 +12,7 @@
     "flakes"
   ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "west-server"; # Define your hostname.
   #
   # # Enable networking
   networking.networkmanager.enable = true;
