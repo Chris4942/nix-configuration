@@ -12,22 +12,27 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nvf,
-    nixos-hardware,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations = {
-      cwest-nixos-1 = import ./hardware/machines/cwest-nixos-1 inputs;
-      cwest-nixos-macbook = import ./hardware/machines/cwest-nixos-macbook inputs;
-      cwest-usb = import ./hardware/machines/cwest-usb inputs;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nvf,
+      nixos-hardware,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations = {
+        cwest-nixos-1 = import ./hardware/machines/cwest-nixos-1 inputs;
+        cwest-nixos-macbook = import ./hardware/machines/cwest-nixos-macbook inputs;
+        cwest-usb = import ./hardware/machines/cwest-usb inputs;
+        server = import ./hardware/machines/server inputs;
+
+      };
+      formatter.x86_64-linux = pkgs.alejandra;
     };
-    formatter.x86_64-linux = pkgs.alejandra;
-  };
 }
