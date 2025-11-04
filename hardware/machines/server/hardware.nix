@@ -53,6 +53,11 @@
     fsType = "ext4";
   };
 
+  fileSystems."/mnt/backup" = {
+    device = "/dev/disk/by-label/BACKUP";
+    fsType = "ext4";
+  };
+
   swapDevices = [
     { device = "/.swapfile"; }
   ];
