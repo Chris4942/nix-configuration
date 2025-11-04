@@ -24,7 +24,6 @@
         "sd_mod"
       ];
       kernelModules = [ ];
-      luks.devices.cryptroot.device = "/dev/disk/by-label/ENCRYPTED_NIXROOT";
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
