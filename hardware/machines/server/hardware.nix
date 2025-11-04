@@ -25,7 +25,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "nodev";
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXROOT";
