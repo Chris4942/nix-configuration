@@ -18,7 +18,6 @@ pkgs: with pkgs; [
   tree
   fd
   paprefs
-  kitty
   acl
   gnumake42
 ]

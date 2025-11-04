@@ -11,4 +11,5 @@ pkgs: with pkgs; [
   bat
   audacity
   anki-bin
+  kitty
 ]
