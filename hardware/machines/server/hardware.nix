@@ -41,6 +41,11 @@
     ];
   };
 
+  fileSystems."/mnt/main" = {
+    device = "/dev/disk/by-label/MAIN";
+    fsType = "ext4";
+  };
+
   swapDevices = [
     { device = "/.swapfile"; }
   ];
