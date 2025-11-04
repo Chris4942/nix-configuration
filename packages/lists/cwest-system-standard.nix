@@ -1,4 +1,5 @@
 pkgs: with pkgs; [
+  neovim
   vim
   git
   openssh

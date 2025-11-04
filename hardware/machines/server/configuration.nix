@@ -40,7 +40,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
+    packages = [ ];
   };
 
   # Install firefox.
