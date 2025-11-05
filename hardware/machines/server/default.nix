@@ -16,6 +16,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/bash.nix
     ../../../modules/nix-ld.nix
     ../../../modules/nvf/module.nix
+    ../../../modules/jellyfin.nix
     nvf.nixosModules.default
   ];
 }
