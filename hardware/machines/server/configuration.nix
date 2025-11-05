@@ -39,8 +39,17 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "jellyfin"
     ];
     packages = with pkgs; [ dvdbackup ];
+  };
+
+  users.users.jellyfin = {
+    isNormalUser = false;
+    description = "Jellyfin Linux User";
+    extraGroups = [
+      "jellyfin"
+    ];
   };
 
   # Install firefox.
