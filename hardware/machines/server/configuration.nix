@@ -40,7 +40,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = [ ];
+    packages = with pkgs; [ dvdbackup ];
   };
 
   # Install firefox.
