@@ -28,6 +28,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/hyprland.nix
     ../../../modules/enable-bluetooth-on-boot.nix
     ../../../modules/fcitx5.nix
+    ../../../modules/anki.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];

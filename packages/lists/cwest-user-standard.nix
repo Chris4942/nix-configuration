@@ -10,6 +10,5 @@ pkgs: with pkgs; [
   wdisplays
   bat
   audacity
-  anki-bin
   kitty
 ]
