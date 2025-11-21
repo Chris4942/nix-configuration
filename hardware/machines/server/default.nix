@@ -18,5 +18,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/nvf/module.nix
     ../../../modules/jellyfin.nix
     nvf.nixosModules.default
+    ./next-cloud.nix
   ];
 }
