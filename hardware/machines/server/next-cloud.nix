@@ -23,6 +23,10 @@
         dir = "/nextcloud";
       in
       {
+        trusted_proxies = [
+          "192.168.1.219"
+          "127.0.0.1"
+        ];
         overwriteprotocol = prot;
         overwritehost = host;
         overwritewebroot = dir;
