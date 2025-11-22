@@ -8,6 +8,8 @@ let
 in
 {
   environment.systemPackages = [ pkgs.nextcloud32 ];
+  # This only is set during the initial set up script
+  # This is overridden in practice
   environment.etc."nextcloud-admin-pass".text = "yak_examples6CHEROKEE";
   networking.firewall.allowedTCPPorts = [
     8080
