@@ -6,13 +6,12 @@
   environment.systemPackages = [ pkgs.nextcloud31 ];
   environment.etc."nextcloud-admin-pass".text = "yak_examples6CHEROKEE";
   networking.firewall.allowedTCPPorts = [
-    80
     8080
   ];
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud31;
-    hostName = "127.0.0.1";
+    hostName = "192.168.1.219:80";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
     home = "/mnt/main/nextcloud";
@@ -20,8 +19,8 @@
     settings =
       let
         prot = "http";
-        host = "192.168.1.219";
-        dir = "/";
+        host = "192.168.1.219:8080";
+        dir = "/nextcloud";
       in
       {
         overwriteprotocol = prot;
