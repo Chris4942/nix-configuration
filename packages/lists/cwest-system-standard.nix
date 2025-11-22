@@ -20,4 +20,5 @@ pkgs: with pkgs; [
   paprefs
   acl
   gnumake42
+  dua
 ]
