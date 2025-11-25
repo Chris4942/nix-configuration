@@ -64,6 +64,10 @@ in
             proxy_redirect off;
           '';
         };
+
+        extraConfig = ''
+          client_max_body_size 20G;
+        '';
       };
     };
   };

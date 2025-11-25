@@ -40,6 +40,7 @@
       "networkmanager"
       "wheel"
       "jellyfin"
+      "nextcloud"
     ];
     packages = with pkgs; [ dvdbackup ];
   };
