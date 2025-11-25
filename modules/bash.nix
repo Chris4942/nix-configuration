@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [ fzf ];
   programs.bash = {
     shellAliases = {
       g = "git";
@@ -13,6 +15,9 @@
       __git_complete g __git_main
 
       export EDITOR=${pkgs.neovim}/bin/nvim;
+      export TERM=xterm
+      source ${pkgs.fzf}/share/fzf/key-bindings.bash
+      source ${pkgs.fzf}/share/fzf/completion.bash
     '';
   };
 }
