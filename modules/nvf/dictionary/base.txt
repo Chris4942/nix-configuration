@@ -58,6 +58,7 @@ swaywm
 systemPackage
 todo
 TODO
+ui
 uname
 unstage
 url
