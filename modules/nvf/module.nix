@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    neovim-node-client
-  ];
+  # environment.systemPackages = with pkgs; [
+    # neovim-node-client
+  # ];
   programs.nvf = {
     enable = true;
     settings = {
