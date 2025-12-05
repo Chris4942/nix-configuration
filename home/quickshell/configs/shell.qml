@@ -20,10 +20,11 @@ PanelWindow {
     Text {
         id: timetxt
         height: 200
-        x: parent.width - 417
-        y: 37
+        x: parent.width - 377
+        y: 41
         font.family: "GoMono"
-        font.pointSize: 100
+        font.italic: true
+        font.pointSize: 75
         color: "#fbf1c7"
 
         Process {
