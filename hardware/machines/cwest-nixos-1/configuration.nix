@@ -40,6 +40,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  qt.enable = true;
+
   home-manager = {
     extraSpecialArgs = {
       inherit home-manager;
@@ -66,6 +68,7 @@
         runelite
         blender
         zoom-us
+        quickshell
       ]);
   };
 

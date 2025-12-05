@@ -11,6 +11,7 @@ rec {
     ../home/terminal/kitty.nix
     ../home/desktop-environments/hyprland.nix
     ../home/waybar/default.nix
+    ../home/quickshell/module.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "cwest";
