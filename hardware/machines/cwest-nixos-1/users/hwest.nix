@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   home.file = {
     ".config/monitors.xml" = {
       source = ../default-monitors.xml;

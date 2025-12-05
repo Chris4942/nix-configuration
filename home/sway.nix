@@ -59,12 +59,14 @@ in
               p = "exec pavucontrol" + toDefault;
               q = "exec ${set-random-image}" + toDefault;
               u = "exec ${pkgs.blueman}/bin/blueman-manager" + toDefault;
-            } // withEscape;
+            }
+            // withEscape;
             resize = lib.mkOptionDefault withEscape;
             lock = {
               l = "exec swaylock" + toDefault;
               x = "exec swaylock & systemctl suspend" + toDefault;
-            } // withEscape;
+            }
+            // withEscape;
           };
         startup = [
           {

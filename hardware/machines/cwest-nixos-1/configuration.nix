@@ -65,6 +65,7 @@
       ++ (with pkgs; [
         runelite
         blender
+        zoom-us
       ]);
   };
 

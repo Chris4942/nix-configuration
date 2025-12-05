@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   hardware.steam-hardware.enable = true;
 
   # make steam work

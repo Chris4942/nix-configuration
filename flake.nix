@@ -31,8 +31,7 @@
         cwest-nixos-macbook = import ./hardware/machines/cwest-nixos-macbook inputs;
         cwest-usb = import ./hardware/machines/cwest-usb inputs;
         server = import ./hardware/machines/server inputs;
-
       };
-      formatter.x86_64-linux = pkgs.alejandra;
+      formatter.x86_64-linux = pkgs.nixfmt-tree;
     };
 }

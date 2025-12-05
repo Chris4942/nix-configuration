@@ -4,7 +4,8 @@
   home-manager,
   lib,
   ...
-}: rec {
+}:
+rec {
   imports = [
     ../home/sway.nix
     ../home/terminal/kitty.nix
@@ -49,7 +50,7 @@
 
   programs.bash.enable = true;
   programs.zoxide = {
-    options = ["--cmd cd"];
+    options = [ "--cmd cd" ];
     enable = true;
   };
 
@@ -85,6 +86,6 @@
   services.blueman-applet.enable = true;
 
   dconf.settings."org/blueman/general" = {
-    plugin-list = ["!ConnectionNotifier"];
+    plugin-list = [ "!ConnectionNotifier" ];
   };
 }

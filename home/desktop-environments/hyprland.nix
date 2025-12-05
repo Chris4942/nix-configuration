@@ -111,41 +111,40 @@
         ];
       };
 
-      bind =
-        [
-          ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
-          "$mod, N, submap, launch"
-          "$mod, X, submap, lock"
-          "$smod, Q, killactive,"
-          "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
-          "$smod, E, exit,"
-          "$mod, H, movefocus, l"
-          "$mod, L, movefocus, r"
-          "$mod, K, movefocus, u"
-          "$mod, J, movefocus, d"
-          "$mod, 0, workspace, ${toString 10}"
-          "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
-          "$mod, D, exec, ${pkgs.rofi}/bin/rofi -show drun"
-          "$mod, F, fullscreen"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-          builtins.concatLists (
-            builtins.genList (
-              i:
-              let
-                ws = i + 1;
-              in
-              [
-                "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            ) 9
-          )
-        );
+      bind = [
+        ", Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
+        "$mod, N, submap, launch"
+        "$mod, X, submap, lock"
+        "$smod, Q, killactive,"
+        "$mod, return, exec, ${pkgs.kitty}/bin/kitty"
+        "$smod, E, exit,"
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
+        "$mod, 0, workspace, ${toString 10}"
+        "$mod SHIFT, 0, movetoworkspace, ${toString 10}"
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
+        "$mod, D, exec, ${pkgs.rofi}/bin/rofi -show drun"
+        "$mod, F, fullscreen"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          ) 9
+        )
+      );
       # https://wiki.hyprland.org/Configuring/Variables/#general
       general = {
         gaps_in = 5;
@@ -231,6 +230,7 @@
             kb_rules =
 
             follow_mouse = 1
+            mouse_refocus = false
 
             sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
