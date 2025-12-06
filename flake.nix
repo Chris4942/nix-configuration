@@ -44,5 +44,5 @@
       };
 
       formatter.x86_64-linux = pkgs.nixfmt-tree;
-    }
+    };
 }
