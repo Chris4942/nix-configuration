@@ -22,8 +22,8 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/audio.nix
     ../../../modules/nvf/module.nix
     ../../../modules/desktop-environment/gnome.nix
-    ../../../modules/desktop-environment/sway.nix
     ../../../modules/libre-office.nix
+    ../../../modules/desktop-environment/hyprland.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
   ];
