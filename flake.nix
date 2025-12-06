@@ -32,6 +32,17 @@
         cwest-usb = import ./hardware/machines/cwest-usb inputs;
         server = import ./hardware/machines/server inputs;
       };
+
+      homeConfigurations = {
+        "deck" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            nvf.homeManagerModules.default
+            ./users/deck.nix
+          ];
+        };
+      };
+
       formatter.x86_64-linux = pkgs.nixfmt-tree;
-    };
+    }
 }
