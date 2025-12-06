@@ -12,7 +12,6 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ../../../modules/fonts.nix
     ../../../modules/localization/new-york.nix
-    ../../../modules/monitor-configuration.nix
     ../../../modules/bash.nix
     ../../../modules/syncthing.nix
     ../../../modules/nix-ld.nix
