@@ -1,8 +1,5 @@
 {
-  config,
   pkgs,
-  home-manager,
-  lib,
   ...
 }:
 {
@@ -10,7 +7,8 @@
     enable = true;
     themeFile = "gruvbox-dark";
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "JetBrainsMono";
+      package = pkgs.nerd-fonts.jetbrains-mono;
       size = 13;
     };
 
