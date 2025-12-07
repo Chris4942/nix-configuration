@@ -19,7 +19,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/nix-ld.nix
     ../../../modules/audio.nix
     ../../../modules/nvf/module.nix
-    ../../../modules/desktop-environment/gnome.nix
     ../../../modules/desktop-environment/hyprland.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
