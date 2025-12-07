@@ -30,6 +30,7 @@
         cwest-nixos-1 = import ./hardware/machines/cwest-nixos-1 inputs;
         cwest-nixos-macbook = import ./hardware/machines/cwest-nixos-macbook inputs;
         cwest-usb = import ./hardware/machines/cwest-usb inputs;
+        cwest-usb-iso = import ./hardware/machines/cwest-usb-iso inputs;
         server = import ./hardware/machines/server inputs;
       };
 
