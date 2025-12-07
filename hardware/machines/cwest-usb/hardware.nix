@@ -1,30 +1,14 @@
 {
-  config,
   lib,
   modulesPath,
   ...
 }:
 {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
   boot = {
-    initrd = {
-      availableKernelModules = [
-        "nvme"
-        "xhci_pci"
-        "ahci"
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
-      kernelModules = [ ];
-      luks.devices.cryptroot.device = "/dev/disk/by-label/ENCRYPTED_NIXROOT";
-    };
-    kernelModules = [ ];
-    extraModulePackages = [ ];
-
     loader = {
       # systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
