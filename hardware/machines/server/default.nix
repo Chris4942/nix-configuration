@@ -20,6 +20,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/jellyfin.nix
     nvf.nixosModules.default
     ./next-cloud.nix
+    ./cron.nix
     home-manager.nixosModules.default
   ];
 }
