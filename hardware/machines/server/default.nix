@@ -1,6 +1,7 @@
 {
   nixpkgs,
   nvf,
+  home-manager,
   ...
 }:
 nixpkgs.lib.nixosSystem {
@@ -19,5 +20,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/jellyfin.nix
     nvf.nixosModules.default
     ./next-cloud.nix
+    home-manager.nixosModules.default
   ];
 }
