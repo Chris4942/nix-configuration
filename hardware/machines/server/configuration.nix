@@ -12,9 +12,7 @@
     "flakes"
   ];
 
-  networking.hostName = "west-server"; # Define your hostname.
-  #
-  # # Enable networking
+  networking.hostName = "west-server";
   networking.networkmanager.enable = true;
 
   services.xserver.enable = true;
@@ -31,7 +29,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   home-manager = {
     extraSpecialArgs = {
       inherit home-manager;
