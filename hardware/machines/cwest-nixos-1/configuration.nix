@@ -10,6 +10,7 @@
 {
   imports = [
     home-manager.nixosModules.default
+    ./default-monitors.nix
   ];
 
   nix.settings.experimental-features = [
@@ -127,14 +128,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  environment.etc."gdm/monitors.xml" = {
-    source = ./default-monitors.xml;
-    mode = "0644";
-    user = "gdm";
-    group = "gdm";
-    target = "/var/lib/gdm/.config/monitors.xml";
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
