@@ -117,55 +117,6 @@ widget label,
 }
 
 
-/*	ANIMATION		
-	---------		*/
-@keyframes text-blink {
-    to {
-        color: @text-alert;
-    }
-}
-
-@keyframes gradient-blink {
-    from {
-        color: @text-alert;
-        background: linear-gradient(to right, @battery 100%, @alert);
-    }
-    to {
-        color: @text-opposite;
-        background: linear-gradient(to right, @battery 15%, @alert);
-    }
-}
-
-/* Attention */
-#mode,
-#battery.below20.discharging {
-    animation-name: text-blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-#battery.below20.discharging {
-    color: transparent
-}
-
-/* Warning */
-#pulseaudio.muted,
-#network.disconnected/*,
-#battery.below20.discharging*/ {
-    color: @text-alert;
-}
-
-/* Critical */
-#battery.below10.discharging {
-    animation-name: gradient-blink;
-    animation-duration: .75s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-
 #workspaces button label {
     background: @workspaces;
 }
@@ -252,7 +203,8 @@ widget label,
     color: @yellow1;
 }
 #battery.charging {
-    background: @green2;
+    background-color: @green2;
+    color: @bg;
 }
 
 #submap {
