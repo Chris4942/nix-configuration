@@ -20,6 +20,7 @@
         "margin-bottom" = -11;
         modules-left = [ "hyprland/workspaces" ];
         modules-right = [
+          "battery"
           "bluetooth"
           "pulseaudio/slider"
           "cpu"

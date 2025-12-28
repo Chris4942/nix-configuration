@@ -249,12 +249,10 @@ widget label,
 
 #battery {
     background-color: @battery;
+    color: @yellow1;
 }
 #battery.charging {
-    background: linear-gradient(to right, @battery 30%, @ok);
-}
-#battery.discharging {
-    background: linear-gradient(to right, @battery 30%, @alert);
+    background: @green2;
 }
 
 #submap {
