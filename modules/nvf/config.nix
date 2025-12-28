@@ -47,7 +47,7 @@
           nix.enable = true;
           rust = {
             enable = true;
-            crates.enable = true;
+            extensions.crates-nvim.enable = true;
             lsp.opts = ''
               ['rust-analyzer'] = {
                 check = {
@@ -58,7 +58,7 @@
           };
           python = {
             enable = true;
-            lsp.server = "pyright";
+            lsp.servers = [ "pyright" ];
           };
           lua.enable = true;
           java.enable = false;

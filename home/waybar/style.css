@@ -121,6 +121,11 @@ widget label,
     background: @workspaces;
 }
 
+
+#workspaces button.active label {
+    background: @purple1;
+}
+
 #mode {
     font-style: italic;
     font-weight: bold;
