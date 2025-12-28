@@ -120,20 +120,6 @@ widget label,
 #workspaces button label {
     background: @workspaces;
 }
-#workspaces button:hover label {
-    transition: background-color .5s;
-    background: radial-gradient( @workspaces-hover, @workspaces 60%);
-}
-#workspaces button.urgent {
-    transition: background-color .5s;
-    background: radial-gradient( @alert, @workspaces 80%);
-    transition: color .5s;
-    color: @text-alert;
-}
-
-#workspaces button.active label {
-    background: @purple1;
-}
 
 #mode {
     font-style: italic;
@@ -145,11 +131,6 @@ widget label,
     box-shadow:
 	0 .2em @alert inset,
 	0 -.2em @alert inset;
-}
-
-
-#scratchpad.empty {
-    color: @waybar;
 }
 
 #clock {
@@ -165,16 +146,6 @@ widget label,
     background: @time;
 }
 
-
-#tray {
-    background-color: @bg;
-}
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
 
 #backlight {
     background-color: @backlight;
@@ -202,6 +173,7 @@ widget label,
     background-color: @battery;
     color: @yellow1;
 }
+
 #battery.charging {
     background-color: @green2;
     color: @bg;
