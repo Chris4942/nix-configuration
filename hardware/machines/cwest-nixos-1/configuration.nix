@@ -70,6 +70,7 @@
         blender
         zoom-us
         quickshell
+        nextcloud-client
       ]);
   };
 
