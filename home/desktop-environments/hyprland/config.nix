@@ -1,8 +1,11 @@
 {
-  lib,
   pkgs,
+  config,
   ...
 }:
+let
+  cwestExtras = config.cwest.hyprland;
+in
 {
   programs.waybar = {
     enable = true;
@@ -81,7 +84,7 @@
     settings =
       let
         backgrounds = builtins.path {
-          path = ../../data/backgrounds;
+          path = ../../../data/backgrounds;
           name = "background-assets";
         };
       in
@@ -149,7 +152,8 @@
               ]
             ) 9
           )
-        );
+        )
+        ++ cwestExtras.extraBind;
       # https://wiki.hyprland.org/Configuring/Variables/#general
       general = {
         gaps_in = 5;
@@ -175,8 +179,6 @@
         reset = "hyprctl dispatch submap reset;";
       in
       ''
-        monitor = HDMI-A-1, disable
-
         submap = launch
                 bind = , B, exec, ${reset} ${pkgs.brave}/bin/brave
                 bind = , S, exec, ${reset} ${pkgs.spotify}/bin/spotify
@@ -265,6 +267,7 @@
         exec-once = ${pkgs.hyprpaper}bin/hyprpaper
         env = HYPRCURSOR_THEME,rose-pine-hyprcursor
         exec-once=fcitx5 -d # not ${pkgs.fcitx5}/bin/fcitx5 !
-      '';
+      ''
+      + cwestExtras.extraExtraConfig;
   };
 }

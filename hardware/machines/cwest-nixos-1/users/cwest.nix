@@ -10,4 +10,9 @@
       force = true;
     };
   };
+
+  cwest.hyprland.extraBind = [ ];
+  cwest.hyprland.extraExtraConfig = ''
+    monitor = HDMI-A-1, disable
+  '';
 }
