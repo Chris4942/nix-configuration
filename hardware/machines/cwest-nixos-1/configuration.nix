@@ -88,7 +88,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
+  environment.systemPackages =
+    import ../../../packages/lists/cwest-system-standard.nix pkgs
+    ++ (with pkgs; [ gnomeExtensions.display-configuration-switcher ]);
 
   systemd.tmpfiles.rules = [
     "d /steam-library 2775 root gamers -"
