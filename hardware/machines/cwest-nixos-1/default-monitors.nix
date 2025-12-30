@@ -1,14 +1,13 @@
 { ... }:
-let
-  monitors-config = {
-    source = ./default-monitors.xml;
-    mode = "0644";
-    user = "gdm";
-    group = "gdm";
-    target = "/var/lib/gdm/.config/monitors.xml";
-  };
-in
 {
-  environment.etc."gdm/monitors.xml" = monitors-config;
-  environment.etc."xdg/monitors.xml" = monitors-config;
+  systemd.tmpfiles.rules =
+    let
+      monitorsXml = builtins.path {
+        path = ./default-monitors.xml;
+        name = "monitorsXml";
+      };
+    in
+    [
+      "L+ /var/lib/gdm/seat0/config/monitors.xml - gdm gdm - ${monitorsXml}"
+    ];
 }

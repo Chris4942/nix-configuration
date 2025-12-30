@@ -27,14 +27,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
