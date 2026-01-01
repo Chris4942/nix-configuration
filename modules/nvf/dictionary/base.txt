@@ -1,5 +1,6 @@
 amazonaws
 arg
+async
 aws
 cachix
 callPackage
