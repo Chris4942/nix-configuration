@@ -4,7 +4,20 @@
   programs.nix-ld.libraries = with pkgs; [
     libusb1
     glibc
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
+
+    # Everything after this is required to run tracy,
+    # a sketcher binary I downloaded from the internet :)
+    freetype
+    dbus
+    glfw
+    gtk3
+    curl
+    gcc.cc.lib
+    libGL
+    mesa
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXrandr
   ];
 }
