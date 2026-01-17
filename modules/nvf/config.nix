@@ -125,9 +125,7 @@
           # Run :DirtytalkUpdate on first use to fix download errors
           extraSpellWords = {
             "en.utf-8" = builtins.filter (s: builtins.isString s) (
-              builtins.split "\n" (
-                builtins.readFile ./dictionary/base.txt + "\n" + builtins.readFile ./dictionary/extra.txt
-              )
+              builtins.split "\n" (import ../../data/dictionary/concat.nix)
             );
           };
         };
