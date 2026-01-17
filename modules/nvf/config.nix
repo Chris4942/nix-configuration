@@ -33,6 +33,14 @@
             codeAction = "<leader>ca";
             listReferences = "<leader>gr";
           };
+          harper-ls = {
+            enable = true;
+            settings = {
+              linters = {
+                OrthographicConsistency = false;
+              };
+            };
+          };
         };
         comments.comment-nvim.enable = true;
         filetree.neo-tree = {
