@@ -135,6 +135,7 @@
         extraLuaFiles = [
           ./lua/terminal.lua
           ./lua/clipboard.lua
+          ./lua/autocomplete-disable.lua
         ];
       };
     };
