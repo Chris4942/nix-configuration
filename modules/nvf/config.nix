@@ -90,6 +90,7 @@
             package = nvim-highlight-colors;
             setup = builtins.readFile ./lua/highlight-color.lua;
           };
+          vim-fetch.package = vim-fetch;
         };
         statusline.lualine.enable = true;
         tabline.nvimBufferline.enable = true;

@@ -128,4 +128,16 @@
     mode = "n";
     action = "<cmd>LspStop<cr>";
   }
+  {
+    key = "<leader>gf";
+    mode = "n";
+    action = "gF";
+    desc = "Go to file (and line number)";
+  }
+  {
+    key = "gf";
+    mode = "n";
+    action = "gF";
+    desc = "Go to file (and line number)";
+  }
 ]
