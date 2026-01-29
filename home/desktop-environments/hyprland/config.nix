@@ -117,7 +117,7 @@ in
       bind =
         with pkgs;
         [
-          ", Print, exec, ${grimblast}/bin/grimblast copy area"
+          ", Print, exec, ${grimblast}/bin/grimblast copysave area -no"
           "$mod, N, submap, launch"
           "$mod, X, submap, lock"
           "$smod, Q, killactive,"
