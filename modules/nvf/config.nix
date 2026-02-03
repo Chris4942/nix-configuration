@@ -71,7 +71,11 @@
             lsp.servers = [ "pyright" ];
           };
           lua.enable = true;
-          java.enable = false;
+          java = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
           markdown.enable = true;
           sql = {
             enable = false;

@@ -2,6 +2,7 @@ amazonaws
 arg
 async
 aws
+backend
 cachix
 callPackage
 cargoToml
@@ -17,12 +18,19 @@ hercules
 Hyprland
 lastModified
 debuginfo
+deserialization
+deserialize
+deserializer
+deserializers
+deserializes
+deserializing
 despawn
 devEnv
 devShell
 DoubleValue
 dconf
 firefox
+frontend
 fn
 ecr
 emissive
