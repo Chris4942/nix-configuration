@@ -71,6 +71,7 @@ ui
 uname
 unstage
 url
+WebSocket
 yaml
 xbox
 X11
