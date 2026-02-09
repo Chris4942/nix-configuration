@@ -83,6 +83,10 @@
             format.enable = true;
             treesitter.enable = true;
           };
+          clang = {
+            enable = true;
+            lsp.enable = true;
+          };
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
