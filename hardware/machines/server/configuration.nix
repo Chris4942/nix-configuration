@@ -49,7 +49,10 @@
       "jellyfin"
       "nextcloud"
     ];
-    packages = with pkgs; [ dvdbackup ];
+    packages = with pkgs; [
+      dvdbackup
+      mkvtoolnix-cli
+    ];
   };
 
   users.users.jellyfin = {
