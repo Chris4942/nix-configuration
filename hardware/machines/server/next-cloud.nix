@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  host = "192.168.1.219";
+  host = "west-server";
   port = "8080";
 in
 {
