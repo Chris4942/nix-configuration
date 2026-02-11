@@ -65,6 +65,7 @@ stdout
 subtree
 swaywm
 systemPackage
+Tailscale
 todo
 TODO
 ui
