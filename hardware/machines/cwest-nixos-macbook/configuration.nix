@@ -27,6 +27,7 @@
   networking.networkmanager.enable = true;
 
   services.xserver.enable = true;
+  services.tailscale.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
