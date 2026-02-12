@@ -3,7 +3,7 @@
   imports = [ ./config.nix ];
   options.cwest.hyprland.extraBind = lib.mkOption {
     type = lib.types.listOf lib.types.str;
-    default = "";
+    default = [ ];
     description = "Extra bind just for this machine";
   };
   options.cwest.hyprland.extraExtraConfig = lib.mkOption {
