@@ -64,6 +64,7 @@
         zoom-us
         quickshell
         nextcloud-client
+        darktable
       ]);
   };
 
