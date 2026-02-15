@@ -87,6 +87,12 @@
             enable = true;
             lsp.enable = true;
           };
+          ts = {
+            enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+            extraDiagnostics.enable = true;
+          };
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
