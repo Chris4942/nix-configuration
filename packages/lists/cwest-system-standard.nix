@@ -13,7 +13,7 @@ pkgs: with pkgs; [
   htop
   zip
   unzip
-  nodejs_22
+  nodejs_24
   libgcc
   tree
   fd
