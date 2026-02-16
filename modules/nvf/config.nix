@@ -49,6 +49,44 @@
           enable = true;
           setupOpts.open_files_do_not_replace_types = [ ];
         };
+        treesitter = {
+          context = {
+            enable = true;
+            setupOpts = {
+              max_lines = 5;
+            };
+          };
+          textobjects = {
+            enable = true;
+            setupOpts = {
+              select = {
+                enable = true;
+                keymaps = {
+                  af = "@function.outer";
+                  "if" = "@function.inner";
+                  ac = "@class.outer";
+                  ic = "@class.inner";
+                  as = "@local.scope";
+                  il = "@loop.inner";
+                  al = "@loop.outer";
+                };
+              };
+              lookahead = true;
+              move = {
+                enable = true;
+                set_jumps = true;
+                goto_next_start = {
+                  "]f" = "@function.outer";
+                  "]c" = "@class.outer";
+                };
+                goto_previous_start = {
+                  "[f" = "@function.outer";
+                  "[c" = "@class.outer";
+                };
+              };
+            };
+          };
+        };
         git = {
           gitsigns.enable = true;
         };
@@ -88,6 +126,7 @@
             lsp.enable = true;
           };
           ts = {
+            # TypeScript / JavaScript / js / ts
             enable = true;
             lsp.enable = true;
             treesitter.enable = true;
