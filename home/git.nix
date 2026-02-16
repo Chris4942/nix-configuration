@@ -55,6 +55,7 @@
         fire = "!git add .; git commit -m 'emergency save'; gitpush";
       };
       color.ui = "auto"; # I don't know if this is necessary, but it was in my old config so I'm including it here too
+      push.autoSetupRemote = true;
     };
   };
 }
