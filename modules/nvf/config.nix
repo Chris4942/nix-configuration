@@ -22,7 +22,6 @@
         binds.whichKey.enable = true;
         lsp = {
           enable = true;
-          formatOnSave = true;
           lightbulb.enable = true;
           lspSignature.enable = true;
           mappings = {
@@ -144,6 +143,11 @@
             setup = builtins.readFile ./lua/highlight-color.lua;
           };
           vim-fetch.package = vim-fetch;
+          conform-nvim = {
+            package = conform-nvim;
+            setup = builtins.readFile ./lua/conform.lua;
+
+          };
         };
         statusline.lualine.enable = true;
         tabline.nvimBufferline.enable = true;
