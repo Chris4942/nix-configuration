@@ -42,6 +42,7 @@
         ma = "merge --abort";
         cp = "cherry-pick";
         clf = "clean -f";
+        f = "fetch";
         # git extension commands:
         # These commands are based on git commands, but have names unrelated to the underlying commands
         add-non-whitespace-changes = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
