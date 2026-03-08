@@ -39,6 +39,7 @@
               linters = {
                 OrthographicConsistency = false;
                 LongSentences = false;
+                OxfordComma = false;
               };
             };
           };
