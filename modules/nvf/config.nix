@@ -35,7 +35,6 @@
           harper-ls = {
             enable = true;
             settings = {
-              userDictPath = "~/.config/harper-ls/user.txt";
               linters = {
                 OrthographicConsistency = false;
                 LongSentences = false;

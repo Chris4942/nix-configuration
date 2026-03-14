@@ -76,3 +76,7 @@ WebSocket
 yaml
 xbox
 X11
+Shareworks
+Wealthfront
+Schwab
+W-2
