@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ../modules/nvf/module.nix ];
+  imports = [ ../modules/nvf/config.nix ];
   home.username = "deck";
   home.homeDirectory = "/home/deck";
   home.stateVersion = "25.05";
