@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     zoxide
     kitty
+    fzf
   ];
   home.username = "deck";
   home.homeDirectory = "/home/deck";
