@@ -4,6 +4,9 @@
     ../modules/nvf/config.nix
     ../home/zoxide.nix
     ../home/terminal/kitty.nix
+    ../home/harper
+    ../home/git.nix
+    ../modules/bash/home-manager-module.nix
   ];
   home.packages = with pkgs; [
     zoxide
