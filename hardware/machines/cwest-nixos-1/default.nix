@@ -12,7 +12,7 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ../../../modules/fonts.nix
     ../../../modules/localization/new-york.nix
-    ../../../modules/bash.nix
+    ../../../modules/bash/nixos-module.nix
     ../../../modules/syncthing.nix
     ../../../modules/nix-ld.nix
     ../../../modules/xinput.nix
