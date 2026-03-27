@@ -12,4 +12,5 @@ pkgs: with pkgs; [
   audacity
   kitty
   obsidian
+  speedtest-cli
 ]
