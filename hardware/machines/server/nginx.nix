@@ -83,7 +83,7 @@ in
   };
   services.immich = {
     enable = true;
-    host = "${host}:${nginxPort}";
+    host = "127.0.0.1";
     openFirewall = true;
     port = 2283;
   };
