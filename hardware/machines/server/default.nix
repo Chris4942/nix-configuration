@@ -22,5 +22,6 @@ nixpkgs.lib.nixosSystem {
     ./nginx.nix
     ./cron.nix
     home-manager.nixosModules.default
+    ./pihole.nix
   ];
 }
