@@ -10,7 +10,7 @@ in
   # This is overridden in practice
   environment.etc."nextcloud-admin-pass".text = "yak_examples6CHEROKEE";
   networking.firewall.allowedTCPPorts = [
-    8080
+    80
     443
   ];
   services.nextcloud = {
@@ -31,7 +31,7 @@ in
       listen = [
         {
           addr = "0.0.0.0";
-          port = 8080;
+          port = 80;
         }
       ];
 
@@ -48,7 +48,7 @@ in
       listen = [
         {
           addr = "0.0.0.0";
-          port = 8080;
+          port = 80;
         }
       ];
 
