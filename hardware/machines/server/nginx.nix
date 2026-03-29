@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   host = "west-server";
-  port = "8080";
+  nginxPort = "8080";
   immichPort = 2283;
 in
 {
@@ -16,7 +16,7 @@ in
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud32;
-    hostName = "${host}:${port}";
+    hostName = "${host}:${nginxPort}";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
     home = "/mnt/main/nextcloud";
@@ -32,9 +32,9 @@ in
           "127.0.0.1"
         ];
         overwriteprotocol = prot;
-        overwritehost = "${host}:${port}";
+        overwritehost = "${host}:${nginxPort}";
         overwritewebroot = dir;
-        overwrite.cli.url = "${prot}://${host}:${port}${dir}/";
+        overwrite.cli.url = "${prot}://${host}:${nginxPort}${dir}/";
         htaccess.RewriteBase = dir;
       };
   };
@@ -83,7 +83,7 @@ in
   };
   services.immich = {
     enable = true;
-    host = "0.0.0.0";
+    host = "${host}:${nginxPort}";
     openFirewall = true;
     port = 2283;
   };
