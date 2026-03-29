@@ -16,68 +16,46 @@ in
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud32;
-    hostName = "${host}:${nginxPort}";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
     config.dbtype = "sqlite";
     home = "/mnt/main/nextcloud";
-
-    settings =
-      let
-        prot = "http";
-        dir = "/nextcloud";
-      in
-      {
-        trusted_proxies = [
-          host
-          "127.0.0.1"
-        ];
-        overwriteprotocol = prot;
-        overwritehost = "${host}:${nginxPort}";
-        overwritewebroot = dir;
-        overwrite.cli.url = "${prot}://${host}:${nginxPort}${dir}/";
-        htaccess.RewriteBase = dir;
-      };
+    hostName = "nextcloud.${host}";
+    settings = {
+      overwriteprotocol = "http";
+      overwritehost = "nextcloud.${host}:${nginxPort}";
+      overwrite.cli.url = "http://nextcloud.${host}:${nginxPort}/";
+    };
   };
-  services.nginx = {
-    enable = true;
-    virtualHosts = {
-      "${host}" = {
-        listen = [
-          {
-            addr = "0.0.0.0";
-            port = 8080;
-          }
-        ];
+  services.nginx.virtualHosts = {
+    "nextcloud.${host}" = {
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 8080;
+        }
+      ];
 
-        locations."/nextcloud/" = {
-          proxyPass = "http://127.0.0.1:80";
-          extraConfig = ''
-            rewrite ^/nextcloud/(.*)$ /$1 break;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-NginX-Proxy true;
-            proxy_set_header X-Forwarded-Proto http;
-            proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-            proxy_redirect off;
-          '';
-        };
-
-        locations."/immich/" = {
-          proxyPass = "http://127.0.0.1:${builtins.toString immichPort}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-          extraConfig = ''
-            client_max_body_size 50000M;
-            proxy_read_timeout   600s;
-            proxy_send_timeout   600s;
-            send_timeout         600s;
-          '';
-        };
-
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:80";
         extraConfig = ''
-          client_max_body_size 20G;
+          proxy_set_header Host $host;
+          proxy_set_header X-Forwarded-Proto http;
         '';
+      };
+    };
+
+    "immich.${host}" = {
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 8080;
+        }
+      ];
+
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:${builtins.toString immichPort}";
+        proxyWebsockets = true;
+        recommendedProxySettings = true;
       };
     };
   };
