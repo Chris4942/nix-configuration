@@ -81,3 +81,4 @@ Wealthfront
 Schwab
 W-2
 sociality
+immich
