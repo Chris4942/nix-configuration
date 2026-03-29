@@ -64,7 +64,7 @@ in
         };
 
         locations."/immich/" = {
-          proxyPass = "http://[::1]:${toString immichPort}";
+          proxyPass = "http://127.0.0.1:${immichPort}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
           extraConfig = ''
@@ -83,7 +83,7 @@ in
   };
   services.immich = {
     enable = true;
-    host = host;
+    host = "0.0.0.0";
     openFirewall = true;
     port = 2283;
   };
