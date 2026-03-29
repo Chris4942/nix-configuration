@@ -14,7 +14,7 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ./hardware.nix
     ../../../modules/localization/new-york.nix
-    ../../../modules/bash.nix
+    ../../../modules/bash/nixos-module.nix
     ../../../modules/nix-ld.nix
     ../../../modules/nvf/module.nix
     ../../../modules/jellyfin.nix
