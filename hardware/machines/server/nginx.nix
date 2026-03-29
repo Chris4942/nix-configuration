@@ -64,7 +64,7 @@ in
         };
 
         locations."/immich/" = {
-          proxyPass = "http://127.0.0.1:${immichPort}";
+          proxyPass = "http://127.0.0.1:${builtins.toString immichPort}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
           extraConfig = ''
