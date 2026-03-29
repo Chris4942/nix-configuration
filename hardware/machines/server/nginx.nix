@@ -2,6 +2,7 @@
 let
   host = "west-server";
   port = "8080";
+  immichPort = 2283;
 in
 {
   environment.systemPackages = [ pkgs.nextcloud32 ];
@@ -62,10 +63,28 @@ in
           '';
         };
 
+        locations."/immich/" = {
+          proxyPass = "http://[::1]:${toString immichPort}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+          extraConfig = ''
+            client_max_body_size 50000M;
+            proxy_read_timeout   600s;
+            proxy_send_timeout   600s;
+            send_timeout         600s;
+          '';
+        };
+
         extraConfig = ''
           client_max_body_size 20G;
         '';
       };
     };
+  };
+  services.immich = {
+    enable = true;
+    host = host;
+    openFirewall = true;
+    port = 2283;
   };
 }
