@@ -13,6 +13,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     ./configuration.nix
     ./hardware.nix
+    ./immich.nix
     ../../../modules/localization/new-york.nix
     ../../../modules/bash/nixos-module.nix
     ../../../modules/nix-ld.nix
