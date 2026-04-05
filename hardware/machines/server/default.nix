@@ -14,6 +14,7 @@ nixpkgs.lib.nixosSystem {
     ./configuration.nix
     ./hardware.nix
     ./immich.nix
+    ./postgresql.nix
     ../../../modules/localization/new-york.nix
     ../../../modules/bash/nixos-module.nix
     ../../../modules/nix-ld.nix
