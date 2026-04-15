@@ -23,6 +23,7 @@ nixpkgs.lib.nixosSystem {
     nvf.nixosModules.default
     ./next-cloud.nix
     ./cron.nix
+    ./home-assistant.nix
     home-manager.nixosModules.default
   ];
 }
