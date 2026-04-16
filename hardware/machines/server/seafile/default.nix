@@ -1,10 +1,5 @@
 { pkgs, ... }:
 let
-  envFile = pkgs.fetchurl {
-    url = "https://manual.seafile.com/13.0/repo/docker/ce/env";
-    sha256 = "sha256-PqasLa8c8PwqxlYsgfM1r1FK7zL5mQ4p571IvbPWn4U=";
-  };
-
   seafileYml = pkgs.fetchurl {
     url = "https://manual.seafile.com/13.0/repo/docker/ce/seafile-server.yml";
     sha256 = "sha256-8lWsiMit+j20dcPGvH4XJHJbNkem53LGF/Y9raZGbQk=";
@@ -29,7 +24,7 @@ let
     installPhase = ''
       mkdir -p $out
 
-      cp ${envFile} $out/.env
+      cp ${./.env} $out/.env
       cp ${seafileYml} $out/seafile-server.yml
       cp ${seadocYml} $out/seadoc.yml
       cp ${caddyYml} $out/caddy.yml
