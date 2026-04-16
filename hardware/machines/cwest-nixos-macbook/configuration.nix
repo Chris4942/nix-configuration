@@ -58,7 +58,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs;
+    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs ++ [ pkgs.runelite ];
   };
 
   # Install firefox.
