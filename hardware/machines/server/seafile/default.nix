@@ -15,7 +15,7 @@ let
     sha256 = "sha256-pfJuflqyyYio3AVBEibjxHyNPKvzXQUD6HkaVc/EpTI=";
   };
 
-  seafile-docker-compose = pkgs.stdenv.mkDerivation {
+  seafile-docker-compose-directory = pkgs.stdenv.mkDerivation {
     pname = "seafile-docker-config";
     version = "13.0";
 
@@ -32,9 +32,5 @@ let
   };
 in
 {
-  systemd.tmpfiles.rules = [
-    "L /opt/seafile - - - - ${seafile-docker-compose}"
-    "L /opt/seafile-data - - - - /mnt/main/seafile/data"
-    "L /opt/seafile-mysql - - - - /mnt/main/seafile/data"
-  ];
+
 }
