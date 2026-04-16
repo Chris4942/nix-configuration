@@ -25,6 +25,6 @@ nixpkgs.lib.nixosSystem {
     ./cron.nix
     ./home-assistant.nix
     home-manager.nixosModules.default
-    ./seafile.nix
+    ./seafile
   ];
 }
