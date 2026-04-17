@@ -30,4 +30,7 @@ in
 
     wantedBy = [ "multi-user.target" ];
   };
+  networking.firewall.allowedTCPPorts = [
+    8011
+  ];
 }

@@ -49,6 +49,7 @@
       "wheel"
       "jellyfin"
       "nextcloud"
+      "docker"
     ];
     packages = with pkgs; [
       dvdbackup
