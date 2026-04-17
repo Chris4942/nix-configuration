@@ -32,6 +32,7 @@ let
 in
 {
   systemd.services.seafile = {
+    enable = true;
     description = "Seafile Docker Compose";
     after = [
       "network.target"
