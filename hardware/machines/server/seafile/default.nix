@@ -18,7 +18,6 @@ let
   seafile-docker-compose-directory = pkgs.stdenv.mkDerivation {
     pname = "seafile-docker-config";
     version = "13.0";
-
     dontUnpack = true;
 
     installPhase = ''
@@ -40,6 +39,7 @@ in
 
     serviceConfig = {
       Type = "oneshot";
+      EnvironmentFile = "/mnt/main/seafile/secrets.env";
       WorkingDirectory = "${seafile-docker-compose-directory}";
       ExecStart = "${pkgs.docker-compose}/bin/docker-compose up -d";
       ExecStop = "${pkgs.docker-compose}/bin/docker-compose down";
