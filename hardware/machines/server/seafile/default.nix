@@ -36,9 +36,7 @@ in
     description = "Seafile Docker Compose";
     after = [
       "network.target"
-      "docker.service"
     ];
-    requires = [ "docker.service" ];
 
     serviceConfig = {
       Type = "oneshot";
