@@ -23,7 +23,6 @@ let
 
     installPhase = ''
       mkdir -p $out
-
       cp ${./.env} $out/.env
       cp ${seafileYml} $out/seafile-server.yml
       cp ${seadocYml} $out/seadoc.yml
@@ -32,5 +31,22 @@ let
   };
 in
 {
+  systemd.services.seafile = {
+    description = "Seafile Docker Compose";
+    after = [
+      "network.target"
+      "docker.service"
+    ];
+    requires = [ "docker.service" ];
 
+    serviceConfig = {
+      Type = "oneshot";
+      WorkingDirectory = "${seafile-docker-compose-directory}";
+      ExecStart = "${pkgs.docker-compose}/bin/docker-compose up -d";
+      ExecStop = "${pkgs.docker-compose}/bin/docker-compose down";
+      RemainAfterExit = true;
+    };
+
+    wantedBy = [ "multi-user.target" ];
+  };
 }
