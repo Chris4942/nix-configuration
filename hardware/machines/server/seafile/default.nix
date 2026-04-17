@@ -1,5 +1,17 @@
 { pkgs, ... }:
+let
+  srcDir = ./docker-compose;
+
+  files = builtins.attrNames (builtins.readDir srcDir);
+
+  linkRules = map (name: "L+ /opt/seafile/${name} - - - - ${srcDir}/${name}") files;
+in
 {
+  systemd.tmpfiles.rules = [
+    "d /opt/seafile 0755 root root -"
+  ]
+  ++ linkRules;
+
   systemd.services.seafile = {
     enable = true;
     description = "Seafile Docker Compose";
