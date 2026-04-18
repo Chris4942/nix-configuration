@@ -9,6 +9,7 @@ in
 {
   systemd.tmpfiles.rules = [
     "d /opt/seafile 0755 root root -"
+    "d /opt/seafile 0755 root root -"
   ]
   ++ linkRules;
 
