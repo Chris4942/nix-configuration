@@ -5,8 +5,10 @@ services:
     restart: unless-stopped
     container_name: seafile-caddy
     ports:
-      - 80:80
-      - 443:443
+      - 8011:80
+      # - 443:443
+      # - 8011:8011
+
     environment:
       - CADDY_INGRESS_NETWORKS=seafile-net
     volumes:
