@@ -33,5 +33,7 @@ in
   };
   networking.firewall.allowedTCPPorts = [
     8011
+    8082
+    8000
   ];
 }
