@@ -6,6 +6,7 @@ backend
 cachix
 callPackage
 cargoToml
+chatbot
 Chris4942
 compat
 ccirunner
