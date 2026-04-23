@@ -62,6 +62,18 @@
     description = "Jellyfin Linux User";
     extraGroups = [
       "jellyfin"
+      "video"
+      "render"
+    ];
+  };
+
+  users.users.immich = {
+    isNormalUser = false;
+    description = "Immich user";
+    extraGroups = [
+      "immich"
+      "video"
+      "render"
     ];
   };
 
