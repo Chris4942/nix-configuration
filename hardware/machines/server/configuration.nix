@@ -55,6 +55,7 @@
       dvdbackup
       mkvtoolnix-cli
       neofetch
+      exiftool
     ];
   };
 
