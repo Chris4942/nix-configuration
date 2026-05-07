@@ -50,6 +50,7 @@
       "jellyfin"
       "nextcloud"
       "docker"
+      "immich"
     ];
     packages = with pkgs; [
       dvdbackup
