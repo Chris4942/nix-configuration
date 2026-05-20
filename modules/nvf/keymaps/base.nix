@@ -140,4 +140,10 @@
     action = "gF";
     desc = "Go to file (and line number)";
   }
+  {
+    key = "<escape><escape>";
+    mode = "t";
+    action = "<C-\\><C-n>";
+    desc = "Exit Terminal Mode";
+  }
 ]
