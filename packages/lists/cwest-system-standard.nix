@@ -25,4 +25,5 @@ pkgs: with pkgs; [
   texliveSmall # This is required so that pandoc is able to format to pdf
   bat
   pwgen
+  wget
 ]

@@ -131,6 +131,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  hardware.keyboard.qmk.enable = true; # Set up udev rules so that I can flash to the device
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
