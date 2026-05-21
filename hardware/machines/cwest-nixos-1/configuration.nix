@@ -67,6 +67,8 @@
         quickshell
         nextcloud-client
         darktable
+        lmstudio
+        opencode
       ]);
   };
 
