@@ -55,6 +55,8 @@
       "wheel"
       "gamers"
       "dialout"
+      "usb"
+      "plugdev"
     ];
     packages =
       (import ../../../packages/lists/cwest-user-standard.nix pkgs)
