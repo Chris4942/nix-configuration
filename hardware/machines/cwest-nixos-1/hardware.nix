@@ -56,5 +56,5 @@
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 }
