@@ -55,7 +55,7 @@
     packages = with pkgs; [
       dvdbackup
       mkvtoolnix-cli
-      neofetch
+      fastfetch
       exiftool
     ];
   };

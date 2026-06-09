@@ -1,6 +1,6 @@
 pkgs: with pkgs; [
   brave
-  neofetch
+  fastfetch
   steam
   discord
   spotify
