@@ -79,27 +79,41 @@ in
     };
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings =
-      let
-        backgrounds = builtins.path {
-          path = ../../../data/backgrounds;
-          name = "background-assets";
-        };
-      in
-      {
-        ipc = "on";
-        splash = false;
-        splash_offset = 2.0;
-
-        preload = [ "${backgrounds}/wallhaven-1p75xv_2560x1440.png" ];
-
-        wallpaper = [
-          ",${backgrounds}/wallhaven-1p75xv_2560x1440.png"
-        ];
+  home.file.".config/hypr/hyprpaper.conf".text =
+    let
+      backgrounds = builtins.path {
+        path = ../../../data/backgrounds;
+        name = "background-assets";
       };
-  };
+    in
+    ''
+      wallpaper {
+        monitor =
+        path = ${backgrounds}/wallhaven-1p75xv_2560x1440.png
+      }
+    '';
+
+  # services.hyprpaper = {
+  #   enable = true;
+  #   settings =
+  #     let
+  #       backgrounds = builtins.path {
+  #         path = ../../../data/backgrounds;
+  #         name = "background-assets";
+  #       };
+  #     in
+  #     {
+  #       ipc = "on";
+  #       splash = false;
+  #       splash_offset = 2.0;
+  #
+  #       preload = [ "${backgrounds}/wallhaven-1p75xv_2560x1440.png" ];
+  #
+  #       wallpaper = [
+  #         ",${backgrounds}/wallhaven-1p75xv_2560x1440.png"
+  #       ];
+  #     };
+  # };
 
   wayland.windowManager.hyprland = {
     enable = true;
