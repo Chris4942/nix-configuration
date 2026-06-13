@@ -69,6 +69,9 @@
         darktable
         lmstudio
         opencode
+        helio-workstation
+        alsa-utils
+        busybox
       ]);
   };
 
