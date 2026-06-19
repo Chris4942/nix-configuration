@@ -2,11 +2,12 @@
   nixpkgs,
   home-manager,
   nvf,
+  noctalia-flake,
   ...
 }:
 nixpkgs.lib.nixosSystem {
   specialArgs = {
-    inherit home-manager nvf;
+    inherit home-manager nvf noctalia-flake;
   };
   modules = [
     ./configuration.nix

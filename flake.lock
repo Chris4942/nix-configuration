@@ -143,7 +143,7 @@
         "type": "github"
       }
     },
-    "noctalia": {
+    "noctalia-flake": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -168,7 +168,7 @@
     "noctalia-qs": {
       "inputs": {
         "nixpkgs": [
-          "noctalia",
+          "noctalia-flake",
           "nixpkgs"
         ],
         "systems": "systems",
@@ -216,7 +216,7 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "noctalia": "noctalia",
+        "noctalia-flake": "noctalia-flake",
         "nvf": "nvf"
       }
     },
@@ -253,7 +253,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "noctalia",
+          "noctalia-flake",
           "noctalia-qs",
           "nixpkgs"
         ]

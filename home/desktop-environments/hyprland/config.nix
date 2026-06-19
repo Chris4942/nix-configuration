@@ -79,19 +79,19 @@ in
     };
   };
 
-  home.file.".config/hypr/hyprpaper.conf".text =
-    let
-      backgrounds = builtins.path {
-        path = ../../../data/backgrounds;
-        name = "background-assets";
-      };
-    in
-    ''
-      wallpaper {
-        monitor =
-        path = ${backgrounds}/wallhaven-1p75xv_2560x1440.png
-      }
-    '';
+  # home.file.".config/hypr/hyprpaper.conf".text =
+  #   let
+  #     backgrounds = builtins.path {
+  #       path = ../../../data/backgrounds;
+  #       name = "background-assets";
+  #     };
+  #   in
+  #   ''
+  #     wallpaper {
+  #       monitor =
+  #       path = ${backgrounds}/wallhaven-1p75xv_2560x1440.png
+  #     }
+  #   '';
 
   # services.hyprpaper = {
   #   enable = true;
@@ -279,8 +279,8 @@ in
         bindl = , XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause
         bindl = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
         bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
-        exec-once = ${pkgs.waybar}/bin/waybar
-        exec-once = ${pkgs.hyprpaper}bin/hyprpaper
+        # exec-once = ${pkgs.waybar}/bin/waybar
+        # exec-once = ${pkgs.hyprpaper}bin/hyprpaper
         env = HYPRCURSOR_THEME,rose-pine-hyprcursor
         exec-once=fcitx5 -d # not ${pkgs.fcitx5}/bin/fcitx5 !
       ''

@@ -5,6 +5,7 @@
   config,
   pkgs,
   home-manager,
+  noctalia-flake,
   ...
 }:
 {
@@ -38,7 +39,7 @@
 
   home-manager = {
     extraSpecialArgs = {
-      inherit home-manager;
+      inherit home-manager noctalia-flake;
     };
     users = {
       cwest = import ./users/cwest.nix;
