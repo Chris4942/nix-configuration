@@ -69,6 +69,12 @@
         darktable
         lmstudio
         opencode
+        helio-workstation
+        alsa-utils
+        busybox
+        carla
+        synthv1
+        surge-xt
       ]);
   };
 
