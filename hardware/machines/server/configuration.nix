@@ -57,6 +57,7 @@
       mkvtoolnix-cli
       fastfetch
       exiftool
+      immich # So that I have access to immich-admin
     ];
   };
 
