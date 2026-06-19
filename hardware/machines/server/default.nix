@@ -26,5 +26,6 @@ nixpkgs.lib.nixosSystem {
     ./home-assistant.nix
     home-manager.nixosModules.default
     ./seafile
+    ./gitea
   ];
 }
