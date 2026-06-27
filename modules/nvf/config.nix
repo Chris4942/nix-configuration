@@ -32,7 +32,7 @@
             codeAction = "<leader>ca";
             listReferences = "<leader>gr";
           };
-          harper-ls = {
+          servers.harper = {
             enable = true;
             settings = {
               linters = {
@@ -124,7 +124,7 @@
             enable = true;
             lsp.enable = true;
           };
-          ts = {
+          typescript = {
             # TypeScript / JavaScript / js / ts
             enable = true;
             lsp.enable = true;
