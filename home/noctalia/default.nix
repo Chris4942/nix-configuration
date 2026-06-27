@@ -58,4 +58,10 @@
       };
     };
   };
+  home.file.".cache/noctalia/wallpapers.json" = {
+    text = builtins.toJSON {
+      defaultWallpaper = ../../data/backgrounds/wallhaven-1p75xv_2560x1440.png;
+      wallpapers = { };
+    };
+  };
 }
