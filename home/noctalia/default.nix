@@ -21,7 +21,7 @@
           ];
           center = [
             {
-              formatHorizontal = "HH:mm";
+              formatHorizontal = "dd-MMM-yyyy HH:mm:ss";
               formatVertical = "HH mm";
               id = "Clock";
               useMonospacedFont = true;
