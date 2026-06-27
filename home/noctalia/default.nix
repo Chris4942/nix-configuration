@@ -1,11 +1,9 @@
 { noctalia-flake, ... }:
 {
-  # import the home manager module
   imports = [
     noctalia-flake.homeModules.default
   ];
 
-  # configure options
   programs.noctalia-shell = {
     enable = true;
     settings = {
@@ -16,35 +14,35 @@
         widgets = {
           left = [
             {
-              id = "ControlCenter";
-              useDistroLogo = true;
-            }
-            {
-              id = "Network";
-            }
-            {
-              id = "Bluetooth";
-            }
-          ];
-          center = [
-            {
               hideUnoccupied = false;
               id = "Workspace";
               labelMode = "none";
             }
           ];
-          right = [
-            {
-              alwaysShowPercentage = false;
-              id = "Battery";
-              warningThreshold = 30;
-            }
+          center = [
             {
               formatHorizontal = "HH:mm";
               formatVertical = "HH mm";
               id = "Clock";
               useMonospacedFont = true;
               usePrimaryColor = true;
+            }
+          ];
+          right = [
+            {
+              id = "Network";
+            }
+            {
+              id = "Bluetooth";
+            }
+            {
+              alwaysShowPercentage = false;
+              id = "Battery";
+              warningThreshold = 30;
+            }
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
             }
           ];
         };
@@ -56,9 +54,8 @@
       };
       location = {
         monthBeforeDay = true;
-        name = "Marseille, France";
+        name = "Washington, DC, United States";
       };
     };
-    # this may also be a string or a path to a JSON file.
   };
 }
