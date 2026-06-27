@@ -16,7 +16,7 @@
             {
               hideUnoccupied = false;
               id = "Workspace";
-              labelMode = "none";
+              labelMode = "number";
             }
           ];
           center = [
