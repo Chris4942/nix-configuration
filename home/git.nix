@@ -1,8 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
     settings = {
+      core = {
+        pager = "${pkgs.less}/bin/less -FX";
+      };
       user = {
         name = "Chris West";
         email = "cjwest4942@gmail.com";
