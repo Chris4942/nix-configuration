@@ -106,6 +106,7 @@
     ++ (with pkgs; [
       gnomeExtensions.display-configuration-switcher
       gnomeExtensions.kimpanel
+      seafile-client
     ]);
 
   systemd.tmpfiles.rules = [
