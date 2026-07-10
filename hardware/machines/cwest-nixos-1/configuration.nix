@@ -35,6 +35,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  virtualisation.docker.enable = true;
+
   qt.enable = true;
 
   home-manager = {
@@ -58,6 +60,7 @@
       "dialout"
       "usb"
       "plugdev"
+      "docker"
     ];
     packages =
       (import ../../../packages/lists/cwest-user-standard.nix pkgs)
