@@ -131,6 +131,10 @@
             treesitter.enable = true;
             extraDiagnostics.enable = true;
           };
+          tsx = {
+            enable = true;
+            format.enable = false;
+          };
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
