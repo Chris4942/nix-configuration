@@ -20,7 +20,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/steam.nix
     ../../../modules/audio.nix
     ../../../modules/nvf/module.nix
-    ../../../hardware/machines/cwest-nixos-1/hardware.nix
+    ./hardware.nix
     ../../../hardware/drivers/amdgpu.nix
     ../../../modules/desktop-environment/gnome.nix
     ../../../modules/libre-office.nix
