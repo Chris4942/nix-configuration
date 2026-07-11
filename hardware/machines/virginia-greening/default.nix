@@ -20,7 +20,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/steam.nix
     ../../../modules/audio.nix
     ../../../modules/nvf/module.nix
-    ../../../hardware/machines/cwest-nixos-macbook/hardware.nix
+    ./hardware.nix
     ../../../modules/desktop-environment/gnome.nix
     ../../../modules/libre-office.nix
     ../../../modules/automated-garbage-collection.nix

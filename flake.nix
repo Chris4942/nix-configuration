@@ -31,8 +31,10 @@
     in
     {
       nixosConfigurations = {
+        # Desktop with walnut inlay in the front
         walnut = import ./hardware/machines/walnut inputs;
-        cwest-nixos-macbook = import ./hardware/machines/cwest-nixos-macbook inputs;
+        # Macbook pro
+        virginia-greening = import ./hardware/machines/virginia-greening inputs;
         cwest-usb = import ./hardware/machines/cwest-usb inputs;
         cwest-usb-iso = import ./hardware/machines/cwest-usb-iso inputs;
         server = import ./hardware/machines/server inputs;
