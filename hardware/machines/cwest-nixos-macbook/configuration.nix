@@ -70,7 +70,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
+  environment.systemPackages =
+    import ../../../packages/lists/cwest-system-standard.nix pkgs
+    ++ (with pkgs; [
+      seafile-client
+    ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
