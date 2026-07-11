@@ -150,7 +150,7 @@ in
           "$mod, F, fullscreen"
           # Switch the current workspace to the other monitor
           # I copied this by hand, so it might not be perfect. It may need some tweaking when I use it the first time
-          "$mod, p, exec, ${hyprland}/bin/hyprctl dispatch moveworkspacetomonitor `${hyprland}/bin/hyprctl activeworkspace -j | ${jq}/bin/jq '.id'` `${hyprland}/bin/hyprctl monitors -j | ${jq}/bin/jq -r '.[] | select(.focused == false).name'"
+          "$mod, p, exec, ${hyprland}/bin/hyprctl dispatch moveworkspacetomonitor `${hyprland}/bin/hyprctl activeworkspace -j | ${jq}/bin/jq '.id'` `${hyprland}/bin/hyprctl monitors -j | ${jq}/bin/jq -r '.[] | select(.focused == false).name'`"
         ]
         ++ (
           # workspaces
