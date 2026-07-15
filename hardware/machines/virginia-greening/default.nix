@@ -27,6 +27,10 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/hyprland.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
-    nixos-hardware.nixosModules.apple-t2
-  ];
+    ./libinput.nix
+  ]
+  ++ (with nixos-hardware.nixosModules; [
+    apple-t2
+    apple-macbook-pro-14-1
+  ]);
 }

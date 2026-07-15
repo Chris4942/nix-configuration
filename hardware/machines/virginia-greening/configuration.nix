@@ -74,6 +74,8 @@
     import ../../../packages/lists/cwest-system-standard.nix pkgs
     ++ (with pkgs; [
       seafile-client
+      libinput
+      udev
     ]);
 
   # Some programs need SUID wrappers, can be configured further or are
