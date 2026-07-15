@@ -31,6 +31,6 @@ nixpkgs.lib.nixosSystem {
   ]
   ++ (with nixos-hardware.nixosModules; [
     apple-t2
-    apple-macbook-pro-14-1
+    # apple-macbook-pro-14-1
   ]);
 }
