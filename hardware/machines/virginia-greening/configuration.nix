@@ -75,7 +75,6 @@
     ++ (with pkgs; [
       seafile-client
       libinput
-      udev
     ]);
 
   # Some programs need SUID wrappers, can be configured further or are
