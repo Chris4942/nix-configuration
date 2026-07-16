@@ -47,7 +47,7 @@
       inherit home-manager noctalia-flake;
     };
     users = {
-      cwest = import ../../../users/cwest.nix;
+      cwest = import ./users/cwest.nix;
     };
   };
 

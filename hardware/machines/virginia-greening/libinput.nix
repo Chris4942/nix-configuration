@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   services.libinput = {
     enable = true;
     # touchpad = {
@@ -27,4 +27,20 @@
     MatchProduct=0x8600
     AttrKeyboardIntegration=internal
   '';
+
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "${./toggle-mouse.sh}";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
+  };
+
 }
