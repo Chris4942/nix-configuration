@@ -46,10 +46,23 @@
             command = "${./toggle-mouse.sh}";
             options = [ "NOPASSWD" ];
           }
+          {
+            command = "${pkgs.busybox}/bin/rm /tmp/trackpad";
+            options = [ "NOPASSWD" ];
+          }
         ];
         groups = [ "wheel" ];
       }
     ];
+  };
+
+  systemd.services.clear-trackpad-cache = {
+    # Delete the cache for the script on startup since the trackpad doesn't always register with the same device id
+    script = ''
+      sudo ${pkgs.busybox}/bin/rm /tmp/trackpad
+    '';
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
   };
 
 }
