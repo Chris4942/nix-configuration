@@ -59,10 +59,9 @@
   systemd.services.clear-trackpad-cache = {
     # Delete the cache for the script on startup since the trackpad doesn't always register with the same device id
     script = ''
-      sudo ${pkgs.busybox}/bin/rm /tmp/trackpad
+      ${pkgs.busybox}/bin/rm /tmp/trackpad
     '';
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
+    wantedBy = [ "multi-user.target" ];
   };
 
 }
