@@ -11,7 +11,6 @@
     pkgs.grim # screenshot functionality
     pkgs.slurp # screenshot functionality
     pkgs.wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-    pkgs.mako # notification system developed by swaywm maintainer
     pkgs.rofi
   ];
 
