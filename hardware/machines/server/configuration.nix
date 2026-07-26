@@ -58,6 +58,11 @@
       fastfetch
       exiftool
       immich # So that I have access to immich-admin
+      # usage:
+      # wakeonlan -i 192.168.0.255 <macadddress-of-target-computer-to-wake>
+      # Grab the MAC address from `ip a` on whatever interface is serving the ip address that shows up in ip r for the LAN
+      # It seems that you have to use the broadcast ip (255) instead of the ip address of the particular device
+      wakeonlan
     ];
   };
 
