@@ -21,6 +21,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/audio.nix
     ../../../modules/nvf/module.nix
     ./hardware.nix
+    ./wake-on-lan.nix
     ../../../hardware/drivers/amdgpu.nix
     ../../../modules/desktop-environment/gnome.nix
     ../../../modules/libre-office.nix
