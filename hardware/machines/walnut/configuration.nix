@@ -79,6 +79,7 @@
         carla
         synthv1
         surge-xt
+        gpick # UI Color picker
       ]);
   };
 
