@@ -95,13 +95,13 @@
           rust = {
             enable = true;
             extensions.crates-nvim.enable = true;
-            lsp.opts = ''
-              ['rust-analyzer'] = {
-                check = {
-                  command = "clippy",
-                },
-              },
-            '';
+            # lsp.opts = ''
+            #   ['rust-analyzer'] = {
+            #     check = {
+            #       command = "clippy",
+            #     },
+            #   },
+            # '';
           };
           python = {
             enable = true;
