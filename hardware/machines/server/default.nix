@@ -21,7 +21,7 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/nvf/module.nix
     ../../../modules/jellyfin.nix
     nvf.nixosModules.default
-    ./next-cloud.nix
+    # ./next-cloud.nix # Replaced with seafile.
     ./cron.nix
     ./home-assistant.nix
     home-manager.nixosModules.default
