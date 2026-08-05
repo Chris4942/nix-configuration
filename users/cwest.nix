@@ -1,20 +1,17 @@
 {
-  config,
   pkgs,
-  home-manager,
-  lib,
   ...
 }:
 rec {
   imports = [
     ../home/terminal/kitty.nix
     ../home/desktop-environments/hyprland
-    # ../home/waybar/default.nix
     ../home/quickshell/module.nix
     ../home/zoxide.nix
     ../home/harper
     ../home/git.nix
     ../home/noctalia
+    ../home/direnv.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "cwest";
