@@ -55,7 +55,12 @@
       "networkmanager"
       "wheel"
     ];
-    packages = import ../../../packages/lists/cwest-user-standard.nix pkgs ++ [ pkgs.runelite ];
+    packages =
+      import ../../../packages/lists/cwest-user-standard.nix pkgs
+      ++ (with pkgs; [
+        runelite
+        obs-studio
+      ]);
   };
 
   # Install firefox.
