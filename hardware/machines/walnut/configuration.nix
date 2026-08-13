@@ -31,6 +31,8 @@
   services.printing.enable = true;
   services.tailscale.enable = true;
 
+  services.displayManager.gdm.autoSuspend = false;
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
