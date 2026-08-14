@@ -6,7 +6,8 @@
     pkgs.jellyfin
     pkgs.jellyfin-web
     pkgs.jellyfin-ffmpeg
-    pkgs.makemkv # provides makemkvcon (even though nixos search doesn't say it does)
+    # TODO:currently broken download link, will probably be fixed in future versions of nixpkgs
+    # pkgs.makemkv # provides makemkvcon (even though nixos search doesn't say it does)
     pkgs.dvdbackup
   ];
 
