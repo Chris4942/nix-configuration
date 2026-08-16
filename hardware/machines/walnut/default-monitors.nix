@@ -1,4 +1,3 @@
-{ ... }:
 {
   systemd.tmpfiles.rules =
     let

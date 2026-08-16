@@ -1,4 +1,3 @@
-{ ... }:
 {
   # this can be done manually instead with
   # nix-collect-garbage -d --delete-older-than 14d

@@ -1,4 +1,4 @@
-{ ... }: {
+{
   networking = {
     interfaces = {
       enp14s0 = {

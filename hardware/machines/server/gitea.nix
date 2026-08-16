@@ -1,4 +1,3 @@
-{ ... }:
 let
   gitea-port = 3000;
 in

@@ -1,4 +1,3 @@
-{ ... }:
 let
   configs = builtins.path {
     path = ./configs;

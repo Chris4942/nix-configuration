@@ -1,4 +1,3 @@
-{ ... }:
 {
   home.file = {
     ".config/monitors.xml" = {

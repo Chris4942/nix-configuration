@@ -1,4 +1,3 @@
-{ ... }:
 let
   # Require pressing all the buttons so I don't do this on accident
   allModifiers = "$mod SHIFT CONTROL_L ALT_L";
