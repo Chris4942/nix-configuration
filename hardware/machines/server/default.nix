@@ -27,5 +27,6 @@ nixpkgs.lib.nixosSystem {
     home-manager.nixosModules.default
     ./seafile
     ./gitea.nix
+    ../../../modules/automated-garbage-collection.nix
   ];
 }
