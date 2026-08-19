@@ -45,7 +45,7 @@
           inherit pkgs;
           modules = [
             nvf.homeManagerModules.default
-            ./users/deck.nix
+            ./users/deck
           ];
         };
       };
