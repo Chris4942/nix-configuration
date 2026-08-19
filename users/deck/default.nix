@@ -7,6 +7,7 @@
     ../../home/harper
     ../../home/git.nix
     ../../modules/bash/home-manager-module.nix
+    ../../home/direnv.nix
   ];
   home.packages = with pkgs; [
     zoxide
