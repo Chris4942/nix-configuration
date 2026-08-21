@@ -94,8 +94,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages =
-    import ../../../packages/lists/cwest-system-standard.nix pkgs ++ (with pkgs; [ lnav ]);
+  environment.systemPackages = import ../../../packages/lists/cwest-system-standard.nix pkgs;
 
   services.openssh.enable = true;
 

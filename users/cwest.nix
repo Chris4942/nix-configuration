@@ -71,6 +71,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    TERMINAL = "${pkgs.kitty}/bin/kitty";
   };
 
   # Let Home Manager install and manage itself.

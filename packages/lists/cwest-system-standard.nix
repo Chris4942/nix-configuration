@@ -27,4 +27,5 @@ pkgs: with pkgs; [
   pwgen
   wget
   superfile
+  lnav
 ]
