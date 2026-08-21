@@ -24,6 +24,17 @@ in
           ];
           center = [
             {
+              colorizeIcons = false;
+              hideMode = "hidden";
+              id = "ActiveWindow";
+              maxWidth = 145;
+              scrollingMode = "hover";
+              showIcon = true;
+              showText = true;
+              textColor = "none";
+              useFixedWidth = false;
+            }
+            {
               formatHorizontal = "dd-MMM-yyyy HH:mm:ss";
               formatVertical = "HH mm";
               id = "Clock";
