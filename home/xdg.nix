@@ -22,10 +22,15 @@
       };
       lnav = {
         exec = "${pkgs.lnav}/bin/lnav %F";
-        mimeType = [
-          "text/x-log"
-        ];
+        mimeType = [ "text/x-log" ];
         name = "lnav";
+        terminal = true;
+        type = "Application";
+      };
+      superfile = {
+        exec = "${pkgs.superfile}/bin/superfile";
+        mimeType = [ "inode/directory" ];
+        name = "superfile";
         terminal = true;
         type = "Application";
       };
