@@ -1,6 +1,12 @@
 { pkgs, ... }: {
   xdg = {
     enable = true;
-    mimeApps.defaultApplicationPackages = with pkgs; [ brave ];
+    mimeApps = {
+      enable = true;
+      defaultApplicationPackages = with pkgs; [
+        brave
+        discord
+      ];
+    };
   };
 }
