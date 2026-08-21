@@ -14,6 +14,7 @@
         mimeType = [
           "text/plain"
           "text/json"
+          "text/xml"
           "application/x-desktop"
         ];
         name = "Neovim";
