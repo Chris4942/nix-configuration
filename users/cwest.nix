@@ -2,7 +2,7 @@
   pkgs,
   ...
 }:
-rec {
+{
   imports = [
     ../home/terminal/kitty.nix
     ../home/desktop-environments/hyprland
@@ -12,6 +12,7 @@ rec {
     ../home/git.nix
     ../home/noctalia
     ../home/direnv.nix
+    ../home/xdg.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "cwest";
@@ -68,11 +69,7 @@ rec {
     ".backgrounds/ink-splat.png".source = ../data/backgrounds/ink-splat.png;
   };
 
-  home.sessionVariables = with pkgs; {
-    BROWSER = "${brave}/bin/brave";
-    MUSIC_PLAYER = "spotify";
-    DISPLAY_MANAGER = "${arandr}/bin/arandr";
-    AUDIO_CONTROLLER = "${pavucontrol}/bin/pavucontrol";
+  home.sessionVariables = {
     EDITOR = "vim";
   };
 

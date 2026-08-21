@@ -26,4 +26,5 @@ pkgs: with pkgs; [
   bat
   pwgen
   wget
+  superfile
 ]
