@@ -21,19 +21,19 @@ in
               id = "Workspace";
               labelMode = "number";
             }
-          ];
-          center = [
             {
               colorizeIcons = false;
               hideMode = "hidden";
               id = "ActiveWindow";
-              maxWidth = 145;
+              maxWidth = 500;
               scrollingMode = "hover";
               showIcon = true;
               showText = true;
               textColor = "none";
               useFixedWidth = false;
             }
+          ];
+          center = [
             {
               formatHorizontal = "dd-MMM-yyyy HH:mm:ss";
               formatVertical = "HH mm";
