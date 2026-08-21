@@ -1,13 +1,6 @@
 { pkgs, ... }: {
   xdg = {
     enable = true;
-    terminal-exec = {
-      enable = true;
-      package = pkgs.kitty;
-      settings = {
-        default = [ "kitty.desktop" ];
-      };
-    };
     desktopEntries = {
       neovim = {
         exec = "vim %F";

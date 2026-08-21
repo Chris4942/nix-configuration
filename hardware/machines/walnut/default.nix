@@ -32,5 +32,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/anki.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
+    ../../../modules/xdg.nix
   ];
 }
