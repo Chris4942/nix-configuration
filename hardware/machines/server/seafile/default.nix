@@ -18,6 +18,8 @@ in
     description = "Seafile Docker Compose";
     after = [
       "network.target"
+      "docker.service"
+      "docker.socket"
     ];
 
     serviceConfig = {
