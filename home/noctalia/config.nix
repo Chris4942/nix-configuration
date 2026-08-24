@@ -44,6 +44,11 @@ in
           ];
           right = [
             {
+              displayMode = "onhover";
+              id = "Volume";
+              middleClickCommand = "pwvucontrol || pavucontrol";
+            }
+            {
               id = "Network";
             }
             {
