@@ -33,5 +33,6 @@ nixpkgs.lib.nixosSystem {
     nvf.nixosModules.default
     home-manager.nixosModules.default
     ../../../modules/xdg.nix
+    ./vm.nix
   ];
 }
