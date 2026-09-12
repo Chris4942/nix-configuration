@@ -28,6 +28,6 @@ nixpkgs.lib.nixosSystem {
     ./seafile
     ./gitea.nix
     ../../../modules/automated-garbage-collection.nix
-    ./zwave-js.nix
+    ./zwave-js/module.nix
   ];
 }
