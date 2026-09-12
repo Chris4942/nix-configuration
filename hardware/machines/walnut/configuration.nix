@@ -83,6 +83,7 @@
         gpick # UI Color picker
         ethtool
         obs-studio
+        magic-wormhole
       ]);
   };
 
