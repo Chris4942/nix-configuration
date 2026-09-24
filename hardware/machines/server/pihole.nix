@@ -15,6 +15,18 @@
         enabled = true;
         description = "hagezi blocklist";
       }
+      {
+        url = "https://media.githubusercontent.com/media/zachlagden/Pi-hole-Optimized-Blocklists/main/lists/all_domains.txt";
+        type = "block";
+        enabled = true;
+        description = "Pi-hole Optimized Blocklists";
+      }
+      {
+        url = "https://media.githubusercontent.com/media/zachlagden/Pi-hole-Optimized-Blocklists/main/lists/nsfw.txt";
+        type = "block";
+        enabled = true;
+        description = "Pi-hole Optimized Blocklists NSFW";
+      }
     ];
   };
 
