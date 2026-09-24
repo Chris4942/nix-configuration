@@ -135,6 +135,7 @@
             enable = true;
             format.enable = false;
           };
+          wgsl.enable = true;
         };
         extraPlugins = with pkgs.vimPlugins; {
           harpoon = {
