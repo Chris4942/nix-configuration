@@ -29,5 +29,6 @@ nixpkgs.lib.nixosSystem {
     ./gitea.nix
     ../../../modules/automated-garbage-collection.nix
     ./zwave-js/module.nix
+    ./pihole.nix
   ];
 }
