@@ -9,7 +9,7 @@
       ];
     };
 
-    hosts = [
+    dns.hosts = [
       "192.168.0.65  west-server"
     ];
 
