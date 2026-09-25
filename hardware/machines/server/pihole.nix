@@ -38,7 +38,7 @@
       "8500"
       "443s"
     ];
-    hostName = "west-server";
+    hostName = "0.0.0.0";
   };
 
   networking.firewall.allowedTCPPorts = [ 8500 ];
