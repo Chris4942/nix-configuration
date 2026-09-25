@@ -3,15 +3,16 @@
     enable = true;
 
     settings = {
-      dns.upstreams = [
-        "9.9.9.9"
-        "1.1.1.1"
-      ];
+      dns = {
+        upstreams = [
+          "9.9.9.9"
+          "1.1.1.1"
+        ];
+        hosts = [
+          "192.168.0.65  west-server"
+        ];
+      };
     };
-
-    dns.hosts = [
-      "192.168.0.65  west-server"
-    ];
 
     # lists = [
     #   {
