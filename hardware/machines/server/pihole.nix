@@ -32,8 +32,11 @@
 
   services.pihole-web = {
     enable = true;
-    ports = [ "443s" ];
+    ports = [
+      "8500"
+      "443s"
+    ];
   };
 
-  networking.firewall.allowedTCPPorts = [ 443 ];
+  networking.firewall.allowedTCPPorts = [ 8500 ];
 }
