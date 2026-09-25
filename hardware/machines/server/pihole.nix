@@ -1,12 +1,17 @@
 {
   services.pihole-ftl = {
     enable = true;
+
     settings = {
       dns.upstreams = [
         "9.9.9.9"
         "1.1.1.1"
       ];
     };
+
+    hosts = [
+      "192.168.0.65  west-server"
+    ];
 
     # lists = [
     #   {
@@ -38,7 +43,7 @@
       "8500"
       "443s"
     ];
-    hostName = "0.0.0.0";
+    hostName = "west-server";
   };
 
   networking.firewall.allowedTCPPorts = [ 8500 ];
