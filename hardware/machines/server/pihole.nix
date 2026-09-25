@@ -28,6 +28,8 @@
         description = "Pi-hole Optimized Blocklists NSFW";
       }
     ];
+
+    openFirewallDNS = true;
   };
 
   services.pihole-web = {
@@ -36,6 +38,7 @@
       "8500"
       "443s"
     ];
+    hostName = "west-server";
   };
 
   networking.firewall.allowedTCPPorts = [ 8500 ];
