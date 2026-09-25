@@ -34,4 +34,6 @@
     enable = true;
     ports = [ "443s" ];
   };
+
+  networking.firewall.allowedTCPPorts = [ 443 ];
 }
