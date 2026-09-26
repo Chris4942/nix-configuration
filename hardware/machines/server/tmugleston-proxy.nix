@@ -18,16 +18,12 @@ in
 
       volumes = [
         "${tailscaleState}:/var/lib/tailscale"
+        "/run/secrets/tailnet-proxy.env:/run/secrets/tailnet-proxy.env:ro"
       ];
 
       environment = {
-        TS_STATE_DIR = "/var/lib/tailscale";
         TS_AUTHKEY_FILE = "/run/secrets/tailscale-authkey";
       };
-
-      environmentFiles = [
-        /run/secrets/tailnet-proxy.env
-      ];
 
       ports = [
         "100.100.100.10:8080:8080"
