@@ -4,7 +4,7 @@ let
 in
 {
   virtualisation.oci-containers = {
-    backend = "docker";
+    backend = "podman";
 
     containers.tailnet-proxy = {
       image = "tailscale/tailscale:latest";
