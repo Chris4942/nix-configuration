@@ -30,5 +30,6 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/automated-garbage-collection.nix
     ./zwave-js/module.nix
     ./pihole.nix
+    ./tmugleston-proxy.nix
   ];
 }
