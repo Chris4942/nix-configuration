@@ -48,7 +48,6 @@
     enable = true;
     ports = [
       "8500"
-      "443s"
     ];
     hostName = "west-server";
   };
