@@ -34,5 +34,6 @@ nixpkgs.lib.nixosSystem {
     home-manager.nixosModules.default
     ../../../modules/xdg.nix
     ./vm.nix
+    ../../../modules/desktop-environment/niri.nix
   ];
 }

@@ -6,6 +6,7 @@
   imports = [
     ../home/terminal/kitty.nix
     ../home/desktop-environments/hyprland
+    ../home/desktop-environments/niri/module.nix
     ../home/quickshell/module.nix
     ../home/zoxide.nix
     ../home/harper
