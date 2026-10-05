@@ -78,7 +78,7 @@ output "HDMI-A-1" {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 4
 
     // Don't move view unless needed to see the newly focused window
     center-focused-column "never"
@@ -89,7 +89,7 @@ layout {
         proportion 0.66667
     }
 
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.5; }
 
     focus-ring {
         width 1
