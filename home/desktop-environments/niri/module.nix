@@ -1,4 +1,13 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  extraFiles = config.cwest.niri.extraFiles;
+in
+{
   imports = [
     ../../noctalia
   ];
@@ -10,5 +19,11 @@
       swaylock
     ];
   };
-  home.file.".config/niri/config.kdl".source = ./config.kdl;
+  home.file = {
+    ".config/niri/config.kdl".text = ''
+      include "base.kdl"
+    ''
+    + (lib.strings.join "\n" (map (f: "include \"${f}\"") extraFiles));
+    ".config/niri/base.kdl".source = ./config.kdl;
+  };
 }

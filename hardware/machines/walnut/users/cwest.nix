@@ -32,4 +32,5 @@ in
         bind = , catchall, submap, reset
       submap = reset
     '';
+  cwest.niri.extraFiles = [ ./monitors.kdl ];
 }

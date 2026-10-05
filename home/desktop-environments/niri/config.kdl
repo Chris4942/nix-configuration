@@ -69,9 +69,6 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
-output "HDMI-A-1" {
-    off
-}
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
