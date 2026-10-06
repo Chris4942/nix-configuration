@@ -17,6 +17,7 @@ in
       rofi
       kitty
       swaylock
+      playerctl
     ];
   };
   home.file = {
