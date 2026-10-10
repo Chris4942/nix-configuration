@@ -5,7 +5,7 @@
   ...
 }:
 let
-  extraFiles = config.cwest.niri.extraFiles;
+  extraFiles = config.cwest.niri.extraFiles ++ [ ./cursor.kdl ];
 in
 {
   imports = [
@@ -18,6 +18,7 @@ in
       kitty
       swaylock
       playerctl
+      kdePackages.breeze
     ];
   };
   home.file = {
