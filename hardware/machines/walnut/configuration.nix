@@ -84,6 +84,7 @@
         ethtool
         obs-studio
         magic-wormhole
+        imagemagick
       ]);
   };
 
