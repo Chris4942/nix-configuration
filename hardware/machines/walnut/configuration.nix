@@ -70,7 +70,6 @@
         blender
         zoom-us
         quickshell
-        nextcloud-client
         darktable
         lmstudio
         opencode
