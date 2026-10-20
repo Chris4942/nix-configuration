@@ -84,7 +84,6 @@
         obs-studio
         magic-wormhole
         imagemagick
-        cwest-niri
       ]);
   };
 
