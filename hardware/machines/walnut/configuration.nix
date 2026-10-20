@@ -42,7 +42,7 @@
 
   home-manager = {
     extraSpecialArgs = {
-      inherit home-manager noctalia-flake;
+      inherit home-manager noctalia-flake pkgs;
     };
     users = {
       cwest = import ./users/cwest.nix;
@@ -84,6 +84,7 @@
         obs-studio
         magic-wormhole
         imagemagick
+        cwest-niri
       ]);
   };
 

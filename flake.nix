@@ -16,6 +16,10 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    cwest-niri = {
+      url = "github:Chris4942/cwest-niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,11 +29,18 @@
       home-manager,
       nvf,
       nixos-hardware,
+      cwest-niri,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      cwest-niri-overlay = final: prev: {
+        cwest-niri = cwest-niri.packages.${final.stdenv.hostPlatform.system}.cwest-niri;
+      };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ cwest-niri-overlay ];
+      };
     in
     {
       nixosConfigurations = {
@@ -40,6 +51,12 @@
         cwest-usb = import ./hardware/machines/cwest-usb inputs;
         cwest-usb-iso = import ./hardware/machines/cwest-usb-iso inputs;
         server = import ./hardware/machines/server inputs;
+      };
+
+      nixosModules.cwest-niri = { ... }: {
+        nixpkgs.overlays = [
+          cwest-niri-overlay
+        ];
       };
 
       homeConfigurations = {

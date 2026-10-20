@@ -3,13 +3,21 @@
   home-manager,
   nvf,
   noctalia-flake,
+  cwest-niri,
+  self,
   ...
 }:
 nixpkgs.lib.nixosSystem {
   specialArgs = {
-    inherit home-manager nvf noctalia-flake;
+    inherit
+      home-manager
+      nvf
+      noctalia-flake
+      cwest-niri
+      ;
   };
   modules = [
+    self.nixosModules.cwest-niri
     ./configuration.nix
     ../../../modules/fonts.nix
     ../../../modules/localization/new-york.nix

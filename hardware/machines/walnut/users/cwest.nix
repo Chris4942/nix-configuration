@@ -1,3 +1,8 @@
+{
+  pkgs,
+  self,
+  ...
+}:
 let
   # Require pressing all the buttons so I don't do this on accident
   allModifiers = "$mod SHIFT CONTROL_L ALT_L";
@@ -32,5 +37,15 @@ in
         bind = , catchall, submap, reset
       submap = reset
     '';
-  cwest.niri.extraFiles = [ ./monitors.kdl ];
+  cwest.niri.extraFiles = [
+    (pkgs.writeText "monitors.kdl" ''
+      output "HDMI-A-1" {
+          off
+      }
+      binds {
+          Shift+Super+Alt+Ctrl+Y hotkey-overlay-title="Toggle TV display" { spawn "${pkgs.cwest-niri}/bin/toggle-monitors"
+          }
+      }
+    '')
+  ];
 }
