@@ -84,6 +84,7 @@
         obs-studio
         magic-wormhole
         imagemagick
+        gopher64
       ]);
   };
 
