@@ -97,6 +97,7 @@
       discord
       spotify
       gimp
+      gopher64
     ];
     extraGroups = [
       "gamers"
