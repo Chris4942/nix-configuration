@@ -28,7 +28,8 @@
         terminal = true;
         type = "Application";
       };
-    };
+    }
+    // (import ./gopher64.nix { inherit pkgs; });
     mimeApps = {
       enable = true;
       defaultApplicationPackages = with pkgs; [
