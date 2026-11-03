@@ -69,7 +69,6 @@
         runelite
         blender
         zoom-us
-        quickshell
         darktable
         lmstudio
         opencode

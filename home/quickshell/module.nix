@@ -6,7 +6,7 @@ let
 in
 {
   programs.quickshell = {
-    enable = true;
+    # enable = true;
     activeConfig = configs;
     systemd.enable = true;
   };

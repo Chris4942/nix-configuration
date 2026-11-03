@@ -8,7 +8,7 @@ in
   ];
 
   programs.noctalia-shell = {
-    enable = true;
+    # enable = true;
     settings = {
       bar = {
         density = "compact";

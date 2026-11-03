@@ -34,14 +34,14 @@ nixpkgs.lib.nixosSystem {
     ../../../modules/desktop-environment/gnome.nix
     ../../../modules/libre-office.nix
     ../../../modules/automated-garbage-collection.nix
-    ../../../modules/desktop-environment/hyprland.nix
+    # ../../../modules/desktop-environment/hyprland.nix
     ../../../modules/enable-bluetooth-on-boot.nix
     # ../../../modules/fcitx5.nix
     ../../../modules/anki.nix
     nvf.nixosModules.default
     home-manager.nixosModules.default
     ../../../modules/xdg.nix
-    ./vm.nix
+    # ./vm.nix
     ../../../modules/desktop-environment/niri.nix
   ];
 }

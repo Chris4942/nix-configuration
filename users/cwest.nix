@@ -5,9 +5,9 @@
 {
   imports = [
     ../home/terminal/kitty.nix
-    ../home/desktop-environments/hyprland
+    # ../home/desktop-environments/hyprland
     ../home/desktop-environments/niri
-    ../home/quickshell/module.nix
+    # ../home/quickshell/module.nix Broken. Try uncommenting this later
     ../home/zoxide.nix
     ../home/harper
     ../home/git.nix
