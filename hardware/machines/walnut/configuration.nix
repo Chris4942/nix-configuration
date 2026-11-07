@@ -71,7 +71,7 @@
         zoom-us
         darktable
         lmstudio
-        opencode
+        # opencode
         helio-workstation
         alsa-utils
         busybox
