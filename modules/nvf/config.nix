@@ -16,6 +16,10 @@
           # Specify bash from pkgs.bash so that if I'm running neovim from inside a nix shell, it uses that version of bash instead.
           shell = "${pkgs.bash}/bin/bash";
         };
+        clipboard = {
+          enable = true;
+          providers.wl-copy.enable = true;
+        };
         viAlias = false;
         vimAlias = true;
         lineNumberMode = "number";
