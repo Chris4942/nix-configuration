@@ -18,12 +18,7 @@ in
           "active_window"
         ];
       };
-    };
-  };
-  home.file.".cache/noctalia/wallpapers.json" = {
-    text = builtins.toJSON {
-      defaultWallpaper = cwest.background;
-      wallpapers = { };
+      wallpaper.default.path = cwest.background;
     };
   };
 }
