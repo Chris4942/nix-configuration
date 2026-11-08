@@ -84,6 +84,7 @@
         magic-wormhole
         imagemagick
         gopher64
+        whatsapp-electron
       ]);
   };
 
