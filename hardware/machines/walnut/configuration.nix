@@ -117,6 +117,7 @@
       gnomeExtensions.display-configuration-switcher
       gnomeExtensions.kimpanel
       seafile-client
+      wl-clipboard
     ]);
 
   systemd.tmpfiles.rules = [
