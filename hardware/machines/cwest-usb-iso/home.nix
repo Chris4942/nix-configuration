@@ -1,7 +1,7 @@
 {
   imports = [
     ../../../home/terminal/kitty.nix
-    ../../../home/desktop-environments/hyprland.nix
+    # ../../../home/desktop-environments/hyprland.nix
     ../../../home/waybar/default.nix
     # ../../../home/quickshell/module.nix
     ../../../home/zoxide.nix

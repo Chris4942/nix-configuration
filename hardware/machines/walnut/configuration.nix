@@ -93,7 +93,7 @@
     description = "Haley West";
     packages = with pkgs; [
       steam
-      brave
+      firefox
       discord
       spotify
       gimp

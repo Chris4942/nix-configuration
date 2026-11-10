@@ -33,7 +33,7 @@
     mimeApps = {
       enable = true;
       defaultApplicationPackages = with pkgs; [
-        brave
+        firefox
         discord
         kitty
       ];

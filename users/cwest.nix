@@ -35,7 +35,7 @@
   home.packages = with pkgs; [
     zoxide
     pulseaudio
-    brave
+    firefox
     arandr
     feh
     foot

@@ -1,5 +1,5 @@
 pkgs: with pkgs; [
-  brave
+  firefox
   fastfetch
   steam
   discord
