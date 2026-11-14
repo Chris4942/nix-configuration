@@ -118,6 +118,7 @@
       gnomeExtensions.kimpanel
       seafile-client
       wl-clipboard
+      brave
     ]);
 
   systemd.tmpfiles.rules = [
