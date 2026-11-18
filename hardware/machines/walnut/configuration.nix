@@ -85,6 +85,7 @@
         imagemagick
         gopher64
         whatsapp-electron
+        bolt-launcher
       ]);
   };
 
