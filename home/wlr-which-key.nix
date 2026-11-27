@@ -34,7 +34,7 @@
           cmd = "${pkgs.pavucontrol}/bin/pavucontrol";
         }
         {
-          key = "b";
+          key = "l";
           desc = "Bluetooth Manager";
           cmd = "${pkgs.blueman}/bin/blueman-manager";
         }
